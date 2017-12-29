@@ -10,8 +10,8 @@
 6 silly lifecycle tbd@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle tbd@1.0.0~start: tbd@1.0.0
 8 verbose lifecycle tbd@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle tbd@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\WStotler\Developer\Test\wnsReact\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft Application Virtualization Client;C:\Program Files\nodejs\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd
-10 verbose lifecycle tbd@1.0.0~start: CWD: C:\Users\WStotler\Developer\Test\wnsReact
+9 verbose lifecycle tbd@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\WStotler\Developer\Test\wnsTest\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft Application Virtualization Client;C:\Program Files\nodejs\;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd
+10 verbose lifecycle tbd@1.0.0~start: CWD: C:\Users\WStotler\Developer\Test\wnsTest
 11 silly lifecycle tbd@1.0.0~start: Args: [ '/d /s /c',
 11 silly lifecycle   'webpack-dev-server --port=8080 --inline --content-base .' ]
 12 silly lifecycle tbd@1.0.0~start: Returned: code: 3221225786  signal: null
@@ -27,7 +27,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid tbd@1.0.0
-16 verbose cwd C:\Users\WStotler\Developer\Test\wnsReact
+16 verbose cwd C:\Users\WStotler\Developer\Test\wnsTest
 17 error Windows_NT 6.1.7601
 18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "start"
 19 error node v6.10.0
