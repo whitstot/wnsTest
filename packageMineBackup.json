@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --port=8080 --inline --content-base .",
+    "start": "webpack-dashboard -- webpack-dev-server",
     "prebuild": "rimraf dist",
     "build": "webpack -p"
   },
