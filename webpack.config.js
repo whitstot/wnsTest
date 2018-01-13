@@ -17,9 +17,7 @@ const options = {
 };
 
 module.exports = {
-  entry: {
-    './js/index.js'
-  },
+  entry: './js/index.js',
   output: {
     path: __dirname,
     filename: './dist/bundle.js'
@@ -35,12 +33,12 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           cacheDirectory: true,
-          presets: ['es2015']
+          presets: ['env', 'react']
         }
       },
       {
@@ -74,6 +72,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin({
         multiStep: true
     }),
+    new webpack.NoErrorsPlugin()
     new htmlPlugin({
       template:path.join(PATHS.app,'index.html'),
       inject:'body'
