@@ -1,84 +1,76 @@
-const path              = require('path');
-const webpack           = require('webpack');
-const htmlPlugin        = require('html-webpack-plugin');
-const openBrowserPlugin = require('open-browser-webpack-plugin'); 
-const dashboardPlugin   = require('webpack-dashboard/plugin');
-const autoprefixer      = require('autoprefixer'); 
-
-const PATHS = {
-  app: path.join(__dirname, 'src'),
-  images:path.join(__dirname,'src/assets/'),
-  build: path.join(__dirname, 'dist')
-};
-
-const options = {
-  host:'localhost',
-  port:'1234'
-};
+var path = require('path');
+//const webpack = require('webpack');
+//const json = require('./file.json');               //might need this in the future, possibly put in index.js?
+//const json = require('json-loader!./file.json');  //might need this in the future, possibly put in index.js? 
+//var React = require('react');                     //might need this later
 
 module.exports = {
   entry: './js/index.js',
   output: {
-    path: __dirname,
-    filename: './dist/bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
-  devServer: {
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      stats: 'errors-only',
-      host: options.host,
-      port: options.port 
-    },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.jsx$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
         query: {
-          cacheDirectory: true,
-          presets: ['env', 'react']
+          presets: ['react', 'env', 'stage-0', 'stage-3']
         }
+      },
+      {
+        test: /\.txt$/,
+        use: 'raw-loader'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}  
+          }
+        ]
+      },
+      {
+        test: /\.exec\.js$/,
+        use: [ 'script-loader' ]
+      },
+      {
+        test: /\.html$/,
+        use: [ "html-loader" ]
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css', 'postcss'],
-        include:PATHS.app
+        use: ['style-loader', 'css-loader']
+      }
+    ],
+    loaders: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
-        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,        
-        loader: 'file',
-        query: {
-          name: '[path][name].[ext]'
-        }
-      },      
+        test: /\.json5$/,
+        loader: 'json5-loader'
+      },
     ]
   },
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9',
-        ]
-      }),
-    ];
-  },
-  plugins:[
-    new dashboardPlugin(),
-    new webpack.HotModuleReplacementPlugin({
-        multiStep: true
-    }),
-    new webpack.NoErrorsPlugin()
-    new htmlPlugin({
-      template:path.join(PATHS.app,'index.html'),
-      inject:'body'
-    }),
-    new openBrowserPlugin({
-      url: `http://${options.host}:${options.port}`
-    })
-  ]
+  devServer: {
+    contentBase: path.join(__dirname),
+    compress: true,
+    port: 8080
+  }
 };
