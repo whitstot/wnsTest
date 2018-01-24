@@ -17,7 +17,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['react', 'env', 'stage-0', 'stage-3']
+          presets: ['es2015', 'react', 'env', 'stage-0', 'stage-3'],
+          plugins: ['transform-runtime']
         }
       },
       {
@@ -56,17 +57,17 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       }
-    ],
-    loaders: [
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.json5$/,
-        loader: 'json5-loader'
-      },
     ]
+    // loaders: [
+    //   {
+    //     test: /\.json$/,
+    //     loader: 'json-loader'
+    //   },
+    //   {
+    //     test: /\.json5$/,
+    //     loader: 'json5-loader'
+    //   },
+    // ]
   },
   devServer: {
     contentBase: path.join(__dirname),
