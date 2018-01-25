@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Element from '../components/React.jsx';
+//import Element from '../components/React.jsx';
 
 ReactDOM.render(
-	<Element />,
+	<h1> Hello, world!</h1>,
   	document.getElementById('ReactId')
 );
