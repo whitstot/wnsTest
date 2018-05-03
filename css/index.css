@@ -1,10 +1,10 @@
 html, body {
-	height: 2000px;
+	height: 100%;
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
 }
-content {
+#ReactId {
 	height: 100%;
 	width: 100%;
 }
