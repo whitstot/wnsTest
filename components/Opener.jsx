@@ -24,12 +24,79 @@ export default class Element extends Component {
 			<div id="elementsWrapper" style={{...styles.elementsWrapper, top: '0px'}}>
 				<div id="photoHolder" style={{...styles.photoHolder, backgroundImage: "url('../images/Ada.jpg')"}}>
 					<div style={styles.menu} id="menu">
-						<div style={styles.titleText}>What are you here for?</div>
-						<div style={styles.buttonHome}>Graphic Design</div>
-						<div style={styles.buttonHome}>Wedding Videography</div>
-						<div style={styles.buttonHome}>Web Development</div>
-						<div style={styles.buttonHome}>Book our Worship Band</div>
-						<div style={{...styles.buttonHome, ...styles.lastButton}}>About Me</div>
+						<a ref={(eref) => { 
+							this.refs['graphicDesign'] = findDOMNode(eref) 
+						}} 
+						onMouseOver={() => { 
+							this.refs['graphicDesign'].style.transition = 'color 0.1s ease';
+							this.refs['graphicDesign'].style.color = 'powderblue';
+						}} 
+						onMouseLeave={() => { 
+							this.refs['graphicDesign'].style.color = 'white';
+						}}
+						style={styles.buttonHome}> 
+							Graphic Design
+						</a>
+
+						<a
+						ref={(eref) => { 
+							this.refs['weddingVideo'] = findDOMNode(eref) 
+						}} 
+						onMouseOver={() => { 
+							this.refs['weddingVideo'].style.transition = 'color 0.1s ease';
+							this.refs['weddingVideo'].style.color = 'powderblue';
+						}} 
+						onMouseLeave={() => { 
+							this.refs['weddingVideo'].style.color = 'white';
+						}}
+						style={styles.buttonHome}>
+							Wedding Videography
+						</a>
+
+						<a 
+						ref={(eref) => { 
+							this.refs['webDev'] = findDOMNode(eref) 
+						}} 
+						onMouseOver={() => { 
+							this.refs['webDev'].style.transition = 'color 0.1s ease';
+							this.refs['webDev'].style.color = 'powderblue';
+						}} 
+						onMouseLeave={() => { 
+							this.refs['webDev'].style.color = 'white';
+						}}
+						style={styles.buttonHome}>
+							Web Development
+						</a>
+
+						<a 
+						ref={(eref) => { 
+							this.refs['worship'] = findDOMNode(eref) 
+						}} 
+						onMouseOver={() => { 
+							this.refs['worship'].style.transition = 'color 0.1s ease';
+							this.refs['worship'].style.color = 'powderblue';
+						}} 
+						onMouseLeave={() => { 
+							this.refs['worship'].style.color = 'white';
+						}}
+						style={styles.buttonHome}>
+							Book our Worship Band
+						</a>
+
+						<a 
+						ref={(eref) => { 
+							this.refs['aboutMe'] = findDOMNode(eref) 
+						}} 
+						onMouseOver={() => { 
+							this.refs['aboutMe'].style.transition = 'color 0.1s ease';
+							this.refs['aboutMe'].style.color = 'powderblue';
+						}} 
+						onMouseLeave={() => { 
+							this.refs['aboutMe'].style.color = 'white';
+						}}
+						style={{...styles.buttonHome, ...styles.lastButton}}>
+							About Me
+						</a>
 					</div>
 				</div>
 			</div>
@@ -56,34 +123,29 @@ var styles = {
 	menu: {
 		position: 'absolute',
 		top: '17%',
-		left: '10%',
+		left: '23%',
 		height: '70%',
-		width: '35%',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		backgroundColor: 'rgba(0,0,0,0.3)',
 		borderRadius: '4%',
-		padding: '5px'
+		padding: '5px',
+		cursor: 'pointer'
 	},	
 	buttonHome: {
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
 		height: '15%',
-		width: '80%',
 		borderBottom: '2px solid white',
 		fontFamily: "'Lobster', cursive",
 		color: 'white',
-		fontSize: 'x-large'
+		fontSize: 'x-large',
+		cursor: 'pointer'
 	},
 	lastButton: {
 		borderBottom: '0px',
-	},
-	titleText: {
-		fontFamily: "'Abel', sans-serif",
-		fontSize: 'xx-large',
-		color: 'lightcoral'
 	}
 }
