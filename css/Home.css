@@ -1,0 +1,142 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.logo {
+	width: 130px;
+	height: 91px;
+}
+.logo:hover {
+	cursor: pointer;
+	opacity: 0.85;
+}
+.menu{
+	display: none;
+}
+.wrapper {
+	display: flex;
+	border-bottom: 1px solid lightgray;
+}
+
+/* Mobile Menu */
+.menuMobile {
+	display: none;
+}
+.dropDownMenu {
+	position: absolute;
+	top: 91px;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	transition: 0.5s ease;
+}
+.mobileMenuOpen {
+	display: flex;
+}
+.mobileMenuItem {
+	color: #ffb3b3;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	padding: 10px;
+	font-size: x-large;
+}
+.mobileMenuItem:hover {
+	color: #ff9999;
+}
+.topMobileMenuItem {
+	margin-top: 33%;
+}
+.esc {
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	position: absolute;
+    right: 0px;
+    padding: 3px 8px;
+    background-color: #ffb3b3;
+    border-radius: 100%;
+    margin: 13px;
+}
+.esc:hover {
+	background-color: #ff9999;
+}
+
+/* Media Queries */
+
+@media (min-width: 680px) {
+	/* desktop */
+	.menu {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		align-items: flex-end;
+		padding-bottom: 12px;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 500;
+		color: lightgray;
+	}
+	.contact {
+		margin-right: 3%;
+	}
+	.graphic {
+		margin-left: 3%;
+	}
+	.menuItem:hover {
+		cursor: pointer;
+		opacity: 0.85;
+	}
+}
+@media (max-width: 679px) {
+	/* mobile */
+	.wrapper {
+		justify-content: space-between;
+	}
+	.menuMobile {
+		display: flex;
+		flex-direction: column;
+    	justify-content: space-around;
+    	height: 85px;
+    	margin: 5px;
+    	align-items: flex-end;
+    	cursor: pointer;
+	}
+	.menuMobile div {
+		transition: 0.3s;
+	}
+	.menuMobile:hover div {
+		width: 60px;
+	}
+	.menuBar1 {
+		height: 7px;
+		width: 60px;
+		background-color: white;
+	}
+	.menuBar2 {
+		height: 7px;
+		width: 40px;
+		background-color: white;
+	}
+	.menuBar3{
+		height: 7px;
+		width: 55px;
+		background-color: white;
+	}
+}
+
+
+
+
+
+
+
+
+
+
