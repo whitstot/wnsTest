@@ -38,9 +38,6 @@ html, body {
 	align-items: center;
 	transition: 0.5s ease;
 }
-.mobileMenuOpen {
-	display: flex;
-}
 .mobileMenuItem {
 	color: #ffb3b3;
 	font-family: 'Raleway', sans-serif;
@@ -93,6 +90,9 @@ html, body {
 		cursor: pointer;
 		opacity: 0.85;
 	}
+	.dropDownMenu {
+		display: none;
+	}
 }
 @media (max-width: 679px) {
 	/* mobile */
@@ -128,6 +128,10 @@ html, body {
 		height: 7px;
 		width: 55px;
 		background-color: white;
+	}
+	.dropDownMenuOpen {
+		z-index: 1;
+		display: flex;
 	}
 }
 

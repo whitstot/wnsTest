@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
-import '../css/Opener.css';
 
 
 export default class Element extends Component {
@@ -17,8 +16,8 @@ export default class Element extends Component {
 	}
 	render() {
 		return (
-			<div className="opener">
-				
+			<div style={{color: 'white'}}>
+				Contact
 			</div>
 		)
 	} 

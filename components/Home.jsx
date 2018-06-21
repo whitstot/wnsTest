@@ -4,26 +4,43 @@ import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/index.css';
 import '../css/Home.css';
-import GraphicDesign from './GraphicDesign.jsx';
+import PhotoshopProjects from './PhotoshopProjects.jsx';		//Photoshop Projects
+import Videography from './Videography.jsx';
+import WebDesign from './WebDesign.jsx';
+import About from './About.jsx';
+import Contact from './Contact.jsx';
 
 
 export default class Element extends Component {
 	constructor(props) {
 		super(props);
+
+	/* 	photoshop
+		videography
+		webDesign
+		about
+		contact   */
+
+		this.state = {
+			componentToRender: 'photoshop'
+		}
 	}
 	componentWillMount() {
 		this.refs = [];
 	}
-	componentDidMount() {
-		
+	renderNewComponent(component) {
+		this.setState({
+			componentToRender: component
+		})
 	}
-	openMenu() {
-		this.refs['dropDownMenu'].classList.add('mobileMenuOpen');
+	toggleMenu() {
+		$(this.refs['dropDownMenu']).toggleClass('dropDownMenuOpen');
 	}
 	closeMenu() {
-		this.refs['dropDownMenu'].classList.remove('mobileMenuOpen');
+		this.refs['dropDownMenu'].classList.remove('dropDownMenuOpen');
 	}
 	render() {
+		console.log('rendered')
 		return (
 			<div>
 				<div className="wrapper">
@@ -31,31 +48,48 @@ export default class Element extends Component {
 						<img className="logo" src="../images/myLogo.jpg" alt=""/>
 					</a>
 					<div className="menu">
-						<div className="graphic menuItem"> Photoshop Projects </div>
+						<div onClick={this.renderNewComponent.bind(this, 'photoshop')} className="graphic menuItem"> Photoshop Projects </div>
 						<div> | </div>
-						<div className="menuItem"> Videography </div>
+						<div onClick={this.renderNewComponent.bind(this,'videography')} className="menuItem"> Videography </div>
 						<div> | </div>
-						<div className="menuItem"> Web Design </div>
+						<div onClick={this.renderNewComponent.bind(this,'webDesign')} className="menuItem"> Web Design </div>
 						<div> | </div>
-						<div className="menuItem"> About Me </div>
+						<div onClick={this.renderNewComponent.bind(this,'about')} className="menuItem"> About Me </div>
 						<div> | </div>
-						<div className="contact menuItem"> Contact </div>
+						<div onClick={this.renderNewComponent.bind(this,'contact')} className="contact menuItem"> Contact </div>
 					</div>
-					<div onClick={this.openMenu.bind(this)} className="menuMobile">
+					
+					<div onClick={this.toggleMenu.bind(this)} className="menuMobile">
 						<div className="menuBar1"> </div>
 						<div className="menuBar2"> </div>
 						<div className="menuBar3"> </div>
 					</div>
 				</div>
+
 				<div ref={eref => {this.refs['dropDownMenu'] = findDOMNode(eref)}} className="dropDownMenu">
-					<div onClick={this.closeMenu.bind(this)} className="esc"> x </div>
+					<div onClick={this.closeMenu.bind(this)} className="esc"> X </div>
 					<div className="mobileMenuItem topMobileMenuItem"> Photoshop Projects </div>
 					<div className="mobileMenuItem"> Videography </div>
 					<div className="mobileMenuItem"> Web Design </div>
 					<div className="mobileMenuItem"> About Me </div>
 					<div className="mobileMenuItem"> Contact </div>
 				</div>
-				<GraphicDesign />
+
+				{this.state.componentToRender === 'photoshop' &&
+					<PhotoshopProjects />
+				}
+				{this.state.componentToRender === 'videography' &&
+					<Videography />
+				}
+				{this.state.componentToRender === 'webDesign' &&
+					<WebDesign />
+				}
+				{this.state.componentToRender === 'about' &&
+					<About />
+				}
+				{this.state.componentToRender === 'contact' &&
+					<Contact />
+				}
 			</div>
 		)
 	} 

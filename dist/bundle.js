@@ -30385,21 +30385,40 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {}
   }, {
+    key: "openMenu",
+    value: function openMenu() {
+      this.refs['dropDownMenu'].classList.add('mobileMenuOpen');
+    }
+  }, {
+    key: "closeMenu",
+    value: function closeMenu() {
+      this.refs['dropDownMenu'].classList.remove('mobileMenuOpen');
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return _react.default.createElement("div", null, _react.default.createElement("div", {
         className: "wrapper"
-      }, _react.default.createElement("img", {
+      }, _react.default.createElement("a", null, _react.default.createElement("img", {
         className: "logo",
         src: "../images/myLogo.jpg",
         alt: ""
-      }), _react.default.createElement("div", {
+      })), _react.default.createElement("div", {
         className: "menu"
       }, _react.default.createElement("div", {
-        className: "graphic"
-      }, " Graphic Design "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", null, " Videography "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", null, " Web Design "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", null, " About Me "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
-        className: "contact"
+        className: "graphic menuItem"
+      }, " Photoshop Projects "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
+        className: "menuItem"
+      }, " Videography "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
+        className: "menuItem"
+      }, " Web Design "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
+        className: "menuItem"
+      }, " About Me "), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
+        className: "contact menuItem"
       }, " Contact ")), _react.default.createElement("div", {
+        onClick: this.openMenu.bind(this),
         className: "menuMobile"
       }, _react.default.createElement("div", {
         className: "menuBar1"
@@ -30407,7 +30426,25 @@ function (_Component) {
         className: "menuBar2"
       }, " "), _react.default.createElement("div", {
         className: "menuBar3"
-      }, " "))), _react.default.createElement(_GraphicDesign.default, null));
+      }, " "))), _react.default.createElement("div", {
+        ref: function ref(eref) {
+          _this.refs['dropDownMenu'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "dropDownMenu"
+      }, _react.default.createElement("div", {
+        onClick: this.closeMenu.bind(this),
+        className: "esc"
+      }, " x "), _react.default.createElement("div", {
+        className: "mobileMenuItem topMobileMenuItem"
+      }, " Photoshop Projects "), _react.default.createElement("div", {
+        className: "mobileMenuItem"
+      }, " Videography "), _react.default.createElement("div", {
+        className: "mobileMenuItem"
+      }, " Web Design "), _react.default.createElement("div", {
+        className: "mobileMenuItem"
+      }, " About Me "), _react.default.createElement("div", {
+        className: "mobileMenuItem"
+      }, " Contact ")), _react.default.createElement(_GraphicDesign.default, null));
     }
   }]);
 
@@ -30636,7 +30673,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n}\n.menuMobile {\n\tdisplay: none;\n}\n\n@media (min-width: 600px) {\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t}\n}\n@media (max-width: 599px) {\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n    \tjustify-content: space-around;\n    \theight: 85px;\n    \tmargin: 5px;\n\t}\n\t.menuBar1 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar2 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar3{\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "* {\n\tbox-sizing: border-box;\n}\nhtml, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: absolute;\n\ttop: 91px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuOpen {\n\tdisplay: flex;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n    padding: 3px 8px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n    margin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n    \tjustify-content: space-around;\n    \theight: 85px;\n    \tmargin: 5px;\n    \talign-items: flex-end;\n    \tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 60px;\n\t}\n\t.menuBar1 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar2 {\n\t\theight: 7px;\n\t\twidth: 40px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar3{\n\t\theight: 7px;\n\t\twidth: 55px;\n\t\tbackground-color: white;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30706,31 +30743,31 @@ function (_Component) {
       return _react.default.createElement("div", {
         className: "grid"
       }, _react.default.createElement("img", {
-        "class": "graphicDesignImg",
-        src: "../images/jadeExplosionFinishedSquare.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        "class": "graphicDesignImg",
+        className: "graphicDesignImg",
         src: "../images/worldRace.jpg",
         alt: ""
       }), _react.default.createElement("img", {
-        "class": "graphicDesignImg",
-        src: "../images/DexCloud2Rust.jpg",
+        className: "graphicDesignImg",
+        src: "../images/jadeExplosionFinishedSquare1.jpg",
         alt: ""
       }), _react.default.createElement("img", {
-        "class": "graphicDesignImg",
+        className: "graphicDesignImg",
+        src: "../images/DexCloudM7Square.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
         src: "../images/KimmiLionBrown.jpg",
         alt: ""
       }), _react.default.createElement("img", {
-        "class": "graphicDesignImg",
+        className: "graphicDesignImg",
         src: "../images/meFlowerFace.jpg",
         alt: ""
       }), _react.default.createElement("img", {
-        "class": "graphicDesignImg",
+        className: "graphicDesignImg",
         src: "../images/MAC2myselfBlue.jpg",
         alt: ""
       }), _react.default.createElement("img", {
-        "class": "graphicDesignImg",
+        className: "graphicDesignImg",
         src: "../images/twinPeaks.jpg",
         alt: ""
       }));
@@ -30803,7 +30840,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.graphicDesignImg {\n\theight: auto;\n\twidth: 100%;\n}\n\n/* Media Queries */ \n\n@media (min-width: 1471px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(4, 1fr);\n\t}\n}\n@media (max-width: 1470px) and (min-width: 900px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(3, 1fr);\n\t}\n}\n@media (max-width: 899px) and (min-width: 460px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(2, 1fr);\n\t}\n}", ""]);
+exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.graphicDesignImg {\n\theight: auto;\n\twidth: 100%;\n}\n.graphicDesignImg:hover {\n\topacity: 0.85;\n}\n\n/* Media Queries */ \n\n@media (min-width: 480px) and (max-width: 801px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(2, 1fr);\n\t}\n}\n@media (min-width: 802px) and (max-width: 1050px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(3, 1fr);\n\t}\n}\n@media (min-width: 1051px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(4, 1fr);\n\t}\n}", ""]);
 
 // exports
 

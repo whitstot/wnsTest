@@ -1,0 +1,43 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: white;
+}
+.opener {
+
+}
+.openerImage {
+	position: absolute;
+    top: 0px;
+    width: 100%;
+    opacity: 1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+}
+/*
+.openerImage {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/Ada.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+}
+
+.openerImage {
+	background-image: url('../images/Ada.jpg');
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+*/
