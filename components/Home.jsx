@@ -32,6 +32,7 @@ export default class Element extends Component {
 		this.setState({
 			componentToRender: component
 		})
+		this.closeMenu();
 	}
 	toggleMenu() {
 		$(this.refs['dropDownMenu']).toggleClass('dropDownMenuOpen');
@@ -68,11 +69,11 @@ export default class Element extends Component {
 
 				<div ref={eref => {this.refs['dropDownMenu'] = findDOMNode(eref)}} className="dropDownMenu">
 					<div onClick={this.closeMenu.bind(this)} className="esc"> X </div>
-					<div className="mobileMenuItem topMobileMenuItem"> Photoshop Projects </div>
-					<div className="mobileMenuItem"> Videography </div>
-					<div className="mobileMenuItem"> Web Design </div>
-					<div className="mobileMenuItem"> About Me </div>
-					<div className="mobileMenuItem"> Contact </div>
+					<div onClick={this.renderNewComponent.bind(this, 'photoshop')} className="mobileMenuItem topMobileMenuItem"> Photoshop Projects </div>
+					<div onClick={this.renderNewComponent.bind(this,'videography')} className="mobileMenuItem"> Videography </div>
+					<div onClick={this.renderNewComponent.bind(this,'webDesign')} className="mobileMenuItem"> Web Design </div>
+					<div onClick={this.renderNewComponent.bind(this,'about')} className="mobileMenuItem"> About Me </div>
+					<div onClick={this.renderNewComponent.bind(this,'contact')} className="mobileMenuItem"> Contact </div>
 				</div>
 
 				{this.state.componentToRender === 'photoshop' &&
