@@ -4,7 +4,7 @@ import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/index.css';
 import '../css/Home.css';
-import PhotoshopProjects from './PhotoshopProjects.jsx';		//Photoshop Projects
+import PhotoshopProjectsParent from './PhotoshopProjectsParent.jsx';		//Photoshop Projects
 import Videography from './Videography.jsx';
 import WebDesign from './WebDesign.jsx';
 import About from './About.jsx';
@@ -41,7 +41,6 @@ export default class Element extends Component {
 		this.refs['dropDownMenu'].classList.remove('dropDownMenuOpen');
 	}
 	render() {
-		console.log('rendered')
 		return (
 			<div>
 				<div className="wrapper">
@@ -77,7 +76,7 @@ export default class Element extends Component {
 				</div>
 
 				{this.state.componentToRender === 'photoshop' &&
-					<PhotoshopProjects />
+					<PhotoshopProjectsParent />
 				}
 				{this.state.componentToRender === 'videography' &&
 					<Videography />

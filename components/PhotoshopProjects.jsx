@@ -5,7 +5,7 @@ import { findDOMNode } from 'react-dom';
 import '../css/PhotoshopProjects.css';
 
 
-export default class Element extends Component {
+export default class PhotoshopProjects extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -18,13 +18,14 @@ export default class Element extends Component {
 	render() {
 		return (
 			<div className="grid">
-				<img className="graphicDesignImg" src="../images/worldRace.jpg" alt=""/>
-				<img className="graphicDesignImg" src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
-				<img className="graphicDesignImg" src="../images/DexCloudM7Square.jpg" alt=""/>
-				<img className="graphicDesignImg" src="../images/KimmiLionBrown.jpg" alt=""/>
-				<img className="graphicDesignImg" src="../images/meFlowerFace.jpg" alt=""/>
-				<img className="graphicDesignImg" src="../images/MAC2myselfBlue.jpg" alt=""/>
-				<img className="graphicDesignImg" src="../images/twinPeaks.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'worldRace')} src="../images/worldRace.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'kimmiLion')} src="../images/KimmiLionBrown.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'thunderCoffee')} src="../images/thunderCoffeeSquare.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jade')} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitsFlowerFarm')} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'meFlowerFace')} src="../images/meFlowerFace.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
 			</div>
 		)
 	} 
