@@ -107,7 +107,7 @@ export default class PhotoOpened extends Component {
 					<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffee.jpg" alt=""/>
 				}
 				{this.state.imageToRender === 'jade' &&
-					<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/jadeExplosionFinished.jpg" alt=""/>
+					<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
 				}
 				{this.state.imageToRender === 'whitsFlowerFarm' &&
 					<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarm.jpg" alt=""/>
@@ -123,6 +123,12 @@ export default class PhotoOpened extends Component {
 				}	
 				{this.state.portrait === false &&
 					<div onClick={this.rightArrowClicked.bind(this)} className="arrows">&#62;</div>
+				}
+				{this.state.portrait === true &&
+					<div className="mobileArrowsWrapper">
+						<div onClick={this.leftArrowClicked.bind(this)} className="arrows">&#60;</div>
+						<div onClick={this.rightArrowClicked.bind(this)} className="arrows">&#62;</div>
+					</div>
 				}
 				
 			</div>

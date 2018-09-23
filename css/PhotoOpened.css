@@ -4,29 +4,11 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 }
-.buttonsWrapper {
-    display: flex;
-    justify-content: space-around;
-}
-.button {
-    color: white;
-    background-color: darkgray;
-    padding: 5px;
-    border-radius: 7%;
-    font-family: 'Raleway', sans-serif;
-}
-.wordsOnPage {
-    color: white;
-}
 .arrows {
     color: white;
     padding: 15px;
     font-size: xx-large;
     font-family: 'Open Sans', sans-serif;
-}
-.arrows:hover {
-    color: gray;
-    cursor: pointer;
 }
 
 /* ------------------------------------------- */
@@ -41,6 +23,11 @@ html, body {
         justify-content: space-around; 
         align-items: center;
     }
+    .arrows:hover {
+        cursor: pointer;
+        background-color: slategray;
+        border-radius: 4px;
+    }
 }
 
 @media (max-width: 679px) {
@@ -50,7 +37,12 @@ html, body {
     }
     .imgWrapper {
         display: flex;
-        justify-content: space-around; 
         align-items: center;
+        flex-direction: column;
+    }
+    .mobileArrowsWrapper {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
     }
 }
