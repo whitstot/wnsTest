@@ -2,7 +2,7 @@
 
 /* Media Queries */
 
-@media (min-width: 756px) {
+@media (min-width: 1001px) {
     /* desktop */
 	.aboutWrapper {
 		display: flex;
@@ -25,7 +25,7 @@
 	}
 }
 
-@media (max-width: 755px) {
+@media (max-width: 1000px) {
     /* mobile */
     .aboutImg {
         width: 100%;

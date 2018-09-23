@@ -1,11 +1,36 @@
 /* For All Dimensions */
 
 .arrows {
-    color: white;
     padding: 15px;
     font-size: xx-large;
     font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    user-select: none;
+    margin: 0px 2%;
 }
+a {
+    cursor: pointer;
+}
+.imageWithLink:hover {
+    opacity: 0.85;
+}
+
+
+
+
+.comeIn {
+  transform: translateY(150%);
+  transition: 1s ease;
+}
+.comeInActivate {
+    transform: translateY(0);
+}
+.goOut {
+    transform: translateY(-150%);
+}
+
+
+
 
 /* ------------------------------------------- */
 
@@ -18,11 +43,23 @@
         margin-top: 2%;
         justify-content: space-around; 
         align-items: center;
-        background-color: black;
     }
     .arrows:hover {
         cursor: pointer;
         border-radius: 4px;
+    }
+    .imageAndTextWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .textWrapper {
+        display: flex;
+        flex-direction: column;
+        font-size: xx-large;
+        font-family: 'Raleway', sans-serif;
+        margin-left: 10%;
     }
 }
 
@@ -35,11 +72,18 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        background-color: black;
     }
     .mobileArrowsWrapper {
         display: flex;
         justify-content: space-around;
         width: 100%;
+    }
+    .textWrapper {
+        display: flex;
+        flex-direction: column;
+        font-size: large;
+        font-family: 'Raleway', sans-serif;
+        margin: 10% 0%;
+        align-items: center;
     }
 }

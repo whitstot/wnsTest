@@ -30391,7 +30391,7 @@ function (_Component) {
     	contact   */
 
     _this.state = {
-      componentToRender: 'photoshop'
+      componentToRender: 'about'
     };
     return _this;
   }
@@ -30551,7 +30551,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n\tbackground-color: black;\n}\n#ReactId {\n\theight: 100%;\n\twidth: 100%;\n}\n", ""]);
+exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n\tbackground-color: black;\n}\n#ReactId {\n\theight: 100%;\n\twidth: 100%;\n}\n* {\n\tbox-sizing: border-box;\n}\n", ""]);
 
 // exports
 
@@ -30710,7 +30710,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "* {\n\tbox-sizing: border-box;\n}\nhtml, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: absolute;\n\ttop: 91px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n    padding: 3px 8px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n    margin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t\tcursor: pointer;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n\t.dropDownMenu {\n\t\tdisplay: none;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n    \tjustify-content: space-around;\n    \theight: 85px;\n    \tmargin: 5px;\n    \talign-items: flex-end;\n    \tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 60px;\n\t}\n\t.menuBar1 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar2 {\n\t\theight: 7px;\n\t\twidth: 40px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar3{\n\t\theight: 7px;\n\t\twidth: 55px;\n\t\tbackground-color: white;\n\t}\n\t.dropDownMenuOpen {\n\t\tz-index: 1;\n\t\tdisplay: flex;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n\tbackground-color: black;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: absolute;\n\ttop: 91px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n    padding: 3px 8px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n    margin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t\tcursor: pointer;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n\t.dropDownMenu {\n\t\tdisplay: none;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n    \tjustify-content: space-around;\n    \theight: 85px;\n    \tmargin: 5px;\n    \talign-items: flex-end;\n    \tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 60px;\n\t}\n\t.menuBar1 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar2 {\n\t\theight: 7px;\n\t\twidth: 40px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar3{\n\t\theight: 7px;\n\t\twidth: 55px;\n\t\tbackground-color: white;\n\t}\n\t.dropDownMenuOpen {\n\t\tz-index: 1;\n\t\tdisplay: flex;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30990,7 +30990,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.graphicDesignImg {\n\theight: auto;\n\twidth: 100%;\n}\n.graphicDesignImg:hover {\n\topacity: 0.85;\n}\n\n/* Media Queries */ \n\n@media (min-width: 480px) and (max-width: 801px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(2, 1fr);\n\t}\n}\n@media (min-width: 802px) and (max-width: 1050px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(3, 1fr);\n\t}\n}\n@media (min-width: 1051px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(4, 1fr);\n\t}\n}", ""]);
+exports.push([module.i, "\n.graphicDesignImg {\n\theight: auto;\n\twidth: 100%;\n}\n.graphicDesignImg:hover {\n\topacity: 0.85;\n}\n\n/* Media Queries */ \n\n@media (min-width: 480px) and (max-width: 801px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(2, 1fr);\n\t}\n}\n@media (min-width: 802px) and (max-width: 1050px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(3, 1fr);\n\t}\n}\n@media (min-width: 1051px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(4, 1fr);\n\t}\n}", ""]);
 
 // exports
 
@@ -31069,6 +31069,7 @@ function (_Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
+      //needed for when we arrow over to another photo, to set the dimensions again
       this.setPhotoDimensions();
     }
   }, {
@@ -31269,7 +31270,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.arrows {\n    color: white;\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n}\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        background-color: slategray;\n        border-radius: 4px;\n    }\n}\n\n@media (max-width: 679px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n}", ""]);
+exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    color: white;\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n}\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n        background-color: black;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n}\n\n@media (max-width: 679px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n        background-color: black;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n}", ""]);
 
 // exports
 
@@ -31470,9 +31471,15 @@ var Element =
 /*#__PURE__*/
 function (_Component) {
   function Element(props) {
+    var _this;
+
     _classCallCheck(this, Element);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this.state = {
+      portrait: window.matchMedia("(orientation: portrait)").matches
+    };
+    return _this;
   }
 
   _createClass(Element, [{
@@ -31482,17 +31489,53 @@ function (_Component) {
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.setPhotoDimensions();
+      window.addEventListener('resize', this.setPhotoDimensions.bind(this));
+      window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
+    }
+  }, {
+    key: "setPhotoDimensions",
+    value: function setPhotoDimensions() {
+      var mediaQueryList = window.matchMedia("(orientation: portrait)"),
+          el = this.refs['me'];
+
+      if (mediaQueryList.matches) {
+        //setting width for portrait view
+        var widthToSet = window.innerWidth / 2.3;
+        el.setAttribute('width', widthToSet);
+        el.removeAttribute('height');
+      } else {
+        //setting the height attribute for landscape view
+        var heightToSet = window.innerHeight / 1.27;
+        el.setAttribute('height', heightToSet);
+        el.removeAttribute('width');
+      } //if the orientation changes this will update the state
+
+
+      if (mediaQueryList.matches !== this.state.portrait) {
+        this.setState({
+          portrait: mediaQueryList.matches
+        });
+      }
+    }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return _react.default.createElement("div", {
         className: "aboutWrapper"
       }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['me'] = (0, _reactDom.findDOMNode)(eref);
+        },
         className: "aboutImg",
         src: "../images/myselfTall.jpg",
         alt: ""
-      }), _react.default.createElement("div", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
+      }), _react.default.createElement("div", {
+        className: "wrapperText"
+      }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
     }
   }]);
 
@@ -31562,7 +31605,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n}\n\n/* wrap in media queries */ \n.aboutWrapper {\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tflex-direction: column;\n\tbackground-color: #eaeaea;\n}\n.aboutImg {\n\twidth: 100%;\n\theight: auto;\n}", ""]);
+exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 756px) {\n    /* desktop */\n\t.aboutWrapper {\n\t\tdisplay: flex;\n\t    background-color: white;\n\t    width: 100%;\n\t    justify-content: space-around;\n\t    align-items: center;\n\t}\n\t.wrapperText {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    width: 30%;\n\t    font-size: xx-large;\n\t    font-family: 'Raleway', sans-serif;\n\t}\n\t.aboutImg {\n\t\tmargin-top: 2%;\n\t\ttransform: scale(0.9);\n\t\tborder-radius: 15px;\n\t}\n}\n\n@media (max-width: 755px) {\n    /* mobile */\n    .aboutImg {\n        width: 100%;\n     \ttransform: scale(0.8);\n    }\n    .aboutWrapper {\n    \tdisplay: flex;\n    \tflex-direction: column;\n    \tbackground-color: white;\n    }\n    .wrapperText {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    padding: 25px;\n\t    font-family: 'Raleway', sans-serif;\n\t}\n}", ""]);
 
 // exports
 

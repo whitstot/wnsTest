@@ -22,7 +22,7 @@ export default class Element extends Component {
 		contact   */
 
 		this.state = {
-			componentToRender: 'about'
+			componentToRender: 'photoshop'
 		}
 	}
 	componentWillMount() {
