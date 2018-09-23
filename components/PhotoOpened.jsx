@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/PhotoOpened.css';
-import { CSSTransitionGroup } from 'react-transition-group';
+import ReactCSSTransitionGroup from 'react-transition-group';
 
 
 export default class PhotoOpened extends Component {
@@ -99,35 +99,32 @@ export default class PhotoOpened extends Component {
 				{this.state.portrait === false &&
 					<div onClick={this.leftArrowClicked.bind(this)} className="arrows">&#60;</div>
 				}
+
 				{this.state.imageToRender === 'worldRace' &&
 					<div className="imageAndTextWrapper">	
-						<img className="comeIn" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/worldRace.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/worldRace.jpg" alt=""/>
 						<div className="textWrapper"> 
 							<div> Level: 4 </div>
 							<br/>
-							<div> Price: Hourly ($50+) </div> 
-							<br/>
-							<center> Acts 1:8 </center>
+							<div> Graphic </div>
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'kimmiLion' &&
 					<div className="imageAndTextWrapper">	
-						<img className="comeIn" style={{opacity: '0.87'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
+						<img style={{opacity: '0.87'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
 						<div className="textWrapper"> 
-							<div> Level: 2 </div>
+							<div> Level: 2 </div> 
 							<br/>
-							<div> Price: $40 </div> 
+							<div> Graphic </div>
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'thunderCoffee' &&
 					<div className="imageAndTextWrapper">	
-						<a href="https://www.thundercoffeefargo.com/"><img className="comeIn imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffee.jpg" alt=""/></a>
+						<a href="https://www.thundercoffeefargo.com/"><img className="imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffee.jpg" alt=""/></a>
 						<div className="textWrapper"> 
 							<div> Level: 1 </div>
-							<br/>
-							<div> Price: $30 </div> 
 							<br/>
 							<div> Simple Logo </div>
 							<br/>
@@ -137,25 +134,19 @@ export default class PhotoOpened extends Component {
 				}
 				{this.state.imageToRender === 'jade' &&
 					<div className="imageAndTextWrapper">	
-						<img className="comeIn" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
 						<div className="textWrapper"> 
-							<div>Level: 2 </div>
-							<br/>
-							<div> Price: $40 </div> 
+							<div> Level: 2 </div>
 							<br/>
 							<div> Explosion Effect </div>
-							<br/>
-							<center> Works well with action shots! </center> 
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'whitsFlowerFarm' &&
 					<div className="imageAndTextWrapper">	
-						<img className="comeIn" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarm.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarm.jpg" alt=""/>
 						<div className="textWrapper"> 
-							<div>Level: 1 </div>
-							<br/>
-							<div> Price: $30 </div> 
+							<div> Level: 1 </div>
 							<br/>
 							<div> Simple Logo </div>
 							<br/>
@@ -165,21 +156,19 @@ export default class PhotoOpened extends Component {
 				}
 				{this.state.imageToRender === 'meFlowerFace' &&
 					<div className="imageAndTextWrapper">
-						<img className="comeIn" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/meFlowerFace.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/meFlowerFace.jpg" alt=""/>
 						<div className="textWrapper"> 
 							<div>Level: 3 </div>
 							<br/>
-							<div> Price: $50 </div>
+							<div> Graphic </div>
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'MAC' &&
 					<div className="imageAndTextWrapper">
-						<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="comeIn imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/MAC2myselfBlue.jpg" alt=""/></a>
+						<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/MAC2myselfBlue.jpg" alt=""/></a>
 						<div className="textWrapper"> 
 							<div>Level: 4 </div>
-							<br/>
-							<div> Price: Hourly ($50+) </div> 
 							<br/>
 							<center> Hard Logo </center>
 						</div>
@@ -187,14 +176,15 @@ export default class PhotoOpened extends Component {
 				}
 				{this.state.imageToRender === 'mountains' &&
 					<div className="imageAndTextWrapper">
-						<img className="comeIn" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/twinPeaks.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/twinPeaks.jpg" alt=""/>
 						<div className="textWrapper"> 
 							<div>Level: 2 </div>
 							<br/>
-							<div> Price: $40 </div> 
+							<div> Graphic </div>
 						</div>
 					</div>
 				}	
+
 				{this.state.portrait === false &&
 					<div onClick={this.rightArrowClicked.bind(this)} className="arrows">&#62;</div>
 				}
