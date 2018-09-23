@@ -1,9 +1,5 @@
-html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-}
+/* For All Dimensions */
+
 .arrows {
     color: white;
     padding: 15px;
@@ -22,10 +18,10 @@ html, body {
         margin-top: 2%;
         justify-content: space-around; 
         align-items: center;
+        background-color: black;
     }
     .arrows:hover {
         cursor: pointer;
-        background-color: slategray;
         border-radius: 4px;
     }
 }
@@ -39,6 +35,7 @@ html, body {
         display: flex;
         align-items: center;
         flex-direction: column;
+        background-color: black;
     }
     .mobileArrowsWrapper {
         display: flex;

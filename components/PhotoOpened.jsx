@@ -34,6 +34,7 @@ export default class PhotoOpened extends Component {
 		window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
 	}
 	componentDidUpdate() {
+		//needed for when we arrow over to another photo, to set the dimensions again
 		this.setPhotoDimensions();
 	}
 	setPhotoDimensions() {

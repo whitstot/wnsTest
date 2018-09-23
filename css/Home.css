@@ -1,12 +1,4 @@
-* {
-	box-sizing: border-box;
-}
-html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-}
+
 .logo {
 	width: 130px;
 	height: 91px;
@@ -21,6 +13,7 @@ html, body {
 .wrapper {
 	display: flex;
 	border-bottom: 1px solid lightgray;
+	background-color: black;
 }
 
 /* Mobile Menu */
