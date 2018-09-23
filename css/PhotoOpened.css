@@ -18,3 +18,39 @@ html, body {
 .wordsOnPage {
     color: white;
 }
+.arrows {
+    color: white;
+    padding: 15px;
+    font-size: xx-large;
+    font-family: 'Open Sans', sans-serif;
+}
+.arrows:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+
+/* Media Queries */
+
+@media (min-width: 680px) {
+    /* desktop */
+    .imgWrapper {
+        display: flex;
+        margin-top: 2%;
+        justify-content: space-around; 
+        align-items: center;
+    }
+}
+
+@media (max-width: 679px) {
+    /* mobile */
+    img {
+        width: 100%;
+    }
+    .imgWrapper {
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+    }
+}

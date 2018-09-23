@@ -76,7 +76,7 @@ export default class Element extends Component {
 				</div>
 
 				{this.state.componentToRender === 'photoshop' &&
-					<PhotoshopProjectsParent />
+					<PhotoshopProjectsParent pageToRender={this.state.componentToRender}/>
 				}
 				{this.state.componentToRender === 'videography' &&
 					<Videography />

@@ -7,12 +7,12 @@ import PhotoshopProjects from './PhotoshopProjects.jsx';
 import PhotoOpened from './PhotoOpened.jsx';
 
 
-export default class Element extends Component {
+export default class PhotoshopProjectsParent extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			componentToRender: 'photoshopProjects'
+			componentToRender: this.props.pageToRender
 		}
 	}
 	componentWillMount() {
@@ -23,13 +23,18 @@ export default class Element extends Component {
 			componentToRender: component
 		})
 	}
+	componentWillReceiveProps() {
+		this.setState({
+			componentToRender: this.props.pageToRender
+		})
+	}
 	render() {
 		return (
 			<div>
-				{this.state.componentToRender === 'photoshopProjects' &&
+				{this.state.componentToRender === 'photoshop' &&
 					<PhotoshopProjects renderNewComponent={(component) => {this.renderNewComponent(component)}} />
 				}
-				{this.state.componentToRender !== 'photoshopProjects' &&
+				{this.state.componentToRender !== 'photoshop' &&
 					<PhotoOpened photo={this.state.componentToRender} renderNewComponent={this.renderNewComponent.bind(this, '')} />
 				}
 			</div>
