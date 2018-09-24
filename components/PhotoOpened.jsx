@@ -40,15 +40,16 @@ export default class PhotoOpened extends Component {
 	}
 	setPhotoDimensions() {
 		let mediaQueryList = window.matchMedia("(orientation: portrait)"),
-			el = this.refs['img'];
+			el = this.refs['img'],
+			windowHeightToCompare = window.innerHeight + 400;
 
-		if (mediaQueryList.matches) {
+		if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
 			//setting width for portrait view
 			let widthToSet = window.innerWidth / 2.3;
 			el.setAttribute('width', widthToSet);
 			el.removeAttribute('height');
 		}
-		else {
+		else if(mediaQueryList.matches === false) {
 			//setting the height attribute for landscape view
 			let	heightToSet = window.innerHeight / 1.27;
 			el.setAttribute('height', heightToSet);

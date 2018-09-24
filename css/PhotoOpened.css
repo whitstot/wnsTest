@@ -20,7 +20,7 @@ a {
 
 /* Media Queries */
 
-@media (min-width: 680px) {
+@media (min-width: 1051px) {
     /* desktop */
     .imgWrapper {
         display: flex;
@@ -47,7 +47,7 @@ a {
     }
 }
 
-@media (max-width: 679px) {
+@media (max-width: 1050px) {
     /* mobile */
     img {
         width: 100%;

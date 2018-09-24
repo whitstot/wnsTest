@@ -52,7 +52,7 @@ export default class Element extends Component {
 				<img ref={(eref) => {this.refs['me'] = findDOMNode(eref)}} className="aboutImg" src="../images/myselfTall.jpg" alt=""/>
 				<div className="wrapperText">
 					<div className="section1">
-						<h1 className="myName">Whitney Stotler 😀</h1>
+						<div className="myName">Whitney Stotler 😀</div>
 						<ul>
 							<li>Jesus follower </li>
 							<li>Worship Leader </li>
