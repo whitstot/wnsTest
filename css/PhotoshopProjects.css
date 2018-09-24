@@ -1,29 +1,44 @@
 
-.graphicDesignImg {
-	height: auto;
-	width: 100%;
-}
 .graphicDesignImg:hover {
 	opacity: 0.85;
 }
 
 /* Media Queries */ 
-
-@media (min-width: 480px) and (max-width: 801px) {
+@media (max-width: 479px) {
+	.graphicDesignImg {
+		height: auto;
+		width: 100%;
+		transform: scale(0.9);
+	    border-radius: 4px;
+	}
+}
+@media (min-width: 480px) and (max-width: 900px) {
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
+	.graphicDesignImg {
+		height: auto;
+		width: 100%;
+	}
 }
-@media (min-width: 802px) and (max-width: 1050px) {
+@media (min-width: 901px) and (max-width: 1529px) {
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
+	.graphicDesignImg {
+		height: auto;
+		width: 100%;
+	}
 }
-@media (min-width: 1051px) {
+@media (min-width: 1530px) {
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
+	}
+	.graphicDesignImg {
+		height: auto;
+		width: 100%;
 	}
 }

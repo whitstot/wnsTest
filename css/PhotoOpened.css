@@ -16,43 +16,6 @@ a {
 }
 
 
-
-
-.example-enter {
-  opacity: 0.01;
-}
-
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
-
-
-
-.comeIn {
-  transform: translateY(150%);
-  transition: 1s ease;
-}
-.comeInActivate {
-    transform: translateY(0);
-}
-.goOut {
-    transform: translateY(-150%);
-}
-
-
-
-
 /* ------------------------------------------- */
 
 /* Media Queries */

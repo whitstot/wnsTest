@@ -2,21 +2,72 @@
 
 /* Media Queries */
 
-@media (min-width: 1001px) {
+@media (min-width: 1121px) {
     /* desktop */
 	.aboutWrapper {
 		display: flex;
-	    background-color: white;
-	    width: 100%;
+		width: 100%;
 	    justify-content: space-around;
-	    align-items: center;
+	    align-items: start;
 	}
 	.wrapperText {
 		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		margin-top:4%;
+	}
+	.myName {
+		font-family: 'Sacramento', cursive;
+		color: lightcoral;
+		margin: 0;
+	}
+	.section1 {
+		display: flex;
 	    justify-content: center;
-	    width: 30%;
 	    font-size: xx-large;
 	    font-family: 'Raleway', sans-serif;
+	    flex-direction: column;
+	    width: 50%;
+	    padding: 1%;
+	    border-right: 1px solid lightgray;
+	    margin: 0% 2%;
+	}
+	ul {
+		margin-left: 30px
+	}
+	li {
+		color: dimgray;
+	}
+	.section1paragraph {
+		font-family: 'Playfair Display', serif;
+    	color: dimgray;
+	}
+	.section2 {
+		display: flex;
+	    font-size: x-large;
+	    font-family: 'Raleway', sans-serif;
+	    flex-direction: column;
+	    padding: 30px 20px;
+	    color: black;
+	    background: lightgray;
+	    margin-bottom: 50px;
+	    margin-right: 40px;
+	}
+	.section3 {
+		font-size: xx-large;
+	    font-family: 'Playfair Display', serif;
+    	color: dimgray;
+	    padding: 30px 20px;
+	    border-top: 1px solid lightgray;
+	}
+	.section23wrapper {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+	}
+	.romansRoad {
+		padding: 10px 0px;
 	}
 	.aboutImg {
 		margin-top: 2%;
@@ -25,7 +76,7 @@
 	}
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1120px) {
     /* mobile */
     .aboutImg {
         width: 100%;
@@ -34,7 +85,6 @@
     .aboutWrapper {
     	display: flex;
     	flex-direction: column;
-    	background-color: white;
     }
     .wrapperText {
 		display: flex;
@@ -42,5 +92,57 @@
 	    font-size: large;
 	    padding: 25px;
 	    font-family: 'Raleway', sans-serif;
+	    flex-direction: column;
+	}
+	.myName {
+		font-family: 'Sacramento', cursive;
+		color: lightcoral;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+
+
+	.section1 {
+		display: flex;
+	    justify-content: center;
+	    font-size: large;
+	    font-family: 'Raleway', sans-serif;
+	    flex-direction: column;
+	    padding: 1% 1% 30px 1%;
+	    margin: 0% 2% 35px 2%;
+	    border-bottom: 1px solid lightgray;
+	}
+	li {
+		color: dimgray;
+	}
+	.section1paragraph {
+		font-family: 'Playfair Display', serif;
+    	color: dimgray;
+	}
+	.section2 {
+		display: flex;
+	    font-size: large;
+	    font-family: 'Raleway', sans-serif;
+	    flex-direction: column;
+	    padding: 10px 20px;
+	    color: black;
+	    background: lightgray;
+	    margin-bottom: 35px;
+	}
+	.section3 {
+		font-size: large;
+	    font-family: 'Playfair Display', serif;
+    	color: dimgray;
+	    padding: 30px 20px;
+	    border-top: 1px solid lightgray;
+	}
+	.section23wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	.romansRoad {
+		padding: 10px 0px;
 	}
 }
