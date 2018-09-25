@@ -130,7 +130,7 @@
 	}
 	.section2 {
 		display: flex;
-	    font-size: large;
+	    font-size: small;
 	    font-family: 'Raleway', sans-serif;
 	    flex-direction: column;
 	    padding: 10px 20px;
