@@ -15,6 +15,9 @@
 	border-bottom: 1px solid lightgray;
 	background-color: black;
 }
+.tabSelected {
+	color: lightpink;
+}
 
 /* Mobile Menu */
 .menuMobile {

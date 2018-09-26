@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/PhotoOpened.css';
-import ReactCSSTransitionGroup from 'react-transition-group';
 
 
 export default class PhotoOpened extends Component {
@@ -38,27 +37,59 @@ export default class PhotoOpened extends Component {
 		//needed for when we arrow over to another photo, to set the dimensions again
 		this.setPhotoDimensions();
 	}
-	setPhotoDimensions() {
-		let mediaQueryList = window.matchMedia("(orientation: portrait)"),
-			el = this.refs['img'],
-			windowHeightToCompare = window.innerHeight + 400;
+	// setPhotoDimensions() {
+	// 	let mediaQueryList = window.matchMedia("(orientation: portrait)"),
+	// 		el = this.refs['img'],
+	// 		windowHeightToCompare = window.innerHeight + 400;
 
-		if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
+	// 	if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
+	// 		//setting width for portrait view
+	// 		let widthToSet = window.innerWidth / 2.3;
+	// 		el.setAttribute('width', widthToSet);
+	// 		el.removeAttribute('height');
+	// 	}
+	// 	else if(mediaQueryList.matches === false) {
+	// 		//setting the height attribute for landscape view
+	// 		let	heightToSet = window.innerHeight / 1.27;
+	// 		el.setAttribute('height', heightToSet);
+	// 		el.removeAttribute('width');
+	// 	}
+	// 	//if the orientation changes this will update the state
+	// 	if (mediaQueryList.matches !== this.state.portrait) {
+	// 		this.setState({
+	// 			portrait: mediaQueryList.matches
+	// 		})
+	// 	}
+	// }
+	setPhotoDimensions() {
+		let el = this.refs['img'],
+			windowHeightToCompare = window.innerHeight + 400,			//might still need in the future so leaving it here
+			windowWidth = window.innerWidth,
+			windowHeight = window.innerHeight,
+			portrait = this.state.portrait;
+
+		//if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
+		if (windowWidth <= 1050) {
 			//setting width for portrait view
 			let widthToSet = window.innerWidth / 2.3;
 			el.setAttribute('width', widthToSet);
 			el.removeAttribute('height');
+			portrait = true;
 		}
-		else if(mediaQueryList.matches === false) {
+		//else if(mediaQueryList.matches === false) {
+		else if (windowWidth > 1050) {
 			//setting the height attribute for landscape view
-			let	heightToSet = window.innerHeight / 1.27;
+			console.log(windowHeight)
+			let	heightToSet = windowHeight / 1.27;
+			console.log(heightToSet)
 			el.setAttribute('height', heightToSet);
 			el.removeAttribute('width');
+			portrait = false;
 		}
 		//if the orientation changes this will update the state
-		if (mediaQueryList.matches !== this.state.portrait) {
+		if (portrait !== this.state.portrait) {
 			this.setState({
-				portrait: mediaQueryList.matches
+				portrait: portrait
 			})
 		}
 	}
@@ -113,7 +144,7 @@ export default class PhotoOpened extends Component {
 				}
 				{this.state.imageToRender === 'kimmiLion' &&
 					<div className="imageAndTextWrapper">	
-						<img style={{opacity: '0.87'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
+						<img style={{opacity: '0.95'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
 						<div className="textWrapper"> 
 							<div> Level: 2 </div> 
 							<br/>

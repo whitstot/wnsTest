@@ -29,6 +29,8 @@ export default class Element extends Component {
 		this.refs = [];
 	}
 	renderNewComponent(component) {
+		$(this.refs[this.state.componentToRender]).removeClass('tabSelected');
+		$(this.refs[component]).addClass('tabSelected');
 		this.setState({
 			componentToRender: component
 		})
@@ -48,15 +50,40 @@ export default class Element extends Component {
 						<img className="logo" src="../images/myLogo.jpg" alt=""/>
 					</a>
 					<div className="menu">
-						<div onClick={this.renderNewComponent.bind(this, 'photoshop')} className="graphic menuItem"> Photoshop Projects </div>
+						<div 
+							ref={(eref) => {this.refs['photoshop'] = findDOMNode(eref)}} 
+							onClick={this.renderNewComponent.bind(this, 'photoshop')} 
+							className="graphic menuItem"> 
+								Photoshop Projects 
+						</div>
 						<div> | </div>
-						<div onClick={this.renderNewComponent.bind(this,'videography')} className="menuItem"> Videography </div>
+						<div 
+							ref={(eref) => {this.refs['videography'] = findDOMNode(eref)}} 
+							onClick={this.renderNewComponent.bind(this,'videography')} 
+							className="menuItem"> 
+								Videography 
+						</div>
 						<div> | </div>
-						<div onClick={this.renderNewComponent.bind(this,'webDesign')} className="menuItem"> Web Design </div>
+						<div 
+							ref={(eref) => {this.refs['webDesign'] = findDOMNode(eref)}} 
+							onClick={this.renderNewComponent.bind(this,'webDesign')} 
+							className="menuItem"> 
+								Web Design 
+						</div>
 						<div> | </div>
-						<div onClick={this.renderNewComponent.bind(this,'about')} className="menuItem"> About Me </div>
+						<div 
+							ref={(eref) => {this.refs['about'] = findDOMNode(eref)}} 
+							onClick={this.renderNewComponent.bind(this,'about')} 
+							className="menuItem tabSelected"> 
+								About Me 
+						</div>
 						<div> | </div>
-						<div onClick={this.renderNewComponent.bind(this,'contact')} className="contact menuItem"> Contact </div>
+						<div 
+							ref={(eref) => {this.refs['contact'] = findDOMNode(eref)}} 
+							onClick={this.renderNewComponent.bind(this,'contact')} 
+							className="contact menuItem"> 
+								Contact 
+						</div>
 					</div>
 					
 					<div onClick={this.toggleMenu.bind(this)} className="menuMobile">

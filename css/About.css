@@ -41,7 +41,7 @@
 	}
 	ul {
 		margin-left: 15px;
-		font-size: x-large;
+		font-size: larger;
 	}
 	li {
 		color: dimgray;
@@ -53,7 +53,7 @@
 	}
 	.section2 {
 		display: flex;
-	    font-size: large;
+	    font-size: small;
 	    font-family: 'Raleway', sans-serif;
 	    flex-direction: column;
 	    padding: 30px 20px;
