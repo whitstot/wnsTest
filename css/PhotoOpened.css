@@ -67,7 +67,7 @@ a {
         flex-direction: column;
         font-size: large;
         font-family: 'Raleway', sans-serif;
-        margin: 10% 0%;
+        margin: 10% 0% 1% 0%;
         align-items: center;
     }
 }

@@ -22,27 +22,32 @@ export default class Element extends Component {
 		window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
 	}
 	setPhotoDimensions() {
-		let mediaQueryList = window.matchMedia("(orientation: portrait)"),
-			el = this.refs['me'],
-			windowHeightToCompare = window.innerHeight + 400;
+		let el = this.refs['me'],
+			windowHeightToCompare = window.innerHeight + 400,			//might still need in the future so leaving it here
+			windowWidth = window.innerWidth,
+			windowHeight = window.innerHeight,
+			portrait = this.state.portrait;
 
-		if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
-		// if(window.innerHeight > window.innerWidth){
+		//if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
+		if(windowWidth <= 1120){
 			//setting width for portrait view
 			let widthToSet = window.innerWidth / 2.3;
 			el.setAttribute('width', widthToSet);
 			el.removeAttribute('height');
+			portrait = true;
 		}
-		else if(mediaQueryList.matches === false) {
+		//else if(mediaQueryList.matches === false) {
+		else if(windowWidth > 1120) {
 			//setting the height attribute for landscape view
 			let	heightToSet = window.innerHeight / 1.27;
 			el.setAttribute('height', heightToSet);
 			el.removeAttribute('width');
+			portrait = false;
 		}
 		//if the orientation changes this will update the state
-		if (mediaQueryList.matches !== this.state.portrait) {
+		if (portrait !== this.state.portrait) {
 			this.setState({
-				portrait: mediaQueryList.matches
+				portrait: portrait
 			})
 		}
 	}

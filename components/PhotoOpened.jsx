@@ -32,35 +32,19 @@ export default class PhotoOpened extends Component {
 		this.setPhotoDimensions();
 		window.addEventListener('resize', this.setPhotoDimensions.bind(this))
 		window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
+
+		window.setTimeout(()=>{
+			this.setPhotoDimensions();
+		}, 20);
 	}
 	componentDidUpdate() {
 		//needed for when we arrow over to another photo, to set the dimensions again
 		this.setPhotoDimensions();
-	}
-	// setPhotoDimensions() {
-	// 	let mediaQueryList = window.matchMedia("(orientation: portrait)"),
-	// 		el = this.refs['img'],
-	// 		windowHeightToCompare = window.innerHeight + 400;
 
-	// 	if ((mediaQueryList.matches === true) || (windowHeightToCompare > window.innerWidth)) {
-	// 		//setting width for portrait view
-	// 		let widthToSet = window.innerWidth / 2.3;
-	// 		el.setAttribute('width', widthToSet);
-	// 		el.removeAttribute('height');
-	// 	}
-	// 	else if(mediaQueryList.matches === false) {
-	// 		//setting the height attribute for landscape view
-	// 		let	heightToSet = window.innerHeight / 1.27;
-	// 		el.setAttribute('height', heightToSet);
-	// 		el.removeAttribute('width');
-	// 	}
-	// 	//if the orientation changes this will update the state
-	// 	if (mediaQueryList.matches !== this.state.portrait) {
-	// 		this.setState({
-	// 			portrait: mediaQueryList.matches
-	// 		})
-	// 	}
-	// }
+		window.setTimeout(()=>{
+			this.setPhotoDimensions();
+		}, 20);
+	}
 	setPhotoDimensions() {
 		let el = this.refs['img'],
 			windowHeightToCompare = window.innerHeight + 400,			//might still need in the future so leaving it here
@@ -79,9 +63,7 @@ export default class PhotoOpened extends Component {
 		//else if(mediaQueryList.matches === false) {
 		else if (windowWidth > 1050) {
 			//setting the height attribute for landscape view
-			console.log(windowHeight)
 			let	heightToSet = windowHeight / 1.27;
-			console.log(heightToSet)
 			el.setAttribute('height', heightToSet);
 			el.removeAttribute('width');
 			portrait = false;

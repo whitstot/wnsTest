@@ -49,11 +49,11 @@
 	.section1paragraph {
 		font-family: 'Playfair Display', serif;
     	color: dimgray;
-    	font-size: large;
+    	font-size: x-large;
 	}
 	.section2 {
 		display: flex;
-	    font-size: small;
+	    font-size: medium;
 	    font-family: 'Raleway', sans-serif;
 	    flex-direction: column;
 	    padding: 30px 20px;
@@ -63,7 +63,7 @@
 	    margin-right: 40px;
 	}
 	.section3 {
-		font-size: large;
+		font-size: x-large;
 	    font-family: 'Playfair Display', serif;
     	color: dimgray;
 	    padding: 30px 20px 30px 0px;
@@ -78,7 +78,6 @@
 		padding: 10px 0px;
 	}
 	.aboutImg {
-		margin-top: 2%;
 		transform: scale(0.9);
 		border-radius: 15px;
 	}
