@@ -61,7 +61,7 @@ export default class Element extends Component {
 				}
 
 				{(this.state.portrait === true && this.state.componentToRender === 'opener') &&
-					<img className="openerImage" src='../images/websiteOpenerPortrait.jpg'/>
+					<img className="openerImage" src='../images/websiteOpenerPortrait1.jpg'/>
 				}
 
 				{this.state.componentToRender === 'opener' && 
