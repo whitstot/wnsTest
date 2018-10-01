@@ -11,7 +11,7 @@ import About from './About.jsx';
 import Contact from './Contact.jsx';
 
 
-export default class Element extends Component {
+export default class Home extends Component {
 	constructor(props) {
 		super(props);
 
@@ -42,13 +42,16 @@ export default class Element extends Component {
 	closeMenu() {
 		this.refs['dropDownMenu'].classList.remove('dropDownMenuOpen');
 	}
+	goToOpener() {
+		this.props.changeToOpener();
+	}
 	render() {
 		return (
 			<div>
 				<div className="wrapper">
-					<a>
-						<img className="logo" src="../images/myLogo.jpg" alt=""/>
-					</a>
+
+					<img onClick={this.goToOpener.bind(this)} className="logo" src="../images/myLogo.jpg" alt=""/>
+
 					<div className="menu">
 						<div 
 							ref={(eref) => {this.refs['photoshop'] = findDOMNode(eref)}} 

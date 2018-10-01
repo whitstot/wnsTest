@@ -1,37 +1,58 @@
 
 .opener {
-
+    height: 100%;
+    background-color: black;
 }
 .openerImage {
-	position: absolute;
-    top: 0px;
-    width: 100%;
-    opacity: 1;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100%;
-    background-attachment: fixed;
-}
-/*
-.openerImage {
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/Ada.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    position: absolute;
+	width: 100%;
 }
 
-.openerImage {
-	background-image: url('../images/Ada.jpg');
-	background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+/* Media Queries */
+
+/* phone */
+@media (max-width: 700px) {
+    .enterSite {
+        position: absolute;
+        font-size: small;
+        bottom: 2%;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        font-family: 'Raleway', sans-serif;
+        padding: 100px 0px 10px 0px;
+        cursor: pointer;
+        color: white;
+    }
 }
-*/
+
+/* ipad */
+@media (min-width: 701px) and (max-width: 1100px) {
+    .enterSite {
+        position: absolute;
+        font-size: large;
+        bottom: 2%;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        font-family: 'Raleway', sans-serif;
+        padding: 100px 0px 10px 0px;
+        cursor: pointer;
+        color: white;
+    }
+}
+
+/* desktop */
+@media (min-width: 1101px) {
+    .enterSite {
+        position: absolute;
+        font-size: xx-large;
+        bottom: 2%;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        font-family: 'Raleway', sans-serif;
+        padding: 100px 0px 10px 0px;
+        cursor: pointer;
+        color: white;
+    }
+}
