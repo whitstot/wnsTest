@@ -55,7 +55,7 @@ a {
     .textWrapper {
         display: flex;
         flex-direction: column;
-        font-size: xx-large;
+        font-size: large;
         font-family: 'Raleway', sans-serif;
         margin-left: 10%;
     }
