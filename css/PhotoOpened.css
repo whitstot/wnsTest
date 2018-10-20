@@ -14,6 +14,20 @@ a {
 .imageWithLink:hover {
     opacity: 0.85;
 }
+.leftInvisibleArrow {
+    position: absolute;
+    height: 70%;
+    width: 25%;
+    left: 0px;
+    z-index: 1;
+}
+.rightInvisibleArrow {
+    position: absolute;
+    height: 70%;
+    width: 25%;
+    right: 0px;
+    z-index: 1;
+}
 
 
 /* ------------------------------------------- */
@@ -69,5 +83,8 @@ a {
         font-family: 'Raleway', sans-serif;
         margin: 10% 0% 1% 0%;
         align-items: center;
+    }
+    .portraitText {
+        text-align: center;
     }
 }

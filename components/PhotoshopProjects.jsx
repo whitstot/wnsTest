@@ -26,6 +26,7 @@ export default class PhotoshopProjects extends Component {
 				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'meFlowerFace')} src="../images/meFlowerFace.jpg" alt=""/>
 				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
 				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
+				<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'lauraUnderwater')} src="../images/LauraUnderwaterHouseSquare.jpg" alt=""/>
 			</div>
 		)
 	} 

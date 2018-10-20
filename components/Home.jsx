@@ -22,7 +22,7 @@ export default class Home extends Component {
 		contact   */
 
 		this.state = {
-			componentToRender: 'about'
+			componentToRender: 'photoshop'
 		}
 	}
 	componentWillMount() {
@@ -56,7 +56,7 @@ export default class Home extends Component {
 						<div 
 							ref={(eref) => {this.refs['photoshop'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this, 'photoshop')} 
-							className="graphic menuItem"> 
+							className="graphic menuItem tabSelected"> 
 								Photoshop Projects 
 						</div>
 						<div> | </div>
@@ -77,7 +77,7 @@ export default class Home extends Component {
 						<div 
 							ref={(eref) => {this.refs['about'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this,'about')} 
-							className="menuItem tabSelected"> 
+							className="menuItem"> 
 								About Me 
 						</div>
 						<div> | </div>

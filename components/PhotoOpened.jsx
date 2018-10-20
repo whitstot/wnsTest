@@ -17,7 +17,8 @@ export default class PhotoOpened extends Component {
 			'whitsFlowerFarm', 
 			'meFlowerFace', 
 			'MAC', 
-			'mountains'
+			'mountains',
+			'lauraUnderwater'
 		];	
 
 		this.state = {
@@ -114,6 +115,13 @@ export default class PhotoOpened extends Component {
 					<div onClick={this.leftArrowClicked.bind(this)} className="arrows">&#60;</div>
 				}
 
+				{this.state.portrait === true &&
+					<div>
+						<div onClick={this.leftArrowClicked.bind(this)} className="leftInvisibleArrow"></div>
+						<div onClick={this.rightArrowClicked.bind(this)} className="rightInvisibleArrow"></div>
+					</div>
+				}
+
 				{this.state.imageToRender === 'worldRace' &&
 					<div className="imageAndTextWrapper">	
 						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/worldRace.jpg" alt=""/>
@@ -121,28 +129,34 @@ export default class PhotoOpened extends Component {
 							<div> Level: 4 </div>
 							<br/>
 							<div> Graphic </div>
+							<br/>
+							<div className="portraitText"> This one's pretty dear to me. I originally created it because I was contemplating going on the World Race. If you don't know what that is, it's an 11 month mission trip that takes you to 11 different countries. Pretty cool, but ended up deciding that wasn't the Lord's calling on my life. None the less, I learned a new photoshop technique. </div>
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'kimmiLion' &&
 					<div className="imageAndTextWrapper">	
-						<img style={{opacity: '0.95'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
+						<img style={{opacity: '0.95', filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
 						<div className="textWrapper"> 
 							<div> Level: 2 </div> 
 							<br/>
 							<div> Graphic </div>
+							<br/>
+							<div className="portraitText"> This is Kimmi. Everyone say "Hi Kimmi!" :D She competes in Brazilian Jiu Jitsu, and we get to wear these on shirts to her fights. She's kind of a beast. You should come. </div>
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'thunderCoffee' &&
 					<div className="imageAndTextWrapper">	
-						<a href="https://www.thundercoffeefargo.com/"><img className="imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffee.jpg" alt=""/></a>
+						<a href="https://www.thundercoffeefargo.com/"><img className="imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffeeSquare.jpg" alt=""/></a>
 						<div className="textWrapper"> 
 							<div> Level: 1 </div>
 							<br/>
 							<div> Simple Logo </div>
 							<br/>
-							<center> Thunder Coffee - Located in Fargo, North Dakota </center>
+							<div className="portraitText"> Thunder Coffee is Located in Fargo, North Dakota. The shop is owned by one of my old friends, Dexter Dutton (who I share a birthday with -- fun fact LOL). If you want to go to their website, just click the photo or the link below!</div>
+							<br />
+							<a href="https://www.thundercoffeefargo.com/"> Thunder Coffee </a>
 						</div>
 					</div>
 				}
@@ -153,18 +167,20 @@ export default class PhotoOpened extends Component {
 							<div> Level: 2 </div>
 							<br/>
 							<div> Explosion Effect </div>
+							<br/>
+							<div className="portraitText"> This is Jade. Everyone say "Hi Jade!" :D This picture was taken for one of her senior photos at ECU. The Explosion Effect is a Glitter Storm Photoshop Action, and it's probably my favorite. Works really well with action shots. </div>
 						</div>
 					</div>
 				}
 				{this.state.imageToRender === 'whitsFlowerFarm' &&
 					<div className="imageAndTextWrapper">	
-						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarm.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
 						<div className="textWrapper"> 
 							<div> Level: 1 </div>
 							<br/>
 							<div> Simple Logo </div>
 							<br/>
-							<div> Whitley's Flower Farm </div> 
+							<div className="portraitText"> Whitley's Flower Farm is soon to be a flower shop in Ada, Oklahoma. Keep your eyes peeled!</div> 
 						</div>
 					</div>
 				}
@@ -172,9 +188,11 @@ export default class PhotoOpened extends Component {
 					<div className="imageAndTextWrapper">
 						<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/meFlowerFace.jpg" alt=""/>
 						<div className="textWrapper"> 
-							<div>Level: 3 </div>
+							<div>Level: 4 </div>
 							<br/>
 							<div> Graphic </div>
+							<br/>
+							<div className="portraitText"> Funny story, I actually made this one right before my basketball game in a hotel room. I guess you could say I love photoshop. </div>
 						</div>
 					</div>
 				}
@@ -185,6 +203,12 @@ export default class PhotoOpened extends Component {
 							<div>Level: 4 </div>
 							<br/>
 							<center> Hard Logo </center>
+							<br/>
+							<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad, and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click her name below -> </div>
+							<br/>
+							<a href="https://maccoplin.wixsite.com/mreevesphoto">Mackenzie Reeves - Photography</a>
+							<br/>
+							<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA">Mackenzie Reeves - Youtube Channel</a>
 						</div>
 					</div>
 				}
@@ -195,6 +219,20 @@ export default class PhotoOpened extends Component {
 							<div>Level: 2 </div>
 							<br/>
 							<div> Graphic </div>
+							<br/>
+							<div className="portraitText"> Twin Peaks. That's all. </div>
+						</div>
+					</div>
+				}
+				{this.state.imageToRender === 'lauraUnderwater' &&
+					<div className="imageAndTextWrapper">
+						<img style={{filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/LauraUnderwaterHouse.jpg" alt=""/>
+						<div className="textWrapper"> 
+							<div> Level: 3 </div>
+							<br/>
+							<div> Graphic </div>
+							<br/>
+							<div className="portraitText"> This is Laura. Everyone say "Did you wait 15 minutes before getting in the water?!" Haha, I'm totally kidding. Although, I'm not kidding when I say that this is my living room and that's my roommate. She's alive, I promise. </div>
 						</div>
 					</div>
 				}	

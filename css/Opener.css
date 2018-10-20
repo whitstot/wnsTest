@@ -12,14 +12,14 @@
 /* phone */
 @media (max-width: 700px) {
     .enterSite {
-        position: absolute;
+        position: fixed;
         font-size: small;
         bottom: 2%;
         width: 100%;
         justify-content: center;
         display: flex;
         font-family: 'Raleway', sans-serif;
-        padding: 100px 0px 10px 0px;
+        padding: 100px 0px 120px 0px;
         cursor: pointer;
         color: white;
     }
@@ -28,14 +28,14 @@
 /* ipad */
 @media (min-width: 701px) and (max-width: 1100px) {
     .enterSite {
-        position: absolute;
+        position: fixed;
         font-size: large;
         bottom: 2%;
         width: 100%;
         justify-content: center;
         display: flex;
         font-family: 'Raleway', sans-serif;
-        padding: 100px 0px 10px 0px;
+        padding: 100px 0px 120px 0px;
         cursor: pointer;
         color: white;
     }
@@ -44,7 +44,7 @@
 /* desktop */
 @media (min-width: 1101px) {
     .enterSite {
-        position: absolute;
+        position: fixed;
         font-size: xx-large;
         bottom: 2%;
         width: 100%;
