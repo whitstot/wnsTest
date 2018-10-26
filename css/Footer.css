@@ -1,0 +1,43 @@
+
+.footerBorder {
+	width: 70%; 
+	height: 1px; 
+	border-top: 1px solid lightgray; 
+	margin-top: 2%;
+}
+.footer {
+	height: 30px; 
+	font-family: 'Playfair Display', serif; 
+	color: darkgray; 
+	padding: 10px; 
+	margin-bottom: 8px; 
+	text-align: center; 
+	font-size: small;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 1051px) {
+	/* desktop */
+	.footerWrapper {
+		display: flex;
+		align-items: center; 
+		width: 100%;
+		flex-direction: column;
+		margin-top: 3%;
+	}
+}
+
+
+@media (max-width: 1050px) {
+	/* mobile */
+	.footerWrapper {
+		display: flex;
+		align-items: center; 
+		width: 100%;
+		flex-direction: column;
+		margin-top: 20%;
+	}
+
+}

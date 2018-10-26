@@ -1,0 +1,78 @@
+
+
+/* Media Queries */
+
+@media (min-width: 1051px) {
+	/* desktop */
+
+	.description {
+		font-family: 'Playfair Display', serif;
+	    color: dimgray;
+	    font-size: x-large;
+	    padding: 10px;
+	    display: flex; 
+		align-items: center;
+		text-decoration: none;
+	}
+	.description:hover {
+		cursor: pointer;
+	}
+	.videoWrapper {
+		display: flex; 
+		justify-content: space-around;
+		margin-top: 2%;
+	}
+	.line {
+		border: 1px solid lightgray;
+	}
+	.JWFilms {
+		font-family: 'Sacramento', cursive;
+		font-size: xx-large;
+		display: flex;
+		justify-content: center;
+		color: darkgoldenrod;
+		margin-top: 1%;
+	}
+	.slogan {
+		font-family: 'Amatic SC', cursive;
+		font-size: x-large;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 3%;
+	}
+}
+
+@media (max-width: 1050px) {
+	/* mobile */
+	.videoWrapper {
+		display: flex;
+    	flex-direction: column;
+    	align-items: center;
+	}
+	.description {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		font-family: 'Playfair Display', serif;
+	    color: dimgray;
+	    font-size: small;
+	    padding: 10px;
+    	margin-bottom: 2%;
+    	text-decoration: none;
+	}
+	.JWFilms {
+		font-family: 'Sacramento', cursive;
+		font-size: xx-large;
+		display: flex;
+		justify-content: center;
+		color: darkgoldenrod;
+		margin-top: 5%;
+	}
+	.slogan {
+		font-family: 'Amatic SC', cursive;
+		font-size: large;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 10%;
+	}
+}
