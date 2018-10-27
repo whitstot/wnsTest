@@ -11381,6 +11381,85 @@ module.exports = emptyObject;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(0));
+
+var _reactDom = _interopRequireWildcard(__webpack_require__(1));
+
+var _jquery = _interopRequireDefault(__webpack_require__(2));
+
+__webpack_require__(42);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
+
+var Footer =
+/*#__PURE__*/
+function (_Component) {
+  function Footer(props) {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Footer).call(this, props));
+  }
+
+  _createClass(Footer, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.refs = [];
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "footerWrapper"
+      }, _react.default.createElement("div", {
+        className: "footerBorder"
+      }), _react.default.createElement("div", {
+        className: "footer"
+      }, "WhitStot Studios\u2122"));
+    }
+  }]);
+
+  _inherits(Footer, _Component);
+
+  return Footer;
+}(_react.Component);
+
+exports.default = Footer;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -11446,85 +11525,6 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(__webpack_require__(0));
-
-var _reactDom = _interopRequireWildcard(__webpack_require__(1));
-
-var _jquery = _interopRequireDefault(__webpack_require__(2));
-
-__webpack_require__(45);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
-
-var Footer =
-/*#__PURE__*/
-function (_Component) {
-  function Footer(props) {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Footer).call(this, props));
-  }
-
-  _createClass(Footer, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      this.refs = [];
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", {
-        className: "footerWrapper"
-      }, _react.default.createElement("div", {
-        className: "footerBorder"
-      }), _react.default.createElement("div", {
-        className: "footer"
-      }, "WhitStot Studios\u2122"));
-    }
-  }]);
-
-  _inherits(Footer, _Component);
-
-  return Footer;
-}(_react.Component);
-
-exports.default = Footer;
-
-/***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11540,7 +11540,7 @@ exports.default = Footer;
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(6);
-  var warning = __webpack_require__(10);
+  var warning = __webpack_require__(11);
   var ReactPropTypesSecret = __webpack_require__(20);
   var loggedTypeFailures = {};
 }
@@ -11857,7 +11857,7 @@ if (process.env.NODE_ENV !== "production") {
 var _assign = __webpack_require__(8);
 var invariant = __webpack_require__(6);
 var emptyObject = __webpack_require__(9);
-var warning = __webpack_require__(10);
+var warning = __webpack_require__(11);
 var emptyFunction = __webpack_require__(7);
 var checkPropTypes = __webpack_require__(12);
 
@@ -13606,7 +13606,7 @@ if (process.env.NODE_ENV !== "production") {
 
 var invariant = __webpack_require__(6);
 var React = __webpack_require__(0);
-var warning = __webpack_require__(10);
+var warning = __webpack_require__(11);
 var ExecutionEnvironment = __webpack_require__(13);
 var _assign = __webpack_require__(8);
 var emptyFunction = __webpack_require__(7);
@@ -31038,7 +31038,7 @@ var _jquery = _interopRequireDefault(__webpack_require__(2));
 
 var _PhotoshopProjects = _interopRequireDefault(__webpack_require__(39));
 
-var _PhotoOpened = _interopRequireDefault(__webpack_require__(42));
+var _PhotoOpened = _interopRequireDefault(__webpack_require__(44));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31139,6 +31139,8 @@ var _jquery = _interopRequireDefault(__webpack_require__(2));
 
 __webpack_require__(40);
 
+var _Footer = _interopRequireDefault(__webpack_require__(10));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -31165,9 +31167,15 @@ var PhotoshopProjects =
 /*#__PURE__*/
 function (_Component) {
   function PhotoshopProjects(props) {
+    var _this;
+
     _classCallCheck(this, PhotoshopProjects);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoshopProjects).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoshopProjects).call(this, props));
+    _this.state = {
+      usingIE: false
+    };
+    return _this;
   }
 
   _createClass(PhotoshopProjects, [{
@@ -31177,11 +31185,150 @@ function (_Component) {
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
+        window.addEventListener('resize', this.IEResize.bind(this));
+        this.setState({
+          usingIE: true
+        });
+      }
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      if (this.state.usingIE === true) {
+        var windowWidth = window.innerWidth,
+            widthToSet = windowWidth / 3;
+        this.refs['IEimgWorldRace'].style.width = widthToSet + 'px';
+        this.refs['IEimgKimmmi'].style.width = widthToSet + 'px';
+        this.refs['IEimgThunder'].style.width = widthToSet + 'px';
+        this.refs['IEimgJade'].style.width = widthToSet + 'px';
+        this.refs['IEimgWhit'].style.width = widthToSet + 'px';
+        this.refs['IEimgFlowerFace'].style.width = widthToSet + 'px';
+        this.refs['IEimgMAC'].style.width = widthToSet + 'px';
+        this.refs['IEimgTwinPeaks'].style.width = widthToSet + 'px';
+        this.refs['IEimgLaura'].style.width = widthToSet + 'px';
+        this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
+        this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
+        this.refs['IEimgThunder'].style.height = widthToSet + 'px';
+        this.refs['IEimgJade'].style.height = widthToSet + 'px';
+        this.refs['IEimgWhit'].style.height = widthToSet + 'px';
+        this.refs['IEimgFlowerFace'].style.height = widthToSet + 'px';
+        this.refs['IEimgMAC'].style.height = widthToSet + 'px';
+        this.refs['IEimgTwinPeaks'].style.height = widthToSet + 'px';
+        this.refs['IEimgLaura'].style.height = widthToSet + 'px';
+      }
+    }
+  }, {
+    key: "IEResize",
+    value: function IEResize() {
+      var windowWidth = window.innerWidth,
+          widthToSet = windowWidth / 3;
+      this.refs['IEimgWorldRace'].style.width = widthToSet + 'px';
+      this.refs['IEimgKimmmi'].style.width = widthToSet + 'px';
+      this.refs['IEimgThunder'].style.width = widthToSet + 'px';
+      this.refs['IEimgJade'].style.width = widthToSet + 'px';
+      this.refs['IEimgWhit'].style.width = widthToSet + 'px';
+      this.refs['IEimgFlowerFace'].style.width = widthToSet + 'px';
+      this.refs['IEimgMAC'].style.width = widthToSet + 'px';
+      this.refs['IEimgTwinPeaks'].style.width = widthToSet + 'px';
+      this.refs['IEimgLaura'].style.width = widthToSet + 'px';
+      this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
+      this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
+      this.refs['IEimgThunder'].style.height = widthToSet + 'px';
+      this.refs['IEimgJade'].style.height = widthToSet + 'px';
+      this.refs['IEimgWhit'].style.height = widthToSet + 'px';
+      this.refs['IEimgFlowerFace'].style.height = widthToSet + 'px';
+      this.refs['IEimgMAC'].style.height = widthToSet + 'px';
+      this.refs['IEimgTwinPeaks'].style.height = widthToSet + 'px';
+      this.refs['IEimgLaura'].style.height = widthToSet + 'px';
+    }
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", {
+      var _this2 = this;
+
+      return _react.default.createElement("div", null, this.state.usingIE === true && _react.default.createElement("div", {
+        className: "IEwrapperMain"
+      }, _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgWorldRace'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'worldRace'),
+        src: "../images/worldRace.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgKimmmi'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'kimmiLion'),
+        src: "../images/KimmiLionBrown.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgThunder'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'thunderCoffee'),
+        src: "../images/thunderCoffeeSquare.jpg",
+        alt: ""
+      })), _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgJade'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'jade'),
+        src: "../images/jadeExplosionFinishedSquare1.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgWhit'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'whitsFlowerFarm'),
+        src: "../images/whitsFlowerFarmSquare.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgFlowerFace'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'meFlowerFace'),
+        src: "../images/meFlowerFace.jpg",
+        alt: ""
+      })), _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgMAC'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'MAC'),
+        src: "../images/MAC2myselfBlue.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgTwinPeaks'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'mountains'),
+        src: "../images/twinPeaks.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgLaura'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'lauraUnderwater'),
+        src: "../images/LauraUnderwaterHouseSquare.jpg",
+        alt: ""
+      }))), this.state.usingIE === false && _react.default.createElement("div", {
         className: "grid"
       }, _react.default.createElement("img", {
         className: "graphicDesignImg",
@@ -31228,7 +31375,7 @@ function (_Component) {
         onClick: this.props.renderNewComponent.bind(this, 'lauraUnderwater'),
         src: "../images/LauraUnderwaterHouseSquare.jpg",
         alt: ""
-      }));
+      })), _react.default.createElement(_Footer.default, null));
     }
   }]);
 
@@ -31298,13 +31445,77 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.graphicDesignImg:hover {\n\topacity: 0.85;\n}\n\n/* Media Queries */ \n@media (max-width: 479px) {\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t\ttransform: scale(0.9);\n\t    border-radius: 4px;\n\t}\n}\n@media (min-width: 480px) and (max-width: 900px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(2, 1fr);\n\t}\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t}\n}\n@media (min-width: 901px) and (max-width: 1529px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(3, 1fr);\n\t}\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t}\n}\n@media (min-width: 1530px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(4, 1fr);\n\t}\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t}\n}", ""]);
+exports.push([module.i, "/* ----------------------------------\n\tIE Class Names\n*/\n.IEwrapperMain {\n\tdisplay: flex;\n\tflex-direction: column;\n\twidth: 100%;\n}\n.IEtriple {\n\tdisplay: flex;\n\tflex-grow: 1;\n\twidth: 100%;\n}\n.IEgraphicDesignImg {\n\talign-self: center;\n\theight: 200px;\n\twidth: 200px;\n\t/* transition: width 0.1s ease;\n\ttransition: height 0.1s ease; */\n}\n.IEgraphicDesignImg:hover {\n\topacity: 0.85;\n\tcursor: pointer;\n}\n\n\n/* ----------------------------------*/\n\n.graphicDesignImg:hover {\n\topacity: 0.85;\n\tcursor: pointer;\n}\n\n/* Media Queries */ \n@media (max-width: 479px) {\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t\ttransform: scale(0.9);\n\t    border-radius: 4px;\n\t}\n}\n@media (min-width: 480px) and (max-width: 900px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(2, 1fr);\n\t}\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t}\n}\n@media (min-width: 901px) and (max-width: 1529px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(3, 1fr);\n\t}\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t}\n}\n@media (min-width: 1530px) {\n\t.grid {\n\t\tdisplay: grid;\n\t\tgrid-template-columns: repeat(4, 1fr);\n\t}\n\t.graphicDesignImg {\n\t\theight: auto;\n\t\twidth: 100%;\n\t}\n}", ""]);
 
 // exports
 
 
 /***/ }),
 /* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(43);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(5)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../node_modules/css-loader/index.js!./Footer.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./Footer.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.footerBorder {\n\twidth: 96%; \n\theight: 1px; \n\tborder-top: 1px solid lightgray; \n\tmargin-top: 2%;\n}\n.footer {\n\theight: 30px; \n\tfont-family: 'Playfair Display', serif; \n\tcolor: darkgray; \n\tpadding: 10px; \n\tmargin-bottom: 8px; \n\ttext-align: center; \n\tfont-size: small;\n}\n\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\t.footerWrapper {\n\t\tdisplay: flex;\n\t\talign-items: center; \n\t\twidth: 100%;\n\t\tflex-direction: column;\n\t\tmargin-top: 3%;\n\t}\n}\n\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.footerWrapper {\n\t\tdisplay: flex;\n\t\talign-items: center; \n\t\twidth: 100%;\n\t\tflex-direction: column;\n\t\tmargin-top: 20%;\n\t}\n\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31321,9 +31532,9 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(43);
+__webpack_require__(45);
 
-var _Footer = _interopRequireDefault(__webpack_require__(11));
+var _Footer = _interopRequireDefault(__webpack_require__(10));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31586,7 +31797,7 @@ function (_Component) {
         className: "textWrapper"
       }, _react.default.createElement("div", null, "Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
-      }, " Twin Peaks. That's all. "))), this.state.imageToRender === 'lauraUnderwater' && _react.default.createElement("div", {
+      }, " "))), this.state.imageToRender === 'lauraUnderwater' && _react.default.createElement("div", {
         className: "imageAndTextWrapper"
       }, _react.default.createElement("img", {
         style: {
@@ -31624,11 +31835,11 @@ function (_Component) {
 exports.default = PhotoOpened;
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(44);
+var content = __webpack_require__(46);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31674,70 +31885,6 @@ if(false) {
 }
 
 /***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n    cursor: pointer;\n    user-select: none;\n    margin: 0px 2%;\n}\na {\n    cursor: pointer;\n}\n.imageWithLink:hover {\n    opacity: 0.85;\n}\n.leftInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    left: 0px;\n    z-index: 1;\n}\n.rightInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    right: 0px;\n    z-index: 1;\n}\n\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n    .imageAndTextWrapper {\n        display: flex;\n        align-items: center;\n        justify-content: space-evenly;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin-left: 10%;\n    }\n}\n\n@media (max-width: 1050px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin: 10% 0% 1% 0%;\n        align-items: center;\n    }\n    .portraitText {\n        text-align: center;\n    }\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(46);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(5)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../node_modules/css-loader/index.js!./Footer.css", function() {
-		var newContent = require("!!../node_modules/css-loader/index.js!./Footer.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31746,7 +31893,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.footerBorder {\n\twidth: 70%; \n\theight: 1px; \n\tborder-top: 1px solid lightgray; \n\tmargin-top: 2%;\n}\n.footer {\n\theight: 30px; \n\tfont-family: 'Playfair Display', serif; \n\tcolor: darkgray; \n\tpadding: 10px; \n\tmargin-bottom: 8px; \n\ttext-align: center; \n\tfont-size: small;\n}\n\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\t.footerWrapper {\n\t\tdisplay: flex;\n\t\talign-items: center; \n\t\twidth: 100%;\n\t\tflex-direction: column;\n\t\tmargin-top: 3%;\n\t}\n}\n\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.footerWrapper {\n\t\tdisplay: flex;\n\t\talign-items: center; \n\t\twidth: 100%;\n\t\tflex-direction: column;\n\t\tmargin-top: 20%;\n\t}\n\n}", ""]);
+exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n    cursor: pointer;\n    user-select: none;\n    margin: 0px 2%;\n}\na {\n    cursor: pointer;\n}\n.imageWithLink:hover {\n    opacity: 0.85;\n}\n.leftInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    left: 0px;\n    z-index: 1;\n}\n.rightInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    right: 0px;\n    z-index: 1;\n}\n\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n    .imageAndTextWrapper {\n        display: flex;\n        align-items: center;\n        justify-content: space-evenly;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin-left: 10%;\n        width: 50%;\n    }\n}\n\n@media (max-width: 1050px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin: 10% 0% 1% 0%;\n        align-items: center;\n    }\n    .portraitText {\n        text-align: center;\n    }\n}", ""]);
 
 // exports
 
@@ -31771,7 +31918,7 @@ var _jquery = _interopRequireDefault(__webpack_require__(2));
 
 __webpack_require__(48);
 
-var _Footer = _interopRequireDefault(__webpack_require__(11));
+var _Footer = _interopRequireDefault(__webpack_require__(10));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32142,7 +32289,7 @@ var _jquery = _interopRequireDefault(__webpack_require__(2));
 
 __webpack_require__(52);
 
-var _Footer = _interopRequireDefault(__webpack_require__(11));
+var _Footer = _interopRequireDefault(__webpack_require__(10));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
