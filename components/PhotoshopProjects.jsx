@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/PhotoshopProjects.css';
+import Footer from './Footer.jsx';
 
 
 export default class PhotoshopProjects extends Component {
@@ -111,6 +112,8 @@ export default class PhotoshopProjects extends Component {
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'lauraUnderwater')} src="../images/LauraUnderwaterHouseSquare.jpg" alt=""/>
 					</div>
 				}
+
+				<Footer />
 			</div>
 		)
 	} 

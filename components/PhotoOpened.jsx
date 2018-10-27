@@ -222,7 +222,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Graphic </div>
 								<br/>
-								<div className="portraitText"> Twin Peaks. That's all. </div>
+								<div className="portraitText"> </div>
 							</div>
 						</div>
 					}
