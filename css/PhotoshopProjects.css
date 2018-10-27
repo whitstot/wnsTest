@@ -1,6 +1,34 @@
+/* ----------------------------------
+	IE Class Names
+*/
+.IEwrapperMain {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.IEtriple {
+	display: flex;
+	flex-grow: 1;
+	width: 100%;
+}
+.IEgraphicDesignImg {
+	align-self: center;
+	height: 200px;
+	width: 200px;
+	/* transition: width 0.1s ease;
+	transition: height 0.1s ease; */
+}
+.IEgraphicDesignImg:hover {
+	opacity: 0.85;
+	cursor: pointer;
+}
+
+
+/* ----------------------------------*/
 
 .graphicDesignImg:hover {
 	opacity: 0.85;
+	cursor: pointer;
 }
 
 /* Media Queries */ 
