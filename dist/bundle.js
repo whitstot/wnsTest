@@ -31568,9 +31568,14 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoOpened).call(this, props));
     _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitsFlowerFarm', 'meFlowerFace', 'MAC', 'mountains', 'lauraUnderwater'];
+    _this.rightArrow = false;
+    _this.leftArrow = false;
+    _this.bringIn = false;
     _this.state = {
       imageToRender: _this.props.photo,
-      portrait: window.matchMedia("(orientation: portrait)").matches
+      portrait: window.matchMedia("(orientation: portrait)").matches,
+      className: "start imageAndTextWrapper" //for the transitions to work
+
     };
     return _this;
   }
@@ -31590,6 +31595,10 @@ function (_Component) {
       window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
       window.setTimeout(function () {
         _this2.setPhotoDimensions();
+
+        _this2.setState({
+          className: 'imageAndTextWrapper moveMeIn'
+        });
       }, 20);
     }
   }, {
@@ -31600,8 +31609,20 @@ function (_Component) {
       //needed for when we arrow over to another photo, to set the dimensions again
       this.setPhotoDimensions();
       window.setTimeout(function () {
-        _this3.setPhotoDimensions();
+        _this3.setPhotoDimensions(); //needed for when we arrow over to another photo, to set the dimensions again
+
       }, 20);
+
+      if (this.bringIn === true) {
+        this.bringIn = false;
+        window.setTimeout(function () {
+          _this3.setPhotoDimensions();
+
+          _this3.setState({
+            className: 'imageAndTextWrapper moveMeIn'
+          });
+        }, 20);
+      }
     }
   }, {
     key: "setPhotoDimensions",
@@ -31636,38 +31657,65 @@ function (_Component) {
       }
     }
   }, {
+    key: "transitionEnd",
+    value: function transitionEnd(e) {
+      if (this.rightArrow === true) {
+        var imageIndex = this.photoArray.indexOf(this.state.imageToRender);
+        this.rightArrow = false;
+        this.bringIn = true;
+
+        if (this.photoArray.length - 1 !== imageIndex) {
+          var num = imageIndex + 1;
+          this.setState({
+            imageToRender: this.photoArray[num],
+            className: 'imageAndTextWrapper moveMeOutToRight'
+          });
+        } else {
+          this.setState({
+            imageToRender: this.photoArray[0],
+            className: 'imageAndTextWrapper moveMeOutToRight'
+          });
+        }
+      }
+
+      if (this.leftArrow === true) {
+        var _imageIndex = this.photoArray.indexOf(this.state.imageToRender);
+
+        this.leftArrow = false;
+        this.bringIn = true;
+
+        if (_imageIndex !== 0) {
+          var _num = _imageIndex - 1;
+
+          this.setState({
+            imageToRender: this.photoArray[_num],
+            className: 'imageAndTextWrapper moveMeOutToLeft'
+          });
+        } else {
+          var _num2 = this.photoArray.length - 1;
+
+          this.setState({
+            imageToRender: this.photoArray[_num2],
+            className: 'imageAndTextWrapper moveMeOutToLeft'
+          });
+        }
+      }
+    }
+  }, {
     key: "rightArrowClicked",
     value: function rightArrowClicked() {
-      var imageIndex = this.photoArray.indexOf(this.state.imageToRender);
-
-      if (this.photoArray.length - 1 !== imageIndex) {
-        var num = imageIndex + 1;
-        this.setState({
-          imageToRender: this.photoArray[num]
-        });
-      } else {
-        this.setState({
-          imageToRender: this.photoArray[0]
-        });
-      }
+      this.rightArrow = true;
+      this.setState({
+        className: 'imageAndTextWrapper moveMeOutToLeft'
+      });
     }
   }, {
     key: "leftArrowClicked",
     value: function leftArrowClicked() {
-      var imageIndex = this.photoArray.indexOf(this.state.imageToRender);
-
-      if (imageIndex !== 0) {
-        var num = imageIndex - 1;
-        this.setState({
-          imageToRender: this.photoArray[num]
-        });
-      } else {
-        var _num = this.photoArray.length - 1;
-
-        this.setState({
-          imageToRender: this.photoArray[_num]
-        });
-      }
+      this.leftArrow = true;
+      this.setState({
+        className: 'imageAndTextWrapper moveMeOutToRight'
+      });
     }
   }, {
     key: "render",
@@ -31686,7 +31734,8 @@ function (_Component) {
         onClick: this.rightArrowClicked.bind(this),
         className: "rightInvisibleArrow"
       })), this.state.imageToRender === 'worldRace' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
           _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
@@ -31698,7 +31747,8 @@ function (_Component) {
       }, _react.default.createElement("div", null, " Level: 4 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
       }, " This one's pretty dear to me. I originally created it because I was contemplating going on the World Race. If you don't know what that is, it's an 11 month mission trip that takes you to 11 different countries. Pretty cool, but ended up deciding that wasn't the Lord's calling on my life. None the less, I learned a new photoshop technique. "))), this.state.imageToRender === 'kimmiLion' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         style: {
           opacity: '0.95',
@@ -31714,7 +31764,8 @@ function (_Component) {
       }, _react.default.createElement("div", null, " Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
       }, " This is Kimmi. Everyone say \"Hi Kimmi!\" :D She competes in Brazilian Jiu Jitsu, and we get to wear these on shirts to her fights. She's kind of a beast. You should come. "))), this.state.imageToRender === 'thunderCoffee' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("a", {
         href: "https://www.thundercoffeefargo.com/"
       }, _react.default.createElement("img", {
@@ -31731,7 +31782,8 @@ function (_Component) {
       }, " Thunder Coffee is Located in Fargo, North Dakota. The shop is owned by one of my old friends, Dexter Dutton (who I share a birthday with -- fun fact LOL). If you want to go to their website, just click the photo or the link below!"), _react.default.createElement("br", null), _react.default.createElement("a", {
         href: "https://www.thundercoffeefargo.com/"
       }, " Thunder Coffee "))), this.state.imageToRender === 'jade' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
           _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
@@ -31743,7 +31795,8 @@ function (_Component) {
       }, _react.default.createElement("div", null, " Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Explosion Effect "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
       }, " This is Jade. Everyone say \"Hi Jade!\" :D This picture was taken for one of her senior photos at ECU. The Explosion Effect is a Glitter Storm Photoshop Action, and it's probably my favorite. Works really well with action shots. "))), this.state.imageToRender === 'whitsFlowerFarm' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
           _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
@@ -31755,7 +31808,8 @@ function (_Component) {
       }, _react.default.createElement("div", null, " Level: 1 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Simple Logo "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
       }, " Whitley's Flower Farm is soon to be a flower shop in Ada, Oklahoma. Keep your eyes peeled!"))), this.state.imageToRender === 'meFlowerFace' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
           _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
@@ -31767,7 +31821,8 @@ function (_Component) {
       }, _react.default.createElement("div", null, "Level: 4 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
       }, " Funny story, I actually made this one right before my basketball game in a hotel room. I guess you could say I love photoshop. "))), this.state.imageToRender === 'MAC' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("a", {
         href: "https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"
       }, _react.default.createElement("img", {
@@ -31786,7 +31841,8 @@ function (_Component) {
       }, "Mackenzie Reeves - Photography"), _react.default.createElement("br", null), _react.default.createElement("a", {
         href: "https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"
       }, "Mackenzie Reeves - Youtube Channel"))), this.state.imageToRender === 'mountains' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
           _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
@@ -31798,7 +31854,8 @@ function (_Component) {
       }, _react.default.createElement("div", null, "Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
       }, " "))), this.state.imageToRender === 'lauraUnderwater' && _react.default.createElement("div", {
-        className: "imageAndTextWrapper"
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
       }, _react.default.createElement("img", {
         style: {
           filter: 'brightness(1.2)'
@@ -31893,7 +31950,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n    cursor: pointer;\n    user-select: none;\n    margin: 0px 2%;\n}\na {\n    cursor: pointer;\n}\n.imageWithLink:hover {\n    opacity: 0.85;\n}\n.leftInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    left: 0px;\n    z-index: 1;\n}\n.rightInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    right: 0px;\n    z-index: 1;\n}\n\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n    .imageAndTextWrapper {\n        display: flex;\n        align-items: center;\n        justify-content: space-evenly;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin-left: 10%;\n        width: 50%;\n    }\n}\n\n@media (max-width: 1050px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin: 10% 0% 1% 0%;\n        align-items: center;\n    }\n    .portraitText {\n        text-align: center;\n    }\n}", ""]);
+exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n    cursor: pointer;\n    user-select: none;\n    margin: 0px 2%;\n}\na {\n    cursor: pointer;\n}\n.imageWithLink:hover {\n    opacity: 0.85;\n}\n.leftInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    left: 0px;\n    z-index: 1;\n}\n.rightInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    right: 0px;\n    z-index: 1;\n}\n\n.start {\n    transform: translate(-150%); \n}\n.moveMeIn {\n    transform: translate(0%);\n}\n.moveMeOutToRight {\n    transform: translate(150%);\n}\n.moveMeOutToLeft {\n    transform: translate(-150%);\n}\n\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n    .imageAndTextWrapper {\n        display: flex;\n        align-items: center;\n        justify-content: space-evenly;\n        width: 100%;\n        transition: transform 0.2s ease;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin-left: 10%;\n        width: 50%;\n    }\n}\n\n@media (max-width: 1050px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imageAndTextWrapper {\n        transition: transform 0.2s ease;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin: 10% 0% 1% 0%;\n        align-items: center;\n    }\n    .portraitText {\n        text-align: center;\n    }\n}", ""]);
 
 // exports
 
