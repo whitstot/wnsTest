@@ -29,6 +29,19 @@ a {
     z-index: 1;
 }
 
+.start {
+    transform: translate(-150%); 
+}
+.moveMeIn {
+    transform: translate(0%);
+}
+.moveMeOutToRight {
+    transform: translate(150%);
+}
+.moveMeOutToLeft {
+    transform: translate(-150%);
+}
+
 
 /* ------------------------------------------- */
 
@@ -51,6 +64,8 @@ a {
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
+        transition: transform 0.2s ease;
+        width: 100%;
     }
     .textWrapper {
         display: flex;
@@ -66,6 +81,9 @@ a {
     /* mobile */
     img {
         width: 100%;
+    }
+    .imageAndTextWrapper {
+        transition: transform 0.2s ease;
     }
     .imgWrapper {
         display: flex;

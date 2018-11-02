@@ -22,9 +22,14 @@ export default class PhotoOpened extends Component {
 			'lauraUnderwater'
 		];	
 
+		this.rightArrow = false;
+		this.leftArrow = false;
+		this.bringIn = false;
+
 		this.state = {
 			imageToRender: this.props.photo,
-			portrait: window.matchMedia("(orientation: portrait)").matches
+			portrait: window.matchMedia("(orientation: portrait)").matches,
+			className: "start imageAndTextWrapper"			//for the transitions to work
 		}
 	}
 	componentWillMount() {
@@ -37,6 +42,10 @@ export default class PhotoOpened extends Component {
 
 		window.setTimeout(()=>{
 			this.setPhotoDimensions();
+
+			this.setState({
+				className: 'imageAndTextWrapper moveMeIn'
+			})
 		}, 20);
 	}
 	componentDidUpdate() {
@@ -44,8 +53,18 @@ export default class PhotoOpened extends Component {
 		this.setPhotoDimensions();
 
 		window.setTimeout(()=>{
-			this.setPhotoDimensions();
+			this.setPhotoDimensions();	//needed for when we arrow over to another photo, to set the dimensions again
 		}, 20);
+
+		if (this.bringIn === true) {
+			this.bringIn = false;
+			window.setTimeout(() => {
+				this.setPhotoDimensions();
+				this.setState({
+					className: 'imageAndTextWrapper moveMeIn'
+				})
+			}, 20)
+		}
 	}
 	setPhotoDimensions() {
 		let el = this.refs['img'],
@@ -77,36 +96,60 @@ export default class PhotoOpened extends Component {
 			})
 		}
 	}
-	rightArrowClicked() {
-		let imageIndex = this.photoArray.indexOf(this.state.imageToRender);
+	transitionEnd(e) {
+		if (this.rightArrow === true) {
+			let imageIndex = this.photoArray.indexOf(this.state.imageToRender);
+			this.rightArrow = false;
+			this.bringIn = true;
 
-		if ((this.photoArray.length - 1) !== imageIndex) {
-			let num = imageIndex + 1;
-			this.setState({
-				imageToRender: this.photoArray[num]
-			})
+			if ((this.photoArray.length - 1) !== imageIndex) {
+				let num = imageIndex + 1;
+				this.setState({
+					imageToRender: this.photoArray[num],
+					className: 'imageAndTextWrapper moveMeOutToRight'
+				})
+			}
+			else {
+				this.setState({
+					imageToRender: this.photoArray[0],
+					className: 'imageAndTextWrapper moveMeOutToRight'
+				})
+			}
 		}
-		else {
-			this.setState({
-				imageToRender: this.photoArray[0]
-			})
+		if (this.leftArrow === true) {
+			let imageIndex = this.photoArray.indexOf(this.state.imageToRender);
+			this.leftArrow = false;
+			this.bringIn = true;
+
+			if (imageIndex !== 0) {
+				let num = imageIndex - 1;
+				this.setState({
+					imageToRender: this.photoArray[num],
+					className: 'imageAndTextWrapper moveMeOutToLeft'
+				})
+			}
+			else {
+				let num = this.photoArray.length - 1;
+				this.setState({
+					imageToRender: this.photoArray[num],
+					className: 'imageAndTextWrapper moveMeOutToLeft'
+				})
+			}
 		}
 	}
-	leftArrowClicked() {
-		let imageIndex = this.photoArray.indexOf(this.state.imageToRender);
+	rightArrowClicked() {
+		this.rightArrow = true;
 
-		if (imageIndex !== 0) {
-			let num = imageIndex - 1;
-			this.setState({
-				imageToRender: this.photoArray[num]
-			})
-		}
-		else {
-			let num = this.photoArray.length - 1;
-			this.setState({
-				imageToRender: this.photoArray[num]
-			})
-		}
+		this.setState({
+			className: 'imageAndTextWrapper moveMeOutToLeft'
+		})
+	}
+	leftArrowClicked() {
+		this.leftArrow = true;
+
+		this.setState({
+			className: 'imageAndTextWrapper moveMeOutToRight'
+		})
 	}
 	render() {
 		return (
@@ -125,7 +168,7 @@ export default class PhotoOpened extends Component {
 					}
 
 					{this.state.imageToRender === 'worldRace' &&
-						<div className="imageAndTextWrapper">	
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
 							<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/worldRace.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 4 </div>
@@ -137,7 +180,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'kimmiLion' &&
-						<div className="imageAndTextWrapper">	
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
 							<img style={{opacity: '0.95', filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 2 </div> 
@@ -149,7 +192,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'thunderCoffee' &&
-						<div className="imageAndTextWrapper">	
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
 							<a href="https://www.thundercoffeefargo.com/"><img className="imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffeeSquare.jpg" alt=""/></a>
 							<div className="textWrapper"> 
 								<div> Level: 1 </div>
@@ -163,7 +206,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'jade' &&
-						<div className="imageAndTextWrapper">	
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
 							<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 2 </div>
@@ -175,7 +218,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'whitsFlowerFarm' &&
-						<div className="imageAndTextWrapper">	
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
 							<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 1 </div>
@@ -187,7 +230,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'meFlowerFace' &&
-						<div className="imageAndTextWrapper">
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
 							<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/meFlowerFace.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div>Level: 4 </div>
@@ -199,7 +242,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'MAC' &&
-						<div className="imageAndTextWrapper">
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
 							<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="imageWithLink" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/MAC2myselfBlue.jpg" alt=""/></a>
 							<div className="textWrapper"> 
 								<div>Level: 4 </div>
@@ -215,7 +258,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'mountains' &&
-						<div className="imageAndTextWrapper">
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
 							<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/twinPeaks.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div>Level: 2 </div>
@@ -227,7 +270,7 @@ export default class PhotoOpened extends Component {
 						</div>
 					}
 					{this.state.imageToRender === 'lauraUnderwater' &&
-						<div className="imageAndTextWrapper">
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
 							<img style={{filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/LauraUnderwaterHouse.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 3 </div>
