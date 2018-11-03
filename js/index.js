@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Element from '../components/Opener.jsx';
+import Element from '../components/Home.jsx';
 
 ReactDOM.render(
 	<Element/>,

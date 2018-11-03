@@ -1,0 +1,43 @@
+
+/* Media Queries */
+
+@media (min-width: 1051px) {
+    /* desktop */
+	.webParagraphWrapper {
+		width: 100%;
+	    display: flex;
+	    justify-content: center;
+	    margin-top: 5%;
+	}
+	.webParagraph {
+		display: flex;
+		font-size: 50px;
+		font-family: 'Pattaya', sans-serif;
+		width: 60%;
+		text-align: center;
+		padding: 80px;
+		background-color: antiquewhite;
+	    color: orangered;
+	    border-radius: 7%;
+	}
+}
+@media (max-width: 1050px) {
+    /* mobile */
+    .webParagraphWrapper {
+		width: 100%;
+	    display: flex;
+	    justify-content: center;
+	    margin-top: 5%;
+	}
+	.webParagraph {
+	    display: flex;
+	    font-size: large;
+	    font-family: 'Pattaya', sans-serif;
+	    width: 85%;
+	    text-align: center;
+	    padding: 45px;
+	    background-color: antiquewhite;
+	    color: orangered;
+	    border-radius: 7%;
+	}
+}

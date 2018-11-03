@@ -22,7 +22,7 @@ export default class Home extends Component {
 		contact   */
 
 		this.state = {
-			componentToRender: 'photoshop'
+			componentToRender: 'webDesign'
 		}
 	}
 	componentWillMount() {

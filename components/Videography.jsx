@@ -103,7 +103,7 @@ export default class Videography extends Component {
 				{this.state.portrait === false &&
 					<video 
 						style={{width: '100%', height: 'auto'}}
-						src="../images/MeaganWedding.mp4" 
+						src="../images/MeaganWeddingShorter.mp4" 
 						type="video/mp4" 
 						preload="true" 
 						playsInline="true" 
@@ -122,7 +122,7 @@ export default class Videography extends Component {
 
 				<div className="meAndJosh">
 					<div className="meAndJoshWrap">	
-						<img ref={(eref) => {this.refs['josh'] = findDOMNode(eref)}} src="../images/myself.jpg" alt=""/>
+						<img ref={(eref) => {this.refs['josh'] = findDOMNode(eref)}} src="../images/Josh.jpg" alt=""/>
 						<div className="meAndJoshParagraph"> 
 							<div> Josh Newman </div>
 							<div> Videographer and founder of JW Films </div>
