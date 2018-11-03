@@ -11394,7 +11394,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(42);
+__webpack_require__(39);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11797,11 +11797,11 @@ var _react = _interopRequireDefault(__webpack_require__(0));
 
 var _reactDom = _interopRequireDefault(__webpack_require__(1));
 
-var _Opener = _interopRequireDefault(__webpack_require__(29));
+var _Home = _interopRequireDefault(__webpack_require__(29));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render(_react.default.createElement(_Opener.default, null), document.getElementById('ReactId'));
+_reactDom.default.render(_react.default.createElement(_Home.default, null), document.getElementById('ReactId'));
 
 /***/ }),
 /* 18 */
@@ -30420,313 +30420,17 @@ var _jquery = _interopRequireDefault(__webpack_require__(2));
 
 __webpack_require__(30);
 
-var _Home = _interopRequireDefault(__webpack_require__(33));
+__webpack_require__(33);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _PhotoshopProjectsParent = _interopRequireDefault(__webpack_require__(35));
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+var _Videography = _interopRequireDefault(__webpack_require__(44));
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var _WebDesign = _interopRequireDefault(__webpack_require__(47));
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _About = _interopRequireDefault(__webpack_require__(50));
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
-
-var Element =
-/*#__PURE__*/
-function (_Component) {
-  function Element(props) {
-    var _this;
-
-    _classCallCheck(this, Element);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
-    _this.state = {
-      componentToRender: 'opener',
-      portrait: window.matchMedia("(orientation: portrait)").matches
-    };
-    return _this;
-  }
-
-  _createClass(Element, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      this.refs = [];
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      window.addEventListener('resize', this.setPhotoHeight.bind(this));
-    }
-  }, {
-    key: "setPhotoHeight",
-    value: function setPhotoHeight() {
-      var portrait = this.state.portrait,
-          windowWidth = window.innerWidth;
-
-      if (windowWidth <= 1100) {
-        portrait = true;
-      } else {
-        portrait = false;
-      } //if the orientation changes this will update the state
-
-
-      if (portrait !== this.state.portrait) {
-        this.setState({
-          portrait: portrait
-        });
-      }
-    }
-  }, {
-    key: "changeComponentToHome",
-    value: function changeComponentToHome() {
-      (0, _jquery.default)(this.refs['openerWrapper']).removeClass('opener');
-      this.setState({
-        componentToRender: 'home'
-      });
-    }
-  }, {
-    key: "changeComponentToOpener",
-    value: function changeComponentToOpener() {
-      (0, _jquery.default)(this.refs['openerWrapper']).addClass('opener');
-      this.setState({
-        componentToRender: 'opener'
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      return _react.default.createElement("div", {
-        ref: function ref(eref) {
-          _this2.refs['openerWrapper'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        className: "opener"
-      }, this.state.portrait === false && this.state.componentToRender === 'opener' && _react.default.createElement("img", {
-        className: "openerImage",
-        src: "../images/websiteOpenerGalaxy.jpg"
-      }), this.state.portrait === true && this.state.componentToRender === 'opener' && _react.default.createElement("img", {
-        className: "openerImage",
-        src: "../images/websiteOpenerPortrait.jpg"
-      }), this.state.componentToRender === 'opener' && _react.default.createElement("center", {
-        onClick: this.changeComponentToHome.bind(this),
-        className: "enterSite"
-      }, "ENTER", _react.default.createElement("br", null), "SITE"), this.state.componentToRender === 'home' && _react.default.createElement(_Home.default, {
-        changeToOpener: this.changeComponentToOpener.bind(this)
-      }));
-    }
-  }]);
-
-  _inherits(Element, _Component);
-
-  return Element;
-}(_react.Component);
-
-exports.default = Element;
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(31);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(5)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../node_modules/css-loader/index.js!./Opener.css", function() {
-		var newContent = require("!!../node_modules/css-loader/index.js!./Opener.css");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.opener {\n    height: 100%;\n    background-color: black;\n}\n.openerImage {\n\twidth: 100%;\n}\n\n/* Media Queries */\n\n/* phone */\n@media (max-width: 700px) {\n    .enterSite {\n        position: fixed;\n        font-size: small;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}\n\n/* ipad */\n@media (min-width: 701px) and (max-width: 1100px) {\n    .enterSite {\n        position: fixed;\n        font-size: large;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}\n\n/* desktop */\n@media (min-width: 1101px) {\n    .enterSite {\n        position: fixed;\n        font-size: xx-large;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 10px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-
-/**
- * When source maps are enabled, `style-loader` uses a link element with a data-uri to
- * embed the css on the page. This breaks all relative urls because now they are relative to a
- * bundle instead of the current page.
- *
- * One solution is to only use full urls, but that may be impossible.
- *
- * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
- *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
- *
- */
-
-module.exports = function (css) {
-  // get current location
-  var location = typeof window !== "undefined" && window.location;
-
-  if (!location) {
-    throw new Error("fixUrls requires window.location");
-  }
-
-	// blank or null?
-	if (!css || typeof css !== "string") {
-	  return css;
-  }
-
-  var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
-
-	// convert each url(...)
-	/*
-	This regular expression is just a way to recursively match brackets within
-	a string.
-
-	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-	   (  = Start a capturing group
-	     (?:  = Start a non-capturing group
-	         [^)(]  = Match anything that isn't a parentheses
-	         |  = OR
-	         \(  = Match a start parentheses
-	             (?:  = Start another non-capturing groups
-	                 [^)(]+  = Match anything that isn't a parentheses
-	                 |  = OR
-	                 \(  = Match a start parentheses
-	                     [^)(]*  = Match anything that isn't a parentheses
-	                 \)  = Match a end parentheses
-	             )  = End Group
-              *\) = Match anything and then a close parens
-          )  = Close non-capturing group
-          *  = Match anything
-       )  = Close capturing group
-	 \)  = Match a close parens
-
-	 /gi  = Get all matches, not the first.  Be case insensitive.
-	 */
-	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
-		// strip quotes (if they exist)
-		var unquotedOrigUrl = origUrl
-			.trim()
-			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
-			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
-
-		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
-		  return fullMatch;
-		}
-
-		// convert the url to a full url
-		var newUrl;
-
-		if (unquotedOrigUrl.indexOf("//") === 0) {
-		  	//TODO: should we add protocol?
-			newUrl = unquotedOrigUrl;
-		} else if (unquotedOrigUrl.indexOf("/") === 0) {
-			// path should be relative to the base url
-			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-		} else {
-			// path should be relative to current directory
-			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-		}
-
-		// send back the fixed url(...)
-		return "url(" + JSON.stringify(newUrl) + ")";
-	});
-
-	// send back the fixed css
-	return fixedCss;
-};
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(__webpack_require__(0));
-
-var _reactDom = _interopRequireWildcard(__webpack_require__(1));
-
-var _jquery = _interopRequireDefault(__webpack_require__(2));
-
-__webpack_require__(34);
-
-__webpack_require__(36);
-
-var _PhotoshopProjectsParent = _interopRequireDefault(__webpack_require__(38));
-
-var _Videography = _interopRequireDefault(__webpack_require__(47));
-
-var _WebDesign = _interopRequireDefault(__webpack_require__(50));
-
-var _About = _interopRequireDefault(__webpack_require__(51));
-
-var _Contact = _interopRequireDefault(__webpack_require__(54));
+var _Contact = _interopRequireDefault(__webpack_require__(53));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30766,7 +30470,7 @@ function (_Component) {
     	contact   */
 
     _this.state = {
-      componentToRender: 'photoshop'
+      componentToRender: 'webDesign'
     };
     return _this;
   }
@@ -30891,11 +30595,11 @@ function (_Component) {
 exports.default = Home;
 
 /***/ }),
-/* 34 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(35);
+var content = __webpack_require__(31);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -30941,7 +30645,7 @@ if(false) {
 }
 
 /***/ }),
-/* 35 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -30955,11 +30659,106 @@ exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin
 
 
 /***/ }),
-/* 36 */
+/* 32 */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(37);
+var content = __webpack_require__(34);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31005,7 +30804,7 @@ if(false) {
 }
 
 /***/ }),
-/* 37 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -31019,7 +30818,7 @@ exports.push([module.i, "\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:h
 
 
 /***/ }),
-/* 38 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31036,9 +30835,9 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-var _PhotoshopProjects = _interopRequireDefault(__webpack_require__(39));
+var _PhotoshopProjects = _interopRequireDefault(__webpack_require__(36));
 
-var _PhotoOpened = _interopRequireDefault(__webpack_require__(44));
+var _PhotoOpened = _interopRequireDefault(__webpack_require__(41));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31120,7 +30919,7 @@ function (_Component) {
 exports.default = PhotoshopProjectsParent;
 
 /***/ }),
-/* 39 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31137,7 +30936,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(40);
+__webpack_require__(37);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -31392,11 +31191,11 @@ function (_Component) {
 exports.default = PhotoshopProjects;
 
 /***/ }),
-/* 40 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(41);
+var content = __webpack_require__(38);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31442,7 +31241,7 @@ if(false) {
 }
 
 /***/ }),
-/* 41 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -31456,11 +31255,11 @@ exports.push([module.i, "/* ----------------------------------\n\tIE Class Names
 
 
 /***/ }),
-/* 42 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(43);
+var content = __webpack_require__(40);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31506,7 +31305,7 @@ if(false) {
 }
 
 /***/ }),
-/* 43 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -31520,7 +31319,7 @@ exports.push([module.i, "\n.footerBorder {\n\twidth: 96%; \n\theight: 1px; \n\tb
 
 
 /***/ }),
-/* 44 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31537,7 +31336,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(45);
+__webpack_require__(42);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -31910,11 +31709,11 @@ function (_Component) {
 exports.default = PhotoOpened;
 
 /***/ }),
-/* 45 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(46);
+var content = __webpack_require__(43);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31960,7 +31759,7 @@ if(false) {
 }
 
 /***/ }),
-/* 46 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -31974,7 +31773,7 @@ exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15p
 
 
 /***/ }),
-/* 47 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31991,7 +31790,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(48);
+__webpack_require__(45);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -32118,7 +31917,7 @@ function (_Component) {
           width: '100%',
           height: 'auto'
         },
-        src: "../images/MeaganWedding.mp4",
+        src: "../images/MeaganWeddingShorter.mp4",
         type: "video/mp4",
         preload: "true",
         playsInline: "true",
@@ -32138,7 +31937,7 @@ function (_Component) {
         ref: function ref(eref) {
           _this2.refs['josh'] = (0, _reactDom.findDOMNode)(eref);
         },
-        src: "../images/myself.jpg",
+        src: "../images/Josh.jpg",
         alt: ""
       }), _react.default.createElement("div", {
         className: "meAndJoshParagraph"
@@ -32246,11 +32045,11 @@ function (_Component) {
 exports.default = Videography;
 
 /***/ }),
-/* 48 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(49);
+var content = __webpack_require__(46);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -32296,7 +32095,7 @@ if(false) {
 }
 
 /***/ }),
-/* 49 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -32310,7 +32109,7 @@ exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {
 
 
 /***/ }),
-/* 50 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32326,6 +32125,8 @@ var _react = _interopRequireWildcard(__webpack_require__(0));
 var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
+
+__webpack_require__(48);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32365,15 +32166,36 @@ function (_Component) {
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.quote = "Well you're looking at it! If you like what you see, we can talk business! I'm currently contracting out of the Chickasaw Nation as a Front-End Web Developer. My contract is actually up at the end of 2018. If you're looking for your website to be handled or created, I might be your girl.";
+      this.string = this.quote.split('');
+      this.animate();
+    }
+  }, {
+    key: "animate",
+    value: function animate() {
+      var _this = this;
+
+      if (this.string.length > 0) {
+        this.refs['paragraph'].innerHTML += this.string.shift();
+        window.setTimeout(function () {
+          window.requestAnimationFrame(_this.animate.bind(_this));
+        }, 20);
+      }
+    }
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return _react.default.createElement("div", {
-        style: {
-          color: 'white'
-        }
-      }, "Web");
+        className: "webParagraphWrapper"
+      }, _react.default.createElement("div", {
+        ref: function ref(eref) {
+          _this2.refs['paragraph'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "webParagraph"
+      }));
     }
   }]);
 
@@ -32385,7 +32207,71 @@ function (_Component) {
 exports.default = Element;
 
 /***/ }),
-/* 51 */
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(49);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(5)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../node_modules/css-loader/index.js!./WebDesign.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./WebDesign.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n\t.webParagraphWrapper {\n\t\twidth: 100%;\n\t    display: flex;\n\t    justify-content: center;\n\t    margin-top: 5%;\n\t}\n\t.webParagraph {\n\t\tdisplay: flex;\n\t\tfont-size: 50px;\n\t\tfont-family: 'Pattaya', sans-serif;\n\t\twidth: 60%;\n\t\ttext-align: center;\n\t\tpadding: 80px;\n\t\tbackground-color: antiquewhite;\n\t    color: orangered;\n\t    border-radius: 7%;\n\t}\n}\n@media (max-width: 1050px) {\n    /* mobile */\n    .webParagraphWrapper {\n\t\twidth: 100%;\n\t    display: flex;\n\t    justify-content: center;\n\t    margin-top: 5%;\n\t}\n\t.webParagraph {\n\t    display: flex;\n\t    font-size: large;\n\t    font-family: 'Pattaya', sans-serif;\n\t    width: 85%;\n\t    text-align: center;\n\t    padding: 45px;\n\t    background-color: antiquewhite;\n\t    color: orangered;\n\t    border-radius: 7%;\n\t}\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32402,7 +32288,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(52);
+__webpack_require__(51);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -32539,11 +32425,11 @@ function (_Component) {
 exports.default = Element;
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(53);
+var content = __webpack_require__(52);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -32589,7 +32475,7 @@ if(false) {
 }
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)(false);
@@ -32603,7 +32489,7 @@ exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1121px) {
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
