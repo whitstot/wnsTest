@@ -30862,7 +30862,7 @@ function (_Component) {
       }, _react.default.createElement("div", {
         onClick: this.closeMenu.bind(this),
         className: "esc"
-      }, " X "), _react.default.createElement("div", {
+      }, " \xD7 "), _react.default.createElement("div", {
         onClick: this.renderNewComponent.bind(this, 'photoshop'),
         className: "mobileMenuItem topMobileMenuItem"
       }, " Photoshop Projects "), _react.default.createElement("div", {
@@ -31013,7 +31013,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n\tbackground-color: black;\n}\n.tabSelected {\n\tcolor: lightpink;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: absolute;\n\ttop: 91px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n    padding: 3px 8px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n    margin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t\tcursor: pointer;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n\t.dropDownMenu {\n\t\tdisplay: none;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n    \tjustify-content: space-around;\n    \theight: 85px;\n    \tmargin: 5px;\n    \talign-items: flex-end;\n    \tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 60px;\n\t}\n\t.menuBar1 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar2 {\n\t\theight: 7px;\n\t\twidth: 40px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar3{\n\t\theight: 7px;\n\t\twidth: 55px;\n\t\tbackground-color: white;\n\t}\n\t.dropDownMenuOpen {\n\t\tz-index: 1;\n\t\tdisplay: flex;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n\tbackground-color: black;\n}\n.tabSelected {\n\tcolor: lightpink;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: absolute;\n\ttop: 91px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n    padding: 1px 7px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n    margin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t\tcursor: pointer;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n\t.dropDownMenu {\n\t\tdisplay: none;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n    \tjustify-content: space-around;\n    \theight: 85px;\n    \tmargin: 5px;\n    \talign-items: flex-end;\n    \tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 60px;\n\t}\n\t.menuBar1 {\n\t\theight: 7px;\n\t\twidth: 60px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar2 {\n\t\theight: 7px;\n\t\twidth: 40px;\n\t\tbackground-color: white;\n\t}\n\t.menuBar3{\n\t\theight: 7px;\n\t\twidth: 55px;\n\t\tbackground-color: white;\n\t}\n\t.dropDownMenuOpen {\n\t\tz-index: 99;\n\t\tdisplay: flex;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -31375,6 +31375,11 @@ function (_Component) {
         onClick: this.props.renderNewComponent.bind(this, 'lauraUnderwater'),
         src: "../images/LauraUnderwaterHouseSquare.jpg",
         alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'ECUsched'),
+        src: "../images/ECUscheduleSquare.jpg",
+        alt: ""
       })), _react.default.createElement(_Footer.default, null));
     }
   }]);
@@ -31567,7 +31572,7 @@ function (_Component) {
     _classCallCheck(this, PhotoOpened);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoOpened).call(this, props));
-    _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitsFlowerFarm', 'meFlowerFace', 'MAC', 'mountains', 'lauraUnderwater'];
+    _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitsFlowerFarm', 'meFlowerFace', 'MAC', 'mountains', 'lauraUnderwater', 'ECUsched'];
     _this.rightArrow = false;
     _this.leftArrow = false;
     _this.bringIn = false;
@@ -31869,7 +31874,20 @@ function (_Component) {
         className: "textWrapper"
       }, _react.default.createElement("div", null, " Level: 3 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
-      }, " This is Laura. Everyone say \"Did you wait 15 minutes before getting in the water?!\" Haha, I'm totally kidding. Although, I'm not kidding when I say that this is my living room and that's my roommate. She's alive, I promise. "))), this.state.portrait === false && _react.default.createElement("div", {
+      }, " This is Laura. Everyone say \"Did you wait 15 minutes before getting in the water?!\" Haha, I'm totally kidding. Although, I'm not kidding when I say that this is my living room and that's my roommate. She's alive, I promise. "))), this.state.imageToRender === 'ECUsched' && _react.default.createElement("div", {
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        src: "../images/ECUschedule.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "textWrapper"
+      }, _react.default.createElement("div", null, " Level: 3 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Sports Photos "), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "portraitText"
+      }, " ECU Womens Basketball schedule for 2018-2019 "))), this.state.portrait === false && _react.default.createElement("div", {
         onClick: this.rightArrowClicked.bind(this),
         className: "arrows"
       }, ">"), this.state.portrait === true && _react.default.createElement("div", {
@@ -32028,8 +32046,7 @@ function (_Component) {
   }, {
     key: "setVideoDimensions",
     value: function setVideoDimensions() {
-      var el = this.refs['img'],
-          windowWidth = window.innerWidth,
+      var windowWidth = window.innerWidth,
           portrait = this.state.portrait,
           widthToSet = 'unset',
           heightToSet = 'unset';
@@ -32075,6 +32092,12 @@ function (_Component) {
         this.refs['descriptionDesirae'].style.height = heightToSet + 'px';
         this.refs['descriptionMeagan'].style.height = heightToSet + 'px';
         this.refs['descriptionShayna'].style.height = heightToSet + 'px';
+        /* -------------------------------------------------- */
+
+        this.refs['me'].style.height = heightToSet + 'px';
+        this.refs['me'].style.width = heightToSet + 'px';
+        this.refs['josh'].style.height = heightToSet + 'px';
+        this.refs['josh'].style.width = heightToSet + 'px';
         portrait = false;
       } //if the orientation changes this will update the state
 
@@ -32090,11 +32113,46 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react.default.createElement("div", null, _react.default.createElement("div", {
+      return _react.default.createElement("div", null, this.state.portrait === false && _react.default.createElement("video", {
+        style: {
+          width: '100%',
+          height: 'auto'
+        },
+        src: "../images/MeaganWedding.mp4",
+        type: "video/mp4",
+        preload: "true",
+        playsInline: "true",
+        autoPlay: "true",
+        loop: "true"
+      }), _react.default.createElement("div", {
+        className: "logoWrapper"
+      }, _react.default.createElement("div", {
         className: "JWFilms"
       }, "JW Films"), _react.default.createElement("div", {
         className: "slogan"
-      }, "To live in those priceless moments, all over again."), _react.default.createElement("div", {
+      }, "To live in those priceless moments, all over again.")), _react.default.createElement("div", {
+        className: "meAndJosh"
+      }, _react.default.createElement("div", {
+        className: "meAndJoshWrap"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['josh'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        src: "../images/myself.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "meAndJoshParagraph"
+      }, _react.default.createElement("div", null, " Josh Newman "), _react.default.createElement("div", null, " Videographer and founder of JW Films "))), _react.default.createElement("div", {
+        className: "meAndJoshWrap"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['me'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        src: "../images/myself.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "meAndJoshParagraph"
+      }, _react.default.createElement("div", null, " Whitney Stotler "), _react.default.createElement("div", null, " Videographer and editor for JW Films ")))), _react.default.createElement("div", {
         className: "videoWrapper"
       }, _react.default.createElement("iframe", {
         ref: function ref(eref) {
@@ -32103,7 +32161,7 @@ function (_Component) {
         allowFullScreen: "1",
         allow: "autoplay; encrypted-media",
         frameBorder: "0",
-        src: "https://www.youtube.com/embed/lQf5ixa_Jo0?autoplay=1&loop=1&mute=1"
+        src: "https://www.youtube.com/embed/lQf5ixa_Jo0?&loop=1&mute=1"
       }), _react.default.createElement("div", {
         className: "line"
       }), _react.default.createElement("a", {
@@ -32125,7 +32183,7 @@ function (_Component) {
           width: "958px",
           height: "539px"
         },
-        src: "https://www.youtube.com/embed/yefauMCc28g?autoplay=1&loop=1&mute=1"
+        src: "https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1"
       }), _react.default.createElement("div", {
         className: "line"
       }), _react.default.createElement("a", {
@@ -32147,7 +32205,7 @@ function (_Component) {
           width: "958px",
           height: "539px"
         },
-        src: "https://www.youtube.com/embed/IIMdSrJvMVM?autoplay=1&loop=1&mute=1"
+        src: "https://www.youtube.com/embed/IIMdSrJvMVM?&loop=1&mute=1"
       }), _react.default.createElement("div", {
         className: "line"
       }), _react.default.createElement("a", {
@@ -32246,7 +32304,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.description {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 1%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: x-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 3%;\n\t}\n}\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.videoWrapper {\n\t\tdisplay: flex;\n    \tflex-direction: column;\n    \talign-items: center;\n\t}\n\t.description {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\ttext-align: center;\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: small;\n\t    padding: 10px;\n    \tmargin-bottom: 2%;\n    \ttext-decoration: none;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 5%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 10%;\n\t}\n}", ""]);
+exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.description {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t    font-size: 240px;\n\t    display: flex;\n\t    justify-content: center;\n\t    color: white;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: 42px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: white;\n\t}\n\t.logoWrapper {\n\t\tposition: absolute;\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: large;\n\t    text-align: center;\n\t    /*display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;*/\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 50px;\n    \tbackground: #ffcccc;\n\t}\n}\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.videoWrapper {\n\t\tdisplay: flex;\n    \tflex-direction: column;\n    \talign-items: center;\n\t}\n\t.description {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\ttext-align: center;\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: small;\n\t    padding: 10px;\n    \tmargin-bottom: 2%;\n    \ttext-decoration: none;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 5%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 10%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t\tflex-direction: column;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: small;\n\t    text-align: center;\n\t    /*display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;*/\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 30px;\n    \tbackground: #ffcccc;\n    \tmargin: 3% 12%;\n\t}\n}", ""]);
 
 // exports
 

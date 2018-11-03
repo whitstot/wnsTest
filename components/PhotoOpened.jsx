@@ -19,7 +19,8 @@ export default class PhotoOpened extends Component {
 			'meFlowerFace', 
 			'MAC', 
 			'mountains',
-			'lauraUnderwater'
+			'lauraUnderwater',
+			'ECUsched'
 		];	
 
 		this.rightArrow = false;
@@ -278,6 +279,18 @@ export default class PhotoOpened extends Component {
 								<div> Graphic </div>
 								<br/>
 								<div className="portraitText"> This is Laura. Everyone say "Did you wait 15 minutes before getting in the water?!" Haha, I'm totally kidding. Although, I'm not kidding when I say that this is my living room and that's my roommate. She's alive, I promise. </div>
+							</div>
+						</div>
+					}	
+					{this.state.imageToRender === 'ECUsched' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/ECUschedule.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 3 </div>
+								<br/>
+								<div> Sports Photos </div>
+								<br/>
+								<div className="portraitText"> ECU Womens Basketball schedule for 2018-2019 </div>
 							</div>
 						</div>
 					}	

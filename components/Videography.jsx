@@ -22,8 +22,7 @@ export default class Videography extends Component {
 		window.addEventListener('resize', this.setVideoDimensions.bind(this))
 	}
 	setVideoDimensions() {
-		let el = this.refs['img'],
-			windowWidth = window.innerWidth,
+		let windowWidth = window.innerWidth,
 			portrait = this.state.portrait,
 			widthToSet = 'unset',
 			heightToSet = 'unset';
@@ -80,6 +79,13 @@ export default class Videography extends Component {
 			this.refs['descriptionMeagan'].style.height = heightToSet + 'px';
 			this.refs['descriptionShayna'].style.height = heightToSet + 'px';
 
+			/* -------------------------------------------------- */
+
+			this.refs['me'].style.height = heightToSet + 'px'
+			this.refs['me'].style.width = heightToSet + 'px'
+			this.refs['josh'].style.height = heightToSet + 'px'
+			this.refs['josh'].style.width = heightToSet + 'px'
+
 			portrait = false;
 		}
 
@@ -94,19 +100,50 @@ export default class Videography extends Component {
 	render() {
 		return (
 			<div>
-				<div className="JWFilms">
-					JW Films
+				{this.state.portrait === false &&
+					<video 
+						style={{width: '100%', height: 'auto'}}
+						src="../images/MeaganWedding.mp4" 
+						type="video/mp4" 
+						preload="true" 
+						playsInline="true" 
+						autoPlay="true" 
+						loop="true"> 
+					</video>
+				}
+				<div className="logoWrapper">
+					<div className="JWFilms">
+						JW Films
+					</div>
+					<div className="slogan">
+						To live in those priceless moments, all over again. 
+					</div>
 				</div>
-				<div className="slogan">
-					To live in those priceless moments, all over again. 
+
+				<div className="meAndJosh">
+					<div className="meAndJoshWrap">	
+						<img ref={(eref) => {this.refs['josh'] = findDOMNode(eref)}} src="../images/myself.jpg" alt=""/>
+						<div className="meAndJoshParagraph"> 
+							<div> Josh Newman </div>
+							<div> Videographer and founder of JW Films </div>
+						</div>
+					</div>
+					<div className="meAndJoshWrap">
+						<img ref={(eref) => {this.refs['me'] = findDOMNode(eref)}} src="../images/myself.jpg" alt=""/>
+						<div className="meAndJoshParagraph"> 
+							<div> Whitney Stotler </div>
+							<div> Videographer and editor for JW Films </div>
+						</div>
+					</div>
 				</div>
+
 				<div className="videoWrapper">
 					<iframe
 						ref={(eref) => {this.refs['iframeRach'] = findDOMNode(eref)}}
 						allowFullScreen="1" 
 						allow="autoplay; encrypted-media"  
 						frameBorder="0"
-						src="https://www.youtube.com/embed/lQf5ixa_Jo0?autoplay=1&loop=1&mute=1">
+						src="https://www.youtube.com/embed/lQf5ixa_Jo0?&loop=1&mute=1">
 					</iframe>
 					<div className="line"></div>
 					<a  className="description" 
@@ -122,7 +159,7 @@ export default class Videography extends Component {
 						allow="autoplay; encrypted-media"  
 						frameBorder="0"
 						style={{width: "958px", height: "539px"}}
-						src="https://www.youtube.com/embed/yefauMCc28g?autoplay=1&loop=1&mute=1">
+						src="https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1">
 					</iframe>
 					<div className="line"></div>
 					<a  className="description"
@@ -138,7 +175,7 @@ export default class Videography extends Component {
 						allow="autoplay; encrypted-media"  
 						frameBorder="0"
 						style={{width: "958px", height: "539px"}}
-						src="https://www.youtube.com/embed/IIMdSrJvMVM?autoplay=1&loop=1&mute=1">
+						src="https://www.youtube.com/embed/IIMdSrJvMVM?&loop=1&mute=1">
 					</iframe>
 					<div className="line"></div>
 					<a  className="description" 

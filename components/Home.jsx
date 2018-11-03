@@ -97,7 +97,7 @@ export default class Home extends Component {
 				</div>
 
 				<div ref={eref => {this.refs['dropDownMenu'] = findDOMNode(eref)}} className="dropDownMenu">
-					<div onClick={this.closeMenu.bind(this)} className="esc"> X </div>
+					<div onClick={this.closeMenu.bind(this)} className="esc"> × </div>
 					<div onClick={this.renderNewComponent.bind(this, 'photoshop')} className="mobileMenuItem topMobileMenuItem"> Photoshop Projects </div>
 					<div onClick={this.renderNewComponent.bind(this,'videography')} className="mobileMenuItem"> Videography </div>
 					<div onClick={this.renderNewComponent.bind(this,'webDesign')} className="mobileMenuItem"> Web Design </div>

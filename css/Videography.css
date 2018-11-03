@@ -27,18 +27,42 @@
 	}
 	.JWFilms {
 		font-family: 'Sacramento', cursive;
-		font-size: xx-large;
-		display: flex;
-		justify-content: center;
-		color: darkgoldenrod;
-		margin-top: 1%;
+	    font-size: 240px;
+	    display: flex;
+	    justify-content: center;
+	    color: white;
 	}
 	.slogan {
 		font-family: 'Amatic SC', cursive;
-		font-size: x-large;
+		font-size: 42px;
 		display: flex;
 		justify-content: center;
-		margin-bottom: 3%;
+		color: white;
+	}
+	.logoWrapper {
+		position: absolute;
+		top: 35%;
+		width: 100%;
+	}
+	.meAndJosh {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		align-items: center;
+		margin: 3% 0% 3% 0%;
+	}
+	.meAndJoshParagraph {
+		font-family: 'Playfair Display', serif;
+	    color: dimgray;
+	    font-size: large;
+	    text-align: center;
+	    /*display: flex; 
+		align-items: center;
+		text-decoration: none;*/
+	}
+	.meAndJoshWrap {
+		padding: 50px;
+    	background: #ffcccc;
 	}
 }
 
@@ -74,5 +98,27 @@
 		display: flex;
 		justify-content: center;
 		margin-bottom: 10%;
+	}
+	.meAndJosh {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		align-items: center;
+		margin: 3% 0% 3% 0%;
+		flex-direction: column;
+	}
+	.meAndJoshParagraph {
+		font-family: 'Playfair Display', serif;
+	    color: dimgray;
+	    font-size: small;
+	    text-align: center;
+	    /*display: flex; 
+		align-items: center;
+		text-decoration: none;*/
+	}
+	.meAndJoshWrap {
+		padding: 30px;
+    	background: #ffcccc;
+    	margin: 3% 12%;
 	}
 }
