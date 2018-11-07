@@ -76,7 +76,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(19);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 1 */
@@ -122,7 +122,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(24);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 2 */
@@ -10499,196 +10499,6 @@ return jQuery;
 /* 3 */
 /***/ (function(module, exports) {
 
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -10768,7 +10578,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -11154,6 +10964,196 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11211,7 +11211,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 7 */
@@ -11374,7 +11374,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 10 */
@@ -11394,7 +11394,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(39);
+__webpack_require__(42);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11522,7 +11522,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 12 */
@@ -11589,7 +11589,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 13 */
@@ -11797,11 +11797,11 @@ var _react = _interopRequireDefault(__webpack_require__(0));
 
 var _reactDom = _interopRequireDefault(__webpack_require__(1));
 
-var _Home = _interopRequireDefault(__webpack_require__(29));
+var _Opener = _interopRequireDefault(__webpack_require__(29));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render(_react.default.createElement(_Home.default, null), document.getElementById('ReactId'));
+_reactDom.default.render(_react.default.createElement(_Opener.default, null), document.getElementById('ReactId'));
 
 /***/ }),
 /* 18 */
@@ -13252,7 +13252,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 20 */
@@ -30242,7 +30242,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 25 */
@@ -30420,17 +30420,313 @@ var _jquery = _interopRequireDefault(__webpack_require__(2));
 
 __webpack_require__(30);
 
-__webpack_require__(33);
+var _Home = _interopRequireDefault(__webpack_require__(33));
 
-var _PhotoshopProjectsParent = _interopRequireDefault(__webpack_require__(35));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _Videography = _interopRequireDefault(__webpack_require__(44));
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-var _WebDesign = _interopRequireDefault(__webpack_require__(47));
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-var _About = _interopRequireDefault(__webpack_require__(50));
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _Contact = _interopRequireDefault(__webpack_require__(53));
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
+
+var Element =
+/*#__PURE__*/
+function (_Component) {
+  function Element(props) {
+    var _this;
+
+    _classCallCheck(this, Element);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this.state = {
+      componentToRender: 'opener',
+      portrait: window.matchMedia("(orientation: portrait)").matches
+    };
+    return _this;
+  }
+
+  _createClass(Element, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.refs = [];
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.addEventListener('resize', this.setPhotoHeight.bind(this));
+    }
+  }, {
+    key: "setPhotoHeight",
+    value: function setPhotoHeight() {
+      var portrait = this.state.portrait,
+          windowWidth = window.innerWidth;
+
+      if (windowWidth <= 1100) {
+        portrait = true;
+      } else {
+        portrait = false;
+      } //if the orientation changes this will update the state
+
+
+      if (portrait !== this.state.portrait) {
+        this.setState({
+          portrait: portrait
+        });
+      }
+    }
+  }, {
+    key: "changeComponentToHome",
+    value: function changeComponentToHome() {
+      (0, _jquery.default)(this.refs['openerWrapper']).removeClass('opener');
+      this.setState({
+        componentToRender: 'home'
+      });
+    }
+  }, {
+    key: "changeComponentToOpener",
+    value: function changeComponentToOpener() {
+      (0, _jquery.default)(this.refs['openerWrapper']).addClass('opener');
+      this.setState({
+        componentToRender: 'opener'
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return _react.default.createElement("div", {
+        ref: function ref(eref) {
+          _this2.refs['openerWrapper'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "opener"
+      }, this.state.portrait === false && this.state.componentToRender === 'opener' && _react.default.createElement("img", {
+        className: "openerImage",
+        src: "../images/websiteOpenerGalaxy.jpg"
+      }), this.state.portrait === true && this.state.componentToRender === 'opener' && _react.default.createElement("img", {
+        className: "openerImage",
+        src: "../images/websiteOpenerPortrait.jpg"
+      }), this.state.componentToRender === 'opener' && _react.default.createElement("center", {
+        onClick: this.changeComponentToHome.bind(this),
+        className: "enterSite"
+      }, "ENTER", _react.default.createElement("br", null), "SITE"), this.state.componentToRender === 'home' && _react.default.createElement(_Home.default, {
+        changeToOpener: this.changeComponentToOpener.bind(this)
+      }));
+    }
+  }]);
+
+  _inherits(Element, _Component);
+
+  return Element;
+}(_react.Component);
+
+exports.default = Element;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(31);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(4)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../node_modules/css-loader/index.js!./Opener.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./Opener.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.opener {\n    height: 100%;\n    background-color: black;\n}\n.openerImage {\n\twidth: 100%;\n}\n\n/* Media Queries */\n\n/* phone */\n@media (max-width: 700px) {\n    .enterSite {\n        position: fixed;\n        font-size: small;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}\n\n/* ipad */\n@media (min-width: 701px) and (max-width: 1100px) {\n    .enterSite {\n        position: fixed;\n        font-size: large;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}\n\n/* desktop */\n@media (min-width: 1101px) {\n    .enterSite {\n        position: fixed;\n        font-size: xx-large;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 10px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(0));
+
+var _reactDom = _interopRequireWildcard(__webpack_require__(1));
+
+var _jquery = _interopRequireDefault(__webpack_require__(2));
+
+__webpack_require__(34);
+
+__webpack_require__(36);
+
+var _PhotoshopProjectsParent = _interopRequireDefault(__webpack_require__(38));
+
+var _Videography = _interopRequireDefault(__webpack_require__(47));
+
+var _WebDesign = _interopRequireDefault(__webpack_require__(50));
+
+var _About = _interopRequireDefault(__webpack_require__(53));
+
+var _Contact = _interopRequireDefault(__webpack_require__(56));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30470,7 +30766,7 @@ function (_Component) {
     	contact   */
 
     _this.state = {
-      componentToRender: 'webDesign'
+      componentToRender: 'photoshop'
     };
     return _this;
   }
@@ -30595,11 +30891,11 @@ function (_Component) {
 exports.default = Home;
 
 /***/ }),
-/* 30 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(31);
+var content = __webpack_require__(35);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -30613,7 +30909,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -30645,10 +30941,10 @@ if(false) {
 }
 
 /***/ }),
-/* 31 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -30659,106 +30955,11 @@ exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin
 
 
 /***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-
-/**
- * When source maps are enabled, `style-loader` uses a link element with a data-uri to
- * embed the css on the page. This breaks all relative urls because now they are relative to a
- * bundle instead of the current page.
- *
- * One solution is to only use full urls, but that may be impossible.
- *
- * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
- *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
- *
- */
-
-module.exports = function (css) {
-  // get current location
-  var location = typeof window !== "undefined" && window.location;
-
-  if (!location) {
-    throw new Error("fixUrls requires window.location");
-  }
-
-	// blank or null?
-	if (!css || typeof css !== "string") {
-	  return css;
-  }
-
-  var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
-
-	// convert each url(...)
-	/*
-	This regular expression is just a way to recursively match brackets within
-	a string.
-
-	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-	   (  = Start a capturing group
-	     (?:  = Start a non-capturing group
-	         [^)(]  = Match anything that isn't a parentheses
-	         |  = OR
-	         \(  = Match a start parentheses
-	             (?:  = Start another non-capturing groups
-	                 [^)(]+  = Match anything that isn't a parentheses
-	                 |  = OR
-	                 \(  = Match a start parentheses
-	                     [^)(]*  = Match anything that isn't a parentheses
-	                 \)  = Match a end parentheses
-	             )  = End Group
-              *\) = Match anything and then a close parens
-          )  = Close non-capturing group
-          *  = Match anything
-       )  = Close capturing group
-	 \)  = Match a close parens
-
-	 /gi  = Get all matches, not the first.  Be case insensitive.
-	 */
-	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
-		// strip quotes (if they exist)
-		var unquotedOrigUrl = origUrl
-			.trim()
-			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
-			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
-
-		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
-		  return fullMatch;
-		}
-
-		// convert the url to a full url
-		var newUrl;
-
-		if (unquotedOrigUrl.indexOf("//") === 0) {
-		  	//TODO: should we add protocol?
-			newUrl = unquotedOrigUrl;
-		} else if (unquotedOrigUrl.indexOf("/") === 0) {
-			// path should be relative to the base url
-			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-		} else {
-			// path should be relative to current directory
-			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-		}
-
-		// send back the fixed url(...)
-		return "url(" + JSON.stringify(newUrl) + ")";
-	});
-
-	// send back the fixed css
-	return fixedCss;
-};
-
-
-/***/ }),
-/* 33 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(34);
+var content = __webpack_require__(37);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -30772,7 +30973,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -30804,10 +31005,10 @@ if(false) {
 }
 
 /***/ }),
-/* 34 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -30818,7 +31019,7 @@ exports.push([module.i, "\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:h
 
 
 /***/ }),
-/* 35 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30835,9 +31036,9 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-var _PhotoshopProjects = _interopRequireDefault(__webpack_require__(36));
+var _PhotoshopProjects = _interopRequireDefault(__webpack_require__(39));
 
-var _PhotoOpened = _interopRequireDefault(__webpack_require__(41));
+var _PhotoOpened = _interopRequireDefault(__webpack_require__(44));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30919,7 +31120,7 @@ function (_Component) {
 exports.default = PhotoshopProjectsParent;
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30936,7 +31137,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(37);
+__webpack_require__(40);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -31191,11 +31392,11 @@ function (_Component) {
 exports.default = PhotoshopProjects;
 
 /***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(38);
+var content = __webpack_require__(41);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31209,7 +31410,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -31241,10 +31442,10 @@ if(false) {
 }
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -31255,11 +31456,11 @@ exports.push([module.i, "/* ----------------------------------\n\tIE Class Names
 
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(40);
+var content = __webpack_require__(43);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31273,7 +31474,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -31305,10 +31506,10 @@ if(false) {
 }
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -31319,7 +31520,7 @@ exports.push([module.i, "\n.footerBorder {\n\twidth: 96%; \n\theight: 1px; \n\tb
 
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31336,7 +31537,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(42);
+__webpack_require__(45);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -31709,11 +31910,11 @@ function (_Component) {
 exports.default = PhotoOpened;
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(43);
+var content = __webpack_require__(46);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -31727,7 +31928,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -31759,10 +31960,10 @@ if(false) {
 }
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -31773,7 +31974,7 @@ exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15p
 
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31790,7 +31991,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(45);
+__webpack_require__(48);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -31860,15 +32061,15 @@ function (_Component) {
         this.refs['iframeRach'].style.height = heightToSet;
         this.refs['iframeDesirae'].style.height = heightToSet;
         this.refs['iframeMeagan'].style.height = heightToSet;
-        this.refs['iframeShayna'].style.height = heightToSet;
-        this.refs['descriptionRach'].style.width = widthToSet;
-        this.refs['descriptionDesirae'].style.width = widthToSet;
-        this.refs['descriptionMeagan'].style.width = widthToSet;
-        this.refs['descriptionShayna'].style.width = widthToSet;
-        this.refs['descriptionRach'].style.height = heightToSet;
-        this.refs['descriptionDesirae'].style.height = heightToSet;
-        this.refs['descriptionMeagan'].style.height = heightToSet;
-        this.refs['descriptionShayna'].style.height = heightToSet;
+        this.refs['iframeShayna'].style.height = heightToSet; // this.refs['descriptionRach'].style.width = widthToSet;
+        // this.refs['descriptionDesirae'].style.width = widthToSet;
+        // this.refs['descriptionMeagan'].style.width = widthToSet;
+        // this.refs['descriptionShayna'].style.width = widthToSet;
+        // this.refs['descriptionRach'].style.height = heightToSet;
+        // this.refs['descriptionDesirae'].style.height = heightToSet;
+        // this.refs['descriptionMeagan'].style.height = heightToSet;
+        // this.refs['descriptionShayna'].style.height = heightToSet;
+
         portrait = true;
       } else if (windowWidth > 1050) {
         //landscape
@@ -31882,15 +32083,15 @@ function (_Component) {
         this.refs['iframeRach'].style.height = heightToSet + 'px';
         this.refs['iframeDesirae'].style.height = heightToSet + 'px';
         this.refs['iframeMeagan'].style.height = heightToSet + 'px';
-        this.refs['iframeShayna'].style.height = heightToSet + 'px';
-        this.refs['descriptionRach'].style.width = widthToSet + 'px';
-        this.refs['descriptionDesirae'].style.width = widthToSet + 'px';
-        this.refs['descriptionMeagan'].style.width = widthToSet + 'px';
-        this.refs['descriptionShayna'].style.width = widthToSet + 'px';
-        this.refs['descriptionRach'].style.height = heightToSet + 'px';
-        this.refs['descriptionDesirae'].style.height = heightToSet + 'px';
-        this.refs['descriptionMeagan'].style.height = heightToSet + 'px';
-        this.refs['descriptionShayna'].style.height = heightToSet + 'px';
+        this.refs['iframeShayna'].style.height = heightToSet + 'px'; // this.refs['descriptionRach'].style.width = widthToSet + 'px';
+        // this.refs['descriptionDesirae'].style.width = widthToSet + 'px';
+        // this.refs['descriptionMeagan'].style.width = widthToSet + 'px';
+        // this.refs['descriptionShayna'].style.width = widthToSet + 'px';
+        // this.refs['descriptionRach'].style.height = heightToSet + 'px';
+        // this.refs['descriptionDesirae'].style.height = heightToSet + 'px';
+        // this.refs['descriptionMeagan'].style.height = heightToSet + 'px';
+        // this.refs['descriptionShayna'].style.height = heightToSet + 'px';
+
         /* -------------------------------------------------- */
 
         this.refs['me'].style.height = heightToSet + 'px';
@@ -31930,28 +32131,12 @@ function (_Component) {
       }, "JW Films"), _react.default.createElement("div", {
         className: "slogan"
       }, "To live in those priceless moments, all over again.")), _react.default.createElement("div", {
-        className: "meAndJosh"
+        className: "breakers"
+      }, "Weddings :"), _react.default.createElement("div", {
+        className: "weddingsParent"
       }, _react.default.createElement("div", {
-        className: "meAndJoshWrap"
-      }, _react.default.createElement("img", {
-        ref: function ref(eref) {
-          _this2.refs['josh'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        src: "../images/Josh.jpg",
-        alt: ""
-      }), _react.default.createElement("div", {
-        className: "meAndJoshParagraph"
-      }, _react.default.createElement("div", null, " Josh Newman "), _react.default.createElement("div", null, " Videographer and founder of JW Films "))), _react.default.createElement("div", {
-        className: "meAndJoshWrap"
-      }, _react.default.createElement("img", {
-        ref: function ref(eref) {
-          _this2.refs['me'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        src: "../images/myself.jpg",
-        alt: ""
-      }), _react.default.createElement("div", {
-        className: "meAndJoshParagraph"
-      }, _react.default.createElement("div", null, " Whitney Stotler "), _react.default.createElement("div", null, " Videographer and editor for JW Films ")))), _react.default.createElement("div", {
+        className: "weddingsChild"
+      }, _react.default.createElement("div", {
         className: "videoWrapper"
       }, _react.default.createElement("iframe", {
         ref: function ref(eref) {
@@ -31961,8 +32146,6 @@ function (_Component) {
         allow: "autoplay; encrypted-media",
         frameBorder: "0",
         src: "https://www.youtube.com/embed/lQf5ixa_Jo0?&loop=1&mute=1"
-      }), _react.default.createElement("div", {
-        className: "line"
       }), _react.default.createElement("a", {
         className: "description",
         ref: function ref(eref) {
@@ -31983,15 +32166,15 @@ function (_Component) {
           height: "539px"
         },
         src: "https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1"
-      }), _react.default.createElement("div", {
-        className: "line"
       }), _react.default.createElement("a", {
         className: "description",
         href: "https://www.youtube.com/watch?v=yefauMCc28g&t=77s",
         ref: function ref(eref) {
           _this2.refs['descriptionDesirae'] = (0, _reactDom.findDOMNode)(eref);
         }
-      }, "Trey and Desirae Richardson Wedding")), _react.default.createElement("div", {
+      }, "Trey and Desirae Richardson Wedding"))), _react.default.createElement("div", {
+        className: "weddingsChild"
+      }, _react.default.createElement("div", {
         className: "videoWrapper"
       }, _react.default.createElement("iframe", {
         ref: function ref(eref) {
@@ -32005,8 +32188,6 @@ function (_Component) {
           height: "539px"
         },
         src: "https://www.youtube.com/embed/IIMdSrJvMVM?&loop=1&mute=1"
-      }), _react.default.createElement("div", {
-        className: "line"
       }), _react.default.createElement("a", {
         className: "description",
         href: "https://www.youtube.com/watch?v=IIMdSrJvMVM",
@@ -32025,15 +32206,191 @@ function (_Component) {
           width: "958px",
           height: "539px"
         }
-      }), _react.default.createElement("div", {
-        className: "line"
       }), _react.default.createElement("a", {
         className: "description",
         href: "https://www.youtube.com/watch?v=lQf5ixa_Jo0",
         ref: function ref(eref) {
           _this2.refs['descriptionShayna'] = (0, _reactDom.findDOMNode)(eref);
         }
-      }, "Tevin and Shayna Wedding")), _react.default.createElement(_Footer.default, null));
+      }, "Tevin and Shayna Wedding")))), _react.default.createElement("div", {
+        className: "breakers"
+      }, "Pricing :"), _react.default.createElement("div", {
+        className: "weddingPrices"
+      }, _react.default.createElement("div", {
+        className: "weddingPricesDiv"
+      }, _react.default.createElement("div", {
+        className: "weddingHeader"
+      }, _react.default.createElement("div", null, "Package 1"), _react.default.createElement("div", {
+        className: "price"
+      }, "$1600")), _react.default.createElement("div", {
+        className: "weddingPricesInner"
+      }, _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Cinematic Wedding Video "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Set to your choice of music "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Approx 10 minutes in length ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Full length video of ceremony with audio  "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Edited with 3 camera angles ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 3 Videographers on site "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Full day of shooting "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Prep "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Ceremony "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Reception ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 5 DVD\u2019s "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Additional available for $15 each ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " HD Web Upload on our site and social media ")))), _react.default.createElement("div", {
+        className: "weddingPricesDiv weddingPricesFavorite"
+      }, _react.default.createElement("div", {
+        className: "weddingHeader weddingHeaderFav"
+      }, _react.default.createElement("div", null, "Package 2 \u2606"), _react.default.createElement("div", {
+        className: "price"
+      }, "$1200")), _react.default.createElement("div", {
+        className: "weddingPricesInner weddingPricesInnerFavorite"
+      }, _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Cinematic Wedding Video "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Set to your choice of music "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Approx 10 minutes in length ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 2 Videographers on site "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Full day of shooting "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Prep "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Ceremony "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Reception ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 5 DVD\u2019s "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Additional available for $15 each ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " HD Web Upload on our site and social media ")))), _react.default.createElement("div", {
+        className: "weddingPricesDiv"
+      }, _react.default.createElement("div", {
+        className: "weddingHeader"
+      }, _react.default.createElement("div", null, "Package 3"), _react.default.createElement("div", {
+        className: "price"
+      }, "$900")), _react.default.createElement("div", {
+        className: "weddingPricesInner"
+      }, _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Cinematic Wedding Video "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Set to your choice of music "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Approx 7 minutes in length ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 2 Videographers on site "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Shots of: "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Ceremony "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Reception ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 5 DVD\u2019s "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Additional available for $15 each ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " HD Web Upload on our site and social media ")))), _react.default.createElement("div", {
+        className: "weddingPricesDiv"
+      }, _react.default.createElement("div", {
+        className: "weddingHeader"
+      }, _react.default.createElement("div", null, "Package 4"), _react.default.createElement("div", {
+        className: "price"
+      }, "$600")), _react.default.createElement("div", {
+        className: "weddingPricesInner"
+      }, _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Cinematic Wedding Video "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Set to your choice of music "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Approx 5 minutes in length ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 1 Videographer on site (limited) "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Shots of: "), _react.default.createElement("ul", {
+        className: "videographyUL"
+      }, _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Ceremony "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " Reception ")), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " 3 DVD\u2019s "), _react.default.createElement("li", {
+        className: "videographyLI"
+      }, " HD Web Upload on our site and social media "))))), _react.default.createElement("div", {
+        className: "breakers"
+      }, "Who We Are :"), _react.default.createElement("div", {
+        className: "meAndJosh"
+      }, _react.default.createElement("div", {
+        className: "meAndJoshWrap"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['me'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        src: "../images/myself.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "meAndJoshParagraph"
+      }, _react.default.createElement("div", null, " Whitney Stotler "), _react.default.createElement("div", null, " Videographer and Editor for JW Films "))), _react.default.createElement("div", {
+        className: "meAndJoshWrap"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['josh'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        src: "../images/Josh.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "meAndJoshParagraph"
+      }, _react.default.createElement("div", null, " Josh Newman "), _react.default.createElement("div", null, " Videographer and Founder of JW Films ")))), _react.default.createElement(_Footer.default, null));
     }
   }]);
 
@@ -32045,11 +32402,11 @@ function (_Component) {
 exports.default = Videography;
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(46);
+var content = __webpack_require__(49);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -32063,7 +32420,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -32095,21 +32452,21 @@ if(false) {
 }
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.description {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t    font-size: 240px;\n\t    display: flex;\n\t    justify-content: center;\n\t    color: white;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: 42px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: white;\n\t}\n\t.logoWrapper {\n\t\tposition: absolute;\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: large;\n\t    text-align: center;\n\t    /*display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;*/\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 50px;\n    \tbackground: #ffcccc;\n\t}\n}\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.videoWrapper {\n\t\tdisplay: flex;\n    \tflex-direction: column;\n    \talign-items: center;\n\t}\n\t.description {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\ttext-align: center;\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: small;\n\t    padding: 10px;\n    \tmargin-bottom: 2%;\n    \ttext-decoration: none;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 5%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 10%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t\tflex-direction: column;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n\t    color: dimgray;\n\t    font-size: small;\n\t    text-align: center;\n\t    /*display: flex; \n\t\talign-items: center;\n\t\ttext-decoration: none;*/\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 30px;\n    \tbackground: #ffcccc;\n    \tmargin: 3% 12%;\n\t}\n}", ""]);
+exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.breakers {\n\t\tborder-bottom: 1px solid lightgray;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: xx-large;\n\t\tmargin: 2%;\n\t\twidth: 97%;\n\t\tpadding: 10px;\n\t}\n\t.description {\n\t\tfont-family: 'Sacramento', cursive;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\tjustify-content: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t\tflex-direction: column;\n\t}\n\t.weddingsParent {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.weddingsChild {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t    font-size: 240px;\n\t    display: flex;\n\t    justify-content: center;\n\t    color: white;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: 42px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: white;\n\t}\n\t.logoWrapper {\n\t\tposition: absolute;\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tfont-size: xx-large;\n    \ttext-align: center;\n    \tpadding-top: 20px;\n\t}\n\t.meAndJoshWrap {\n\t\tdisplay: flex;\n    \tflex-direction: column;\n    \talign-items: center;\n\t}\n\t.weddingPrices {\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\tpadding-bottom: 25px;\n\t\t/* height: 500px; */\n\t}\n\t.weddingPricesDiv {\n\t\tbackground-color: #80b1b3;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tpadding: 20px 25px;\n\t\tmax-width: 20%;\n\t\tcolor: dimgray;\n\t\tborder-radius: 10px;\n\t\ttransition: transform 0.5s ease;\n\t}\n\t.weddingPricesDiv:hover {\n\t\ttransform: scale(1.05);\n\t}\n\t.weddingPricesFavorite {\n\t\tbackground-color: #bf4040;\n\t}\n\t.weddingPricesInner {\n\t\t/*background-color: #cfe1e2;*/\n\t\tbackground-color: ghostwhite;\n\t\tpadding: 13px;\n\t\theight: 91%;\n\t\tborder-radius: 7px;\n\t}\n\t.weddingPricesInnerFavorite {\n\t\t/* background: #ffe6e6; */\n\t\tbackground-color: ghostwhite;\n\t}\n\tli.videographyLI {\n\t\tfont-size: x-large;\n\t\tfont-family: 'Playfair Display', serif;\n\t\t\n\t}\n\tul.videographyUL {\n\t\tmargin-left: 0px;\n\t\tmargin-top: 10px;\n\t}\n\t.weddingHeader {\n\t\tfont-size: 34px;\n\t\ttext-align: center;\n\t\tfont-family: 'Roboto', serif;\n\t}\n\t.price {\n\t\tfont-family: 'Roboto', serif;\n\t\tfont-size: 60px;\n\t\tpadding: 5px 0px 10px 0px;\n\t}\n\t.weddingHeaderFav {\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.breakers {\n\t\tborder-bottom: 1px solid lightgray;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: large;\n\t\tmargin: 2%;\n\t\twidth: 97%;\n\t\tpadding: 10px;\n\t}\n\t.description {\n\t\tfont-family: 'Sacramento', cursive;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\tjustify-content: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t\tflex-direction: column;\n\t}\n\t.weddingsParent {\n\t\t/*display: flex;\n\t\tflex-direction: column;*/\n\t}\n\t.weddingsChild {\n\t\tmargin-left: auto;\n    \tmargin-right: auto;\n    \twidth: 85%;\n    \tpadding-top: 10px;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 5%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 10%;\n\t}\n\t.logoWrapper {\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tfont-size: large;\n    \ttext-align: center;\n    \tpadding-top: 20px;\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 30px 30px 10px 30px;\n    \tmargin: 3% 12%;\n\t}\n\t.weddingPrices {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\twidth: 100%;\n\t\tpadding-bottom: 25px;\n\t\t/* height: 500px; */\n\t}\n\t.weddingPricesDiv {\n\t\tbackground-color: #80b1b3;\n\t    display: flex;\n\t    flex-direction: column;\n\t    /* padding: 10px 20px; */\n\t    max-width: 80%;\n\t    color: dimgray;\n\t    border-radius: 10px;\n\t    margin-top: 2%;\n\t}\n\t.weddingPricesFavorite {\n\t\tbackground-color: #bf4040;\n\t}\n\t.weddingPricesInner {\n\t\t/*background-color: #cfe1e2;*/\n    \tbackground-color: ghostwhite;\n    \tpadding: 13px;\n    \tborder-radius: 7px;\n\t}\n\t.weddingPricesInnerFavorite {\n\t\t/* background: #ffe6e6; */\n\t\tbackground-color: ghostwhite;\n\t}\n\tli.videographyLI {\n\t\tfont-family: 'Playfair Display', serif;\n\t\t\n\t}\n\tul.videographyUL {\n\t\tmargin-left: 0px;\n\t\tmargin-top: 10px;\n\t}\n\t.weddingHeader {\n\t\tfont-size: 21px;\n    \ttext-align: center;\n    \tfont-family: 'Roboto', serif;\n\t}\n\t.price {\n\t\tfont-family: 'Roboto', serif;\n    \tfont-size: 44px;\n    \tpadding: 5px 0px 10px 0px;\n\t}\n\t.weddingHeaderFav {\n\t\tcolor: white;\n\t}\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32126,7 +32483,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(48);
+__webpack_require__(51);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32207,11 +32564,11 @@ function (_Component) {
 exports.default = Element;
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(49);
+var content = __webpack_require__(52);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -32225,7 +32582,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -32257,10 +32614,10 @@ if(false) {
 }
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -32271,7 +32628,7 @@ exports.push([module.i, "\n/* Media Queries */\n\n@media (min-width: 1051px) {\n
 
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32288,7 +32645,7 @@ var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
 
-__webpack_require__(51);
+__webpack_require__(54);
 
 var _Footer = _interopRequireDefault(__webpack_require__(10));
 
@@ -32425,11 +32782,11 @@ function (_Component) {
 exports.default = Element;
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(52);
+var content = __webpack_require__(55);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -32443,7 +32800,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(4)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -32475,10 +32832,10 @@ if(false) {
 }
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
@@ -32489,7 +32846,7 @@ exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1121px) {
 
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

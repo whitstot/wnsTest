@@ -5,13 +5,21 @@
 @media (min-width: 1051px) {
 	/* desktop */
 
+	.breakers {
+		border-bottom: 1px solid lightgray;
+		font-family: 'Roboto', sans-serif;
+		font-size: xx-large;
+		margin: 2%;
+		width: 97%;
+		padding: 10px;
+	}
 	.description {
-		font-family: 'Playfair Display', serif;
+		font-family: 'Sacramento', cursive;
 	    color: dimgray;
 	    font-size: x-large;
 	    padding: 10px;
 	    display: flex; 
-		align-items: center;
+		justify-content: center;
 		text-decoration: none;
 	}
 	.description:hover {
@@ -21,6 +29,15 @@
 		display: flex; 
 		justify-content: space-around;
 		margin-top: 2%;
+		flex-direction: column;
+	}
+	.weddingsParent {
+		display: flex;
+		flex-direction: column;
+	}
+	.weddingsChild {
+		display: flex;
+		justify-content: space-around;
 	}
 	.line {
 		border: 1px solid lightgray;
@@ -53,36 +70,114 @@
 	}
 	.meAndJoshParagraph {
 		font-family: 'Playfair Display', serif;
-	    color: dimgray;
-	    font-size: large;
-	    text-align: center;
-	    /*display: flex; 
-		align-items: center;
-		text-decoration: none;*/
+    	font-size: xx-large;
+    	text-align: center;
+    	padding-top: 20px;
 	}
 	.meAndJoshWrap {
-		padding: 50px;
-    	background: #ffcccc;
+		display: flex;
+    	flex-direction: column;
+    	align-items: center;
+	}
+	.weddingPrices {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 100%;
+		padding-bottom: 25px;
+		/* height: 500px; */
+	}
+	.weddingPricesDiv {
+		background-color: #80b1b3;
+		display: flex;
+		flex-direction: column;
+		padding: 20px 25px;
+		max-width: 20%;
+		color: dimgray;
+		border-radius: 10px;
+		transition: transform 0.5s ease;
+	}
+	.weddingPricesDiv:hover {
+		transform: scale(1.05);
+	}
+	.weddingPricesFavorite {
+		background-color: #bf4040;
+	}
+	.weddingPricesInner {
+		/*background-color: #cfe1e2;*/
+		background-color: ghostwhite;
+		padding: 13px;
+		height: 91%;
+		border-radius: 7px;
+	}
+	.weddingPricesInnerFavorite {
+		/* background: #ffe6e6; */
+		background-color: ghostwhite;
+	}
+	li.videographyLI {
+		font-size: x-large;
+		font-family: 'Playfair Display', serif;
+		
+	}
+	ul.videographyUL {
+		margin-left: 0px;
+		margin-top: 10px;
+	}
+	.weddingHeader {
+		font-size: 34px;
+		text-align: center;
+		font-family: 'Roboto', serif;
+	}
+	.price {
+		font-family: 'Roboto', serif;
+		font-size: 60px;
+		padding: 5px 0px 10px 0px;
+	}
+	.weddingHeaderFav {
+		color: white;
 	}
 }
 
 @media (max-width: 1050px) {
 	/* mobile */
-	.videoWrapper {
-		display: flex;
-    	flex-direction: column;
-    	align-items: center;
+	.breakers {
+		border-bottom: 1px solid lightgray;
+		font-family: 'Roboto', sans-serif;
+		font-size: large;
+		margin: 2%;
+		width: 97%;
+		padding: 10px;
 	}
 	.description {
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		font-family: 'Playfair Display', serif;
+		font-family: 'Sacramento', cursive;
 	    color: dimgray;
-	    font-size: small;
+	    font-size: x-large;
 	    padding: 10px;
-    	margin-bottom: 2%;
-    	text-decoration: none;
+	    display: flex; 
+		justify-content: center;
+		text-decoration: none;
+	}
+	.description:hover {
+		cursor: pointer;
+	}
+	.videoWrapper {
+		display: flex; 
+		justify-content: space-around;
+		margin-top: 2%;
+		flex-direction: column;
+	}
+	.weddingsParent {
+		/*display: flex;
+		flex-direction: column;*/
+	}
+	.weddingsChild {
+		margin-left: auto;
+    	margin-right: auto;
+    	width: 85%;
+    	padding-top: 10px;
+	}
+	.line {
+		border: 1px solid lightgray;
 	}
 	.JWFilms {
 		font-family: 'Sacramento', cursive;
@@ -99,26 +194,78 @@
 		justify-content: center;
 		margin-bottom: 10%;
 	}
+	.logoWrapper {
+		top: 35%;
+		width: 100%;
+	}
 	.meAndJosh {
 		display: flex;
+		flex-direction: column;
 		width: 100%;
 		justify-content: space-around;
 		align-items: center;
 		margin: 3% 0% 3% 0%;
-		flex-direction: column;
 	}
 	.meAndJoshParagraph {
 		font-family: 'Playfair Display', serif;
-	    color: dimgray;
-	    font-size: small;
-	    text-align: center;
-	    /*display: flex; 
-		align-items: center;
-		text-decoration: none;*/
+    	font-size: large;
+    	text-align: center;
+    	padding-top: 20px;
 	}
 	.meAndJoshWrap {
-		padding: 30px;
-    	background: #ffcccc;
+		padding: 30px 30px 10px 30px;
     	margin: 3% 12%;
+	}
+	.weddingPrices {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding-bottom: 25px;
+		/* height: 500px; */
+	}
+	.weddingPricesDiv {
+		background-color: #80b1b3;
+	    display: flex;
+	    flex-direction: column;
+	    /* padding: 10px 20px; */
+	    max-width: 80%;
+	    color: dimgray;
+	    border-radius: 10px;
+	    margin-top: 2%;
+	}
+	.weddingPricesFavorite {
+		background-color: #bf4040;
+	}
+	.weddingPricesInner {
+		/*background-color: #cfe1e2;*/
+    	background-color: ghostwhite;
+    	padding: 13px;
+    	border-radius: 7px;
+	}
+	.weddingPricesInnerFavorite {
+		/* background: #ffe6e6; */
+		background-color: ghostwhite;
+	}
+	li.videographyLI {
+		font-family: 'Playfair Display', serif;
+		
+	}
+	ul.videographyUL {
+		margin-left: 0px;
+		margin-top: 10px;
+	}
+	.weddingHeader {
+		font-size: 21px;
+    	text-align: center;
+    	font-family: 'Roboto', serif;
+	}
+	.price {
+		font-family: 'Roboto', serif;
+    	font-size: 44px;
+    	padding: 5px 0px 10px 0px;
+	}
+	.weddingHeaderFav {
+		color: white;
 	}
 }
