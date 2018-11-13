@@ -12,7 +12,7 @@ export default class Element extends Component {
 
 		this.state = {
 			webParagraphClass: 'webParagraph',
-			webImgClass: 'webImage'
+			webParagraph2Class: 'webParagraph2'
 		}
 	}
 	componentWillMount() {
@@ -22,7 +22,7 @@ export default class Element extends Component {
 		window.setTimeout(()=>{
 			this.setState({
 				webParagraphClass: 'webParagraph comeIn',
-				webImgClass: 'webImage comeIn'
+				webParagraph2Class: 'webParagraph2 comeIn'
 			})
 		}, 20);
 	}
@@ -31,9 +31,12 @@ export default class Element extends Component {
 			<div>
                 <div ref={(eref) => {this.refs['paragraph'] = findDOMNode(eref)}} className="rainbow">
                     <div className={this.state.webParagraphClass}>
-                        WELL, YOU'RE LOOKING<br/> AT IT
+                        WELL, YOU'RE LOOKING<br/> AT IT.
                     </div>
-                    <img className={this.state.webImgClass} src="../images/MeCali.jpg" alt=""/>
+                    <div className="webParagraph2wrap">
+	                    <div className={this.state.webParagraph2Class}>Right now, I am a Front-End Web Developer at The Chickasaw Nation. If you're wanting a small website done, contact me under the contact tab!
+	                    </div>
+	                </div>
                 </div>
 			</div>
 		)
