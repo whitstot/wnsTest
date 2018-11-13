@@ -9,7 +9,7 @@
     .contactWrapper {
         display: flex;
         flex-direction: column;
-        height: 525px;
+        height: 415px;
         justify-content: space-between;
         align-items: center;
         margin: 6% 21%;
@@ -44,7 +44,7 @@
         color: lightcoral;
     }
     .contactBackground {
-        height: 100%;
+        /*height: 100%;*/
         width: 100%;
         background-color: pink;
         position: absolute;

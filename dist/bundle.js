@@ -31825,7 +31825,7 @@ function (_Component) {
         className: "textWrapper"
       }, _react.default.createElement("div", null, "Level: 4 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
-      }, " Funny story, I actually made this one right before my basketball game in a hotel room. I guess you could say I love photoshop. "))), this.state.imageToRender === 'MAC' && _react.default.createElement("div", {
+      }, " Funny story, I actually made this one right before my basketball game in a hotel room. "))), this.state.imageToRender === 'MAC' && _react.default.createElement("div", {
         onTransitionEnd: this.transitionEnd.bind(this),
         className: this.state.className
       }, _react.default.createElement("a", {
@@ -31968,7 +31968,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n    cursor: pointer;\n    user-select: none;\n    margin: 0px 2%;\n}\na {\n    cursor: pointer;\n}\n.imageWithLink:hover {\n    opacity: 0.85;\n}\n.leftInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    left: 0px;\n    z-index: 1;\n}\n.rightInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    right: 0px;\n    z-index: 1;\n}\n\n.start {\n    transform: translate(-150%); \n}\n.moveMeIn {\n    transform: translate(0%);\n}\n.moveMeOutToRight {\n    transform: translate(150%);\n}\n.moveMeOutToLeft {\n    transform: translate(-150%);\n}\n\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n    .imageAndTextWrapper {\n        display: flex;\n        align-items: center;\n        justify-content: space-evenly;\n        width: 100%;\n        transition: transform 0.2s ease;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin-left: 10%;\n        width: 50%;\n    }\n}\n\n@media (max-width: 1050px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imageAndTextWrapper {\n        transition: transform 0.2s ease;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin: 10% 0% 1% 0%;\n        align-items: center;\n    }\n    .portraitText {\n        text-align: center;\n    }\n}", ""]);
+exports.push([module.i, "/* For All Dimensions */\n\n.arrows {\n    padding: 15px;\n    font-size: xx-large;\n    font-family: 'Open Sans', sans-serif;\n    cursor: pointer;\n    user-select: none;\n    margin: 0px 2%;\n}\na {\n    cursor: pointer;\n}\n.imageWithLink:hover {\n    opacity: 0.85;\n}\n.leftInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    left: 0px;\n    z-index: 1;\n}\n.rightInvisibleArrow {\n    position: absolute;\n    height: 70%;\n    width: 25%;\n    right: 0px;\n    z-index: 1;\n}\n\n.start {\n    transform: translate(-150%); \n}\n.moveMeIn {\n    transform: translate(0%);\n}\n.moveMeOutToRight {\n    transform: translate(150%);\n}\n.moveMeOutToLeft {\n    transform: translate(-150%);\n}\n\n\n/* ------------------------------------------- */\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n    .imgWrapper {\n        display: flex;\n        margin-top: 2%;\n        justify-content: space-around; \n        align-items: center;\n        overflow-x: hidden;\n    }\n    .arrows:hover {\n        cursor: pointer;\n        border-radius: 4px;\n    }\n    .imageAndTextWrapper {\n        display: flex;\n        align-items: center;\n        justify-content: space-evenly;\n        width: 100%;\n        transition: transform 0.2s ease;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin-left: 10%;\n        width: 50%;\n    }\n}\n\n@media (max-width: 1050px) {\n    /* mobile */\n    img {\n        width: 100%;\n    }\n    .imageAndTextWrapper {\n        transition: transform 0.2s ease;\n    }\n    .imgWrapper {\n        display: flex;\n        align-items: center;\n        flex-direction: column;\n    }\n    .mobileArrowsWrapper {\n        display: flex;\n        justify-content: space-around;\n        width: 100%;\n    }\n    .textWrapper {\n        display: flex;\n        flex-direction: column;\n        font-size: large;\n        font-family: 'Raleway', sans-serif;\n        margin: 10% 0% 1% 0%;\n        align-items: center;\n    }\n    .portraitText {\n        text-align: center;\n    }\n}", ""]);
 
 // exports
 
@@ -32121,9 +32121,9 @@ function (_Component) {
         src: "../images/MeaganWeddingShorter.mp4",
         type: "video/mp4",
         preload: "true",
-        playsInline: "true",
-        autoPlay: "true",
-        loop: "true"
+        playsInline: true,
+        autoPlay: true,
+        loop: true
       }), _react.default.createElement("div", {
         className: "logoWrapper"
       }, _react.default.createElement("div", {
@@ -32460,7 +32460,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.breakers {\n\t\tborder-bottom: 1px solid lightgray;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: x-large;\n\t\tmargin: 2%;\n\t\twidth: 97%;\n\t\tpadding: 10px;\n\t}\n\t.description {\n\t\tfont-family: 'Sacramento', cursive;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\tjustify-content: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t\tflex-direction: column;\n\t}\n\t.weddingsParent {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.weddingsChild {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t    font-size: 240px;\n\t    display: flex;\n\t    justify-content: center;\n\t    color: white;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: 42px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: white;\n\t}\n\t.logoWrapper {\n\t\tposition: absolute;\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tfont-size: large;\n    \ttext-align: center;\n    \tpadding-top: 20px;\n\t}\n\t.meAndJoshWrap {\n\t\tdisplay: flex;\n    \tflex-direction: column;\n    \talign-items: center;\n\t}\n\t.weddingPrices {\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\tpadding-bottom: 25px;\n\t\t/* height: 500px; */\n\t}\n\t.weddingPricesDiv {\n\t\tbackground-color: #80b1b3;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tpadding: 5px 7px;\n\t\tmax-width: 20%;\n\t\tcolor: dimgray;\n\t\tborder-radius: 10px;\n\t\ttransition: transform 0.5s ease;\n\t}\n\t.weddingPricesDiv:hover {\n\t\ttransform: scale(1.05);\n\t}\n\t.weddingPricesFavorite {\n\t\tbackground-color: #bf4040;\n\t}\n\t.weddingPricesInner {\n\t\t/*background-color: #cfe1e2;*/\n\t\tbackground-color: ghostwhite;\n\t\tpadding: 13px;\n\t\theight: 91%;\n\t\tborder-radius: 7px;\n\t}\n\t.weddingPricesInnerFavorite {\n\t\t/* background: #ffe6e6; */\n\t\tbackground-color: ghostwhite;\n\t}\n\tli.videographyLI {\n\t\tfont-size: small;\n\t\tfont-family: 'Playfair Display', serif;\n\t\t\n\t}\n\tul.videographyUL {\n\t\tmargin-left: 0px;\n\t\tmargin-top: 10px;\n\t}\n\t.weddingHeader {\n\t\tfont-size: 18px;\n\t\ttext-align: center;\n\t\tfont-family: 'Roboto', serif;\n\t}\n\t.price {\n\t\tfont-family: 'Roboto', serif;\n\t\tfont-size: 50px;\n\t\tpadding: 5px 0px 10px 0px;\n\t}\n\t.weddingHeaderFav {\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.breakers {\n\t\tborder-bottom: 1px solid lightgray;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: large;\n\t\tmargin: 2%;\n\t\twidth: 97%;\n\t\tpadding: 10px;\n\t}\n\t.description {\n\t\tfont-family: 'Sacramento', cursive;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\tjustify-content: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t\tflex-direction: column;\n\t}\n\t.weddingsParent {\n\t\t/*display: flex;\n\t\tflex-direction: column;*/\n\t}\n\t.weddingsChild {\n\t\tmargin-left: auto;\n    \tmargin-right: auto;\n    \twidth: 85%;\n    \tpadding-top: 10px;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 5%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 10%;\n\t}\n\t.logoWrapper {\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tfont-size: large;\n    \ttext-align: center;\n    \tpadding-top: 20px;\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 30px 30px 10px 30px;\n    \tmargin: 3% 12%;\n\t}\n\t.weddingPrices {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\twidth: 100%;\n\t\tpadding-bottom: 25px;\n\t\t/* height: 500px; */\n\t}\n\t.weddingPricesDiv {\n\t\tbackground-color: #80b1b3;\n\t    display: flex;\n\t    flex-direction: column;\n\t    /* padding: 10px 20px; */\n\t    max-width: 80%;\n\t    color: dimgray;\n\t    border-radius: 10px;\n\t    margin-top: 2%;\n\t}\n\t.weddingPricesFavorite {\n\t\tbackground-color: #bf4040;\n\t}\n\t.weddingPricesInner {\n\t\t/*background-color: #cfe1e2;*/\n    \tbackground-color: ghostwhite;\n    \tpadding: 13px;\n    \tborder-radius: 7px;\n\t}\n\t.weddingPricesInnerFavorite {\n\t\t/* background: #ffe6e6; */\n\t\tbackground-color: ghostwhite;\n\t}\n\tli.videographyLI {\n\t\tfont-family: 'Playfair Display', serif;\n\t\t\n\t}\n\tul.videographyUL {\n\t\tmargin-left: 0px;\n\t\tmargin-top: 10px;\n\t}\n\t.weddingHeader {\n\t\tfont-size: 21px;\n    \ttext-align: center;\n    \tfont-family: 'Roboto', serif;\n\t}\n\t.price {\n\t\tfont-family: 'Roboto', serif;\n    \tfont-size: 44px;\n    \tpadding: 5px 0px 10px 0px;\n\t}\n\t.weddingHeaderFav {\n\t\tcolor: white;\n\t}\n}", ""]);
+exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.breakers {\n\t\tborder-bottom: 1px solid lightgray;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: x-large;\n\t\tmargin: 2%;\n\t\twidth: 97%;\n\t\tpadding: 10px;\n\t}\n\t.description {\n\t\tfont-family: 'Sacramento', cursive;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\tjustify-content: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t\tflex-direction: column;\n\t}\n\t.weddingsParent {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.weddingsChild {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t    font-size: 240px;\n\t    display: flex;\n\t    justify-content: center;\n\t    color: white;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: 42px;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: white;\n\t}\n\t.logoWrapper {\n\t\tposition: absolute;\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tfont-size: large;\n    \ttext-align: center;\n    \tpadding-top: 20px;\n\t}\n\t.meAndJoshWrap {\n\t\tdisplay: flex;\n    \tflex-direction: column;\n    \talign-items: center;\n\t}\n\t.weddingPrices {\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\tpadding-bottom: 25px;\n\t\t/* height: 500px; */\n\t}\n\t.weddingPricesDiv {\n\t\tbackground-color: #80b1b3;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tpadding: 5px 7px;\n\t\tmax-width: 20%;\n\t\tcolor: dimgray;\n\t\tborder-radius: 10px;\n\t\ttransition: transform 0.5s ease;\n\t}\n\t.weddingPricesDiv:hover {\n\t\ttransform: scale(1.05);\n\t}\n\t.weddingPricesFavorite {\n\t\tbackground-color: #395e60;\n\t}\n\t.weddingPricesInner {\n\t\t/*background-color: #cfe1e2;*/\n\t\tbackground-color: ghostwhite;\n\t\tpadding: 13px;\n\t\theight: 91%;\n\t\tborder-radius: 7px;\n\t}\n\t.weddingPricesInnerFavorite {\n\t\t/* background: #ffe6e6; */\n\t\tbackground-color: ghostwhite;\n\t}\n\tli.videographyLI {\n\t\tfont-size: small;\n\t\tfont-family: 'Playfair Display', serif;\n\t\t\n\t}\n\tul.videographyUL {\n\t\tmargin-left: 0px;\n\t\tmargin-top: 10px;\n\t}\n\t.weddingHeader {\n\t\tfont-size: 18px;\n\t\ttext-align: center;\n\t\tfont-family: 'Roboto', serif;\n\t}\n\t.price {\n\t\tfont-family: 'Roboto', serif;\n\t\tfont-size: 50px;\n\t\tpadding: 5px 0px 10px 0px;\n\t}\n\t.weddingHeaderFav {\n\t\tcolor: white;\n\t}\n}\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.breakers {\n\t\tborder-bottom: 1px solid lightgray;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: large;\n\t\tmargin: 2%;\n\t\twidth: 97%;\n\t\tpadding: 10px;\n\t}\n\t.description {\n\t\tfont-family: 'Sacramento', cursive;\n\t    color: dimgray;\n\t    font-size: x-large;\n\t    padding: 10px;\n\t    display: flex; \n\t\tjustify-content: center;\n\t\ttext-decoration: none;\n\t}\n\t.description:hover {\n\t\tcursor: pointer;\n\t}\n\t.videoWrapper {\n\t\tdisplay: flex; \n\t\tjustify-content: space-around;\n\t\tmargin-top: 2%;\n\t\tflex-direction: column;\n\t}\n\t.weddingsParent {\n\t\t/*display: flex;\n\t\tflex-direction: column;*/\n\t}\n\t.weddingsChild {\n\t\tmargin-left: auto;\n    \tmargin-right: auto;\n    \twidth: 85%;\n    \tpadding-top: 10px;\n\t}\n\t.line {\n\t\tborder: 1px solid lightgray;\n\t}\n\t.JWFilms {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tfont-size: xx-large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tcolor: darkgoldenrod;\n\t\tmargin-top: 5%;\n\t}\n\t.slogan {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tfont-size: large;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tmargin-bottom: 10%;\n\t}\n\t.logoWrapper {\n\t\ttop: 35%;\n\t\twidth: 100%;\n\t}\n\t.meAndJosh {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\twidth: 100%;\n\t\tjustify-content: space-around;\n\t\talign-items: center;\n\t\tmargin: 3% 0% 3% 0%;\n\t}\n\t.meAndJoshParagraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tfont-size: small;\n    \ttext-align: center;\n    \tpadding-top: 20px;\n\t}\n\t.meAndJoshWrap {\n\t\tpadding: 30px 30px 10px 30px;\n    \tmargin: 3% 12%;\n\t}\n\t.weddingPrices {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t\twidth: 100%;\n\t\tpadding-bottom: 25px;\n\t\t/* height: 500px; */\n\t}\n\t.weddingPricesDiv {\n\t\tbackground-color: #80b1b3;\n\t    display: flex;\n\t    flex-direction: column;\n\t    /* padding: 10px 20px; */\n\t    max-width: 80%;\n\t    color: dimgray;\n\t    border-radius: 10px;\n\t    margin-top: 2%;\n\t}\n\t.weddingPricesFavorite {\n\t\tbackground-color: #395e60;\n\t}\n\t.weddingPricesInner {\n\t\t/*background-color: #cfe1e2;*/\n    \tbackground-color: ghostwhite;\n    \tpadding: 13px;\n    \tborder-radius: 7px;\n\t}\n\t.weddingPricesInnerFavorite {\n\t\t/* background: #ffe6e6; */\n\t\tbackground-color: ghostwhite;\n\t}\n\tli.videographyLI {\n\t\tfont-family: 'Playfair Display', serif;\n\t\t\n\t}\n\tul.videographyUL {\n\t\tmargin-left: 0px;\n\t\tmargin-top: 10px;\n\t}\n\t.weddingHeader {\n\t\tfont-size: 21px;\n    \ttext-align: center;\n    \tfont-family: 'Roboto', serif;\n\t}\n\t.price {\n\t\tfont-family: 'Roboto', serif;\n    \tfont-size: 44px;\n    \tpadding: 5px 0px 10px 0px;\n\t}\n\t.weddingHeaderFav {\n\t\tcolor: white;\n\t}\n}", ""]);
 
 // exports
 
@@ -32511,9 +32511,16 @@ var Element =
 /*#__PURE__*/
 function (_Component) {
   function Element(props) {
+    var _this;
+
     _classCallCheck(this, Element);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this.state = {
+      webParagraphClass: 'webParagraph',
+      webParagraph2Class: 'webParagraph2'
+    };
+    return _this;
   }
 
   _createClass(Element, [{
@@ -32524,35 +32531,32 @@ function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.quote = "Well you're looking at it! If you like what you see, we can talk business! I'm currently contracting out of the Chickasaw Nation as a Front-End Web Developer. My contract is actually up at the end of 2018. If you're looking for your website to be handled or created, I might be your girl.";
-      this.string = this.quote.split('');
-      this.animate();
-    }
-  }, {
-    key: "animate",
-    value: function animate() {
-      var _this = this;
+      var _this2 = this;
 
-      if (this.string.length > 0) {
-        this.refs['paragraph'].innerHTML += this.string.shift();
-        window.setTimeout(function () {
-          window.requestAnimationFrame(_this.animate.bind(_this));
-        }, 20);
-      }
+      window.setTimeout(function () {
+        _this2.setState({
+          webParagraphClass: 'webParagraph comeIn',
+          webParagraph2Class: 'webParagraph2 comeIn'
+        });
+      }, 20);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
-      return _react.default.createElement("div", {
-        className: "webParagraphWrapper"
-      }, _react.default.createElement("div", {
+      return _react.default.createElement("div", null, _react.default.createElement("div", {
         ref: function ref(eref) {
-          _this2.refs['paragraph'] = (0, _reactDom.findDOMNode)(eref);
+          _this3.refs['paragraph'] = (0, _reactDom.findDOMNode)(eref);
         },
-        className: "webParagraph"
-      }));
+        className: "rainbow"
+      }, _react.default.createElement("div", {
+        className: this.state.webParagraphClass
+      }, "WELL, YOU'RE LOOKING", _react.default.createElement("br", null), " AT IT."), _react.default.createElement("div", {
+        className: "webParagraph2wrap"
+      }, _react.default.createElement("div", {
+        className: this.state.webParagraph2Class
+      }, "Currently, I am a Front-End Web Developer at The Chickasaw Nation. If you're wanting your website created, contact me under the contact tab!"))));
     }
   }]);
 
@@ -32622,7 +32626,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n\t.webParagraphWrapper {\n\t\twidth: 100%;\n\t    display: flex;\n\t    justify-content: center;\n\t    margin-top: 5%;\n\t}\n\t.webParagraph {\n\t\tdisplay: flex;\n\t\tfont-size: 50px;\n\t\tfont-family: 'Pattaya', sans-serif;\n\t\twidth: 60%;\n\t\ttext-align: center;\n\t\tpadding: 80px;\n\t\tbackground-color: antiquewhite;\n\t    color: orangered;\n\t    border-radius: 7%;\n\t}\n}\n@media (max-width: 1050px) {\n    /* mobile */\n    .webParagraphWrapper {\n\t\twidth: 100%;\n\t    display: flex;\n\t    justify-content: center;\n\t    margin-top: 5%;\n\t}\n\t.webParagraph {\n\t    display: flex;\n\t    font-size: large;\n\t    font-family: 'Pattaya', sans-serif;\n\t    width: 85%;\n\t    text-align: center;\n\t    padding: 45px;\n\t    background-color: antiquewhite;\n\t    color: orangered;\n\t    border-radius: 7%;\n\t}\n}", ""]);
+exports.push([module.i, "\n/* Media Queries */\n\n@media (min-width: 1051px) {\n    /* desktop */\n\t.webParagraph {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tcolor: white;\n\t\tfont-family: 'Allerta Stencil', sans-serif;\n\t\ttext-align: right;\n\t\tfont-size: 54px;\n\t\twidth: 100%;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(-150%);\n\t\tmargin: 8% 0%;\n\t}\n\t.webParagraph2 {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tcolor: white;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: 20px;\n\t\twidth: 75%;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(150%);\n\t\ttext-align: justify;\n\t}\n\t.webParagraph2wrap {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: center;\n\t}\n\t.comeIn {\n\t\ttransform: translate(0%, 0%)\n\t}\n\n\n\n\t/*  Rainbow Stuff  */\n\n\t.rainbow { \n\t\twidth: 100%;\n\t\theight: 100%;\n\t\t/* left:0;\n\t\tright: 0;\n\t\ttop: 0;\n\t\tbottom: 0; */\n\t\tposition: absolute;\n\t  \tbackground: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);\n\t  \tbackground-size: 1800% 1800%;\n\t  \t-webkit-animation: rainbow 18s ease infinite;\n\t  \t-z-animation: rainbow 18s ease infinite;\n\t  \t-o-animation: rainbow 18s ease infinite;\n\t\tanimation: rainbow 18s ease infinite;\n\t\topacity: 1;\n\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\toverflow-x: hidden;\n\t\tflex-direction: column;\n\n\t\t/*\n\n\t\tI can't get the background url to work? it looks really cool when i paste this in the DOM though\n\n\t\tbackground: url(../images/meCaliCut.jpg) no-repeat center center fixed;\n\t    \t-webkit-background-size: cover;\n\t    \t-moz-background-size: cover;\n\t    \t-o-background-size: cover;\n\t    \tbackground-size: cover;\n\n\t    */\n\t}\n\t  \n\t@-webkit-keyframes rainbow {\n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n\t@-moz-keyframes rainbow {\n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n\t@-o-keyframes rainbow {\n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n\t@keyframes rainbow { \n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n}\n\n\n@media (max-width: 1050px) {\n    /* mobile */\n\t.webParagraph {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tcolor: white;\n\t\tfont-family: 'Allerta Stencil', sans-serif;\n\t\ttext-align: right;\n\t\tfont-size: 54px;\n\t\twidth: 100%;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(-150%);\n\t\tmargin: 8% 0% 25% 0%;\n\t\tpadding-right: 10px;\n\t}\n\t.webParagraph2 {\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\tcolor: white;\n\t\tfont-family: 'Roboto', sans-serif;\n\t\tfont-size: 15px;\n\t\twidth: 75%;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(150%);\n\t\ttext-align: justify;\n\t}\n\t.webParagraph2wrap {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t\tjustify-content: center;\n\t}\n\t.comeIn {\n\t\ttransform: translate(0%, 0%)\n\t}\n\n\n\t/*  Rainbow Stuff  */\n\n\t.rainbow { \n\t\twidth: 100%;\n\t\theight: 100%;\n\t\t/* left:0;\n\t\tright: 0;\n\t\ttop: 0;\n\t\tbottom: 0; */\n\t\tposition: absolute;\n\t  \tbackground: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);\n\t  \tbackground-size: 100% 1000%;\n\t  \t-webkit-animation: rainbow 18s ease infinite;\n\t  \t-z-animation: rainbow 18s ease infinite;\n\t  \t-o-animation: rainbow 18s ease infinite;\n\t\tanimation: rainbow 18s ease infinite;\n\t\topacity: 1;\n\n\t\tdisplay: flex;\n\t\t/*justify-content: center;*/\n\t\toverflow-x: hidden;\n\t\tflex-direction: column;\n\n\t\t/*\n\n\t\tI can't get the background url to work? it looks really cool when i paste this in the DOM though\n\n\t\tbackground: url(../images/meCaliCut.jpg) no-repeat center center fixed;\n\t    \t-webkit-background-size: cover;\n\t    \t-moz-background-size: cover;\n\t    \t-o-background-size: cover;\n\t    \tbackground-size: cover;\n\n\t    */\n\t}\n\t  \n\t@-webkit-keyframes rainbow {\n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n\t@-moz-keyframes rainbow {\n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n\t@-o-keyframes rainbow {\n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n\t@keyframes rainbow { \n\t\t0%{background-position:0% 82%}\n\t\t50%{background-position:100% 19%}\n\t\t100%{background-position:0% 82%}\n\t}\n}", ""]);
 
 // exports
 
@@ -32681,7 +32685,11 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
     _this.state = {
-      portrait: window.matchMedia("(orientation: portrait)").matches
+      portrait: window.matchMedia("(orientation: portrait)").matches,
+      pictureClass: 'aboutImg',
+      section1Class: 'section1',
+      section2Class: 'section2',
+      section3Class: 'section3'
     };
     return _this;
   }
@@ -32694,9 +32702,19 @@ function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       this.setPhotoDimensions();
       window.addEventListener('resize', this.setPhotoDimensions.bind(this));
       window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
+      window.setTimeout(function () {
+        _this2.setState({
+          pictureClass: 'aboutImg grow',
+          section1Class: 'section1 comeIn',
+          section2Class: 'section2 comeIn',
+          section3Class: 'section3 comeIn'
+        });
+      }, 20);
     }
   }, {
     key: "setPhotoDimensions",
@@ -32733,31 +32751,31 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react.default.createElement("div", null, _react.default.createElement("div", {
         className: "aboutWrapper"
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
-          _this2.refs['me'] = (0, _reactDom.findDOMNode)(eref);
+          _this3.refs['me'] = (0, _reactDom.findDOMNode)(eref);
         },
-        className: "aboutImg",
+        className: this.state.pictureClass,
         src: "../images/myselfTall.jpg",
         alt: ""
       }), _react.default.createElement("div", {
         className: "wrapperText"
       }, _react.default.createElement("div", {
-        className: "section1"
+        className: this.state.section1Class
       }, _react.default.createElement("center", {
         className: "hi"
       }, " Hi! I'm "), _react.default.createElement("center", {
         className: "myName"
-      }, "Whitney Stotler \uD83D\uDE00"), _react.default.createElement("ul", null, _react.default.createElement("li", null, "Jesus follower "), _react.default.createElement("li", null, "Worship Leader "), _react.default.createElement("li", null, "Farm Girl "), _react.default.createElement("li", null, "Retired College Basketball Player "), _react.default.createElement("li", null, "Photoshop Enthusiast"), _react.default.createElement("li", null, "Videographer"), _react.default.createElement("li", null, "Web Developer")), _react.default.createElement("div", {
+      }, "Whitney Stotler"), _react.default.createElement("ul", null, _react.default.createElement("li", null, "Jesus follower "), _react.default.createElement("li", null, "Worship Leader "), _react.default.createElement("li", null, "Farm Girl "), _react.default.createElement("li", null, "Retired College Basketball Player "), _react.default.createElement("li", null, "Photoshop Enthusiast"), _react.default.createElement("li", null, "Videographer"), _react.default.createElement("li", null, "Web Developer")), _react.default.createElement("div", {
         className: "section1paragraph"
       }, " For the past four years, my life has been continually changing. I recognized my need for a savior on July 11, 2014, and my life did a 180\u02DA. God, Jesus, and the Holy Spirit have been transforming my heart since. I have a heart for those who don't yet know Him, and a deep desire to worship Him because of His goodness. In the past, I would use my singing for the glory of myself, but now I see who deserves the praise-- our Creator. If you came to this site, you've seen me showcase some of my artwork and abilities, but I want to point you to Someone better.")), _react.default.createElement("div", {
         className: "section23wrapper"
       }, _react.default.createElement("div", {
-        className: "section2"
+        className: this.state.section2Class
       }, _react.default.createElement("div", {
         className: "romansRoad"
       }, " Romans 3:23 - \"For all have sinned and fall short of the glory of God\" "), _react.default.createElement("div", {
@@ -32769,7 +32787,7 @@ function (_Component) {
       }, " Romans 10:9-10 - \"If you confess with your mouth that Jesus is Lord, and believe in your heart that God raised him from the dead, you will be saved. For it is by believing in your heart that you are made right with God, and confessing with your mouth that you are saved.\""), _react.default.createElement("div", {
         className: "romansRoad"
       }, "Romans 10:13 - \"For all who call on the name of the Lord will be saved.\" ")), _react.default.createElement("div", {
-        className: "section3"
+        className: this.state.section3Class
       }, "God knows we can never be fulfilled except through Him. He loved us enough to give us a way back to Him, despite our sinfullness and lack of holiness. He wanted us, yet didn't need us, and left the throne to come bring us back home. \"Child, you are loved.\"")))), _react.default.createElement(_Footer.default, null));
     }
   }]);
@@ -32840,7 +32858,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1121px) {\n    /* desktop */\n\t.aboutWrapper {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t    justify-content: space-around;\n\t    align-items: start;\n\t}\n\t.wrapperText {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tflex-direction: row;\n\t\tmargin-top:4%;\n\t}\n\t.hi {\n\t\tfont-size: x-large;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tmargin-bottom: 10px;\n\t}\n\t.myName {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tcolor: lightcoral;\n\t\tmargin: 0;\n\t\tfont-size: 50px;\n\t}\n\t.section1 {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    width: 50%;\n\t    padding: 1%;\n\t    border-right: 1px solid lightgray;\n\t    margin-right: 2%;\n\t}\n\tul {\n\t\tmargin-left: 15px;\n\t\tfont-size: larger;\n\t}\n\tli {\n\t\tcolor: dimgray;\n\t}\n\t.section1paragraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n    \tfont-size: x-large;\n\t}\n\t.section2 {\n\t\tdisplay: flex;\n\t    font-size: medium;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    padding: 30px 20px;\n\t    color: black;\n\t    background: lightgray;\n\t    margin-bottom: 50px;\n\t    margin-right: 40px;\n\t}\n\t.section3 {\n\t\tfont-size: x-large;\n\t    font-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n\t    padding: 30px 20px 30px 0px;\n\t    border-top: 1px solid lightgray;\n\t}\n\t.section23wrapper {\n\t\twidth: 50%;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.romansRoad {\n\t\tpadding: 10px 0px;\n\t}\n\t.aboutImg {\n\t\ttransform: scale(0.9);\n\t\tborder-radius: 15px;\n\t}\n}\n\n@media (max-width: 1120px) {\n    /* mobile */\n    .aboutImg {\n        width: 100%;\n     \ttransform: scale(0.8);\n    }\n    .aboutWrapper {\n    \tdisplay: flex;\n    \tflex-direction: column;\n    }\n    .wrapperText {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    padding: 25px;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t}\n\t.myName {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tcolor: lightcoral;\n\t\tmargin: 0;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tfont-size: 30px;\n\t}\n\t.section1 {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    padding: 1% 1% 30px 1%;\n\t    margin: 0% 2% 35px 2%;\n\t    border-bottom: 1px solid lightgray;\n\t}\n\tli {\n\t\tcolor: dimgray;\n\t}\n\t.section1paragraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n    \tfont-size: large;\n\t}\n\t.section2 {\n\t\tdisplay: flex;\n\t    font-size: small;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    padding: 10px 20px;\n\t    color: black;\n\t    background: lightgray;\n\t    margin-bottom: 35px;\n\t}\n\t.section3 {\n\t\tfont-size: large;\n\t    font-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n\t    padding: 30px 20px;\n\t    border-top: 1px solid lightgray;\n\t}\n\t.section23wrapper {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.romansRoad {\n\t\tpadding: 10px 0px;\n\t}\n}", ""]);
+exports.push([module.i, "\n\n/* Media Queries */\n\n@media (min-width: 1121px) {\n    /* desktop */\n\t.aboutWrapper {\n\t\tdisplay: flex;\n\t\twidth: 100%;\n\t    justify-content: space-around;\n\t\talign-items: start;\n\t\toverflow-x: hidden;\n\t}\n\t.wrapperText {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\tflex-direction: row;\n\t\tmargin-top:4%;\n\t\toverflow: hidden;\n\t}\n\t.hi {\n\t\tfont-size: x-large;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tmargin-bottom: 10px;\n\t}\n\t.myName {\n\t\tfont-family: 'Amatic SC', cursive;\n\t\tcolor: lightcoral;\n\t\tmargin: 0;\n\t\tfont-size: 50px;\n\t}\n\t.section1 {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    width: 50%;\n\t    padding: 1%;\n\t    border-right: 1px solid lightgray;\n\t\tmargin-right: 2%;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(0%, 150%)\n\t}\n\tul {\n\t\tmargin-left: 15px;\n\t\tfont-size: larger;\n\t}\n\tli {\n\t\tcolor: dimgray;\n\t}\n\t.section1paragraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n    \tfont-size: x-large;\n\t}\n\t.section2 {\n\t\tdisplay: flex;\n\t    font-size: medium;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    padding: 30px 20px;\n\t    color: black;\n\t    background: lightgray;\n\t    margin-bottom: 50px;\n\t\tmargin-right: 40px;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(150%, -150%)\n\t}\n\t.section3 {\n\t\tfont-size: x-large;\n\t    font-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n\t    padding: 30px 20px 30px 0px;\n\t\tborder-top: 1px solid lightgray;\n\t\ttransition: transform 0.5s ease;\n\t\ttransform: translate(150%, 150%)\n\t}\n\t.section23wrapper {\n\t\twidth: 50%;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.romansRoad {\n\t\tpadding: 10px 0px;\n\t}\n\t.aboutImg {\n\t\ttransform: scale(0.8);\n\t\tborder-radius: 15px;\n\t\ttransition: transform 0.5s ease;\n\t}\n\t.grow {\n\t\ttransform: scale(0.9);\n\t}\n\t.comeIn {\n\t\ttransform: translate(0%, 0%);\n\t}\n}\n\n@media (max-width: 1120px) {\n    /* mobile */\n    .aboutImg {\n        width: 100%;\n     \ttransform: scale(0.8);\n    }\n    .aboutWrapper {\n    \tdisplay: flex;\n    \tflex-direction: column;\n    }\n    .wrapperText {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    padding: 25px;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t}\n\t.myName {\n\t\tfont-family: 'Sacramento', cursive;\n\t\tcolor: lightcoral;\n\t\tmargin: 0;\n\t\tdisplay: flex;\n\t\tjustify-content: center;\n\t\tfont-size: 30px;\n\t}\n\t.section1 {\n\t\tdisplay: flex;\n\t    justify-content: center;\n\t    font-size: large;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    padding: 1% 1% 30px 1%;\n\t    margin: 0% 2% 35px 2%;\n\t    border-bottom: 1px solid lightgray;\n\t}\n\tli {\n\t\tcolor: dimgray;\n\t}\n\t.section1paragraph {\n\t\tfont-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n    \tfont-size: large;\n\t}\n\t.section2 {\n\t\tdisplay: flex;\n\t    font-size: small;\n\t    font-family: 'Raleway', sans-serif;\n\t    flex-direction: column;\n\t    padding: 10px 20px;\n\t    color: black;\n\t    background: lightgray;\n\t    margin-bottom: 35px;\n\t}\n\t.section3 {\n\t\tfont-size: large;\n\t    font-family: 'Playfair Display', serif;\n    \tcolor: dimgray;\n\t    padding: 30px 20px;\n\t    border-top: 1px solid lightgray;\n\t}\n\t.section23wrapper {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.romansRoad {\n\t\tpadding: 10px 0px;\n\t}\n}", ""]);
 
 // exports
 
@@ -32862,6 +32880,8 @@ var _react = _interopRequireWildcard(__webpack_require__(0));
 var _reactDom = _interopRequireWildcard(__webpack_require__(1));
 
 var _jquery = _interopRequireDefault(__webpack_require__(2));
+
+__webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32889,9 +32909,15 @@ var Element =
 /*#__PURE__*/
 function (_Component) {
   function Element(props) {
+    var _this;
+
     _classCallCheck(this, Element);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this.state = {
+      class: 'contactWrapper'
+    };
+    return _this;
   }
 
   _createClass(Element, [{
@@ -32901,15 +32927,33 @@ function (_Component) {
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      window.setTimeout(function () {
+        _this2.setState({
+          class: 'contactWrapper bringMeIn'
+        });
+      }, 20);
+    }
   }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
-        style: {
-          color: 'white'
-        }
-      }, "Contact");
+        className: "contactBackground"
+      }, _react.default.createElement("div", {
+        className: this.state.class
+      }, _react.default.createElement("div", {
+        className: "addressStamp"
+      }, _react.default.createElement("div", null, "Billy Bob ", _react.default.createElement("br", null), "1234 CR 5678 ", _react.default.createElement("br", null), "Small Town USA ", _react.default.createElement("br", null)), _react.default.createElement("img", {
+        className: "contactImg",
+        src: "../images/flagStamp.jpg"
+      })), _react.default.createElement("div", {
+        className: "emailMe"
+      }, "If you want to get ahold of me, ", _react.default.createElement("br", null), " just shoot me an email!", _react.default.createElement("a", {
+        className: "emailMeHref",
+        href: "mailto:whitneynstotler@gmail.com?Subject=Let's%20Chat&Body=I'd%20like%20to%20talk%20about%20:"
+      }, " Email Me"))));
     }
   }]);
 
@@ -32919,6 +32963,70 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Element;
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(58);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(4)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../node_modules/css-loader/index.js!./Contact.css", function() {
+		var newContent = require("!!../node_modules/css-loader/index.js!./Contact.css");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n    .contactWrapper {\n        display: flex;\n        flex-direction: column;\n        height: 415px;\n        justify-content: space-between;\n        align-items: center;\n        margin: 6% 21%;\n        background: white;\n        box-shadow: lightcoral 10px 10px;\n        font-family: 'Indie Flower', cursive;\n        transform: translate(-150%, 150%);\n        transition: transform 0.5s ease;\n    }\n    .bringMeIn {\n        transform: translate(0%, 0%);\n    }\n    .contactImg {\n        height: 80px;\n    }\n    .addressStamp {\n        display: flex;\n        justify-content: space-between;\n        flex-direction: row;\n        width: 100%;\n        align-items: center;\n        padding: 0px 15px;\n    }\n    .emailMe {\n        height: 58%;\n        display: flex;\n        flex-direction: column;\n        text-align: center;\n        font-size: 25px;\n    }\n    .emailMeHref {\n        color: lightcoral;\n    }\n    .contactBackground {\n        /*height: 100%;*/\n        width: 100%;\n        background-color: pink;\n        position: absolute;\n    }\n}\n\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\n}", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

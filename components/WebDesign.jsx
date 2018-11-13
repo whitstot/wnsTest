@@ -34,7 +34,7 @@ export default class Element extends Component {
                         WELL, YOU'RE LOOKING<br/> AT IT.
                     </div>
                     <div className="webParagraph2wrap">
-	                    <div className={this.state.webParagraph2Class}>Right now, I am a Front-End Web Developer at The Chickasaw Nation. If you're wanting a small website done, contact me under the contact tab!
+	                    <div className={this.state.webParagraph2Class}>Currently, I am a Front-End Web Developer at The Chickasaw Nation. If you're wanting your website created, contact me under the contact tab!
 	                    </div>
 	                </div>
                 </div>
