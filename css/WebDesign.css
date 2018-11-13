@@ -36,7 +36,68 @@
 	.comeIn {
 		transform: translate(0%, 0%)
 	}
+
+
+
+	/*  Rainbow Stuff  */
+
+	.rainbow { 
+		width: 100%;
+		height: 100%;
+		/* left:0;
+		right: 0;
+		top: 0;
+		bottom: 0; */
+		position: absolute;
+	  	background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+	  	background-size: 1800% 1800%;
+	  	-webkit-animation: rainbow 18s ease infinite;
+	  	-z-animation: rainbow 18s ease infinite;
+	  	-o-animation: rainbow 18s ease infinite;
+		animation: rainbow 18s ease infinite;
+		opacity: 1;
+
+		display: flex;
+		justify-content: center;
+		overflow-x: hidden;
+		flex-direction: column;
+
+		/*
+
+		I can't get the background url to work? it looks really cool when i paste this in the DOM though
+
+		background: url(../images/meCaliCut.jpg) no-repeat center center fixed;
+	    	-webkit-background-size: cover;
+	    	-moz-background-size: cover;
+	    	-o-background-size: cover;
+	    	background-size: cover;
+
+	    */
+	}
+	  
+	@-webkit-keyframes rainbow {
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
+	@-moz-keyframes rainbow {
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
+	@-o-keyframes rainbow {
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
+	@keyframes rainbow { 
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
 }
+
+
 @media (max-width: 1050px) {
     /* mobile */
 	.webParagraph {
@@ -46,66 +107,89 @@
 		color: white;
 		font-family: 'Allerta Stencil', sans-serif;
 		text-align: right;
+		font-size: 54px;
+		width: 100%;
+		transition: transform 0.5s ease;
+		transform: translate(-150%);
+		margin: 8% 0% 25% 0%;
+		padding-right: 10px;
+	}
+	.webParagraph2 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-family: 'Roboto', sans-serif;
+		font-size: 15px;
+		width: 75%;
+		transition: transform 0.5s ease;
+		transform: translate(150%);
+		text-align: justify;
+	}
+	.webParagraph2wrap {
+		display: flex;
+		width: 100%;
+		justify-content: center;
 	}
 	.comeIn {
 		transform: translate(0%, 0%)
 	}
-}
 
 
-/*  Rainbow Stuff  */
+	/*  Rainbow Stuff  */
 
-.rainbow { 
-	width: 100%;
-	height: 100%;
-	/* left:0;
-	right: 0;
-	top: 0;
-	bottom: 0; */
-	position: absolute;
-  	background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  	background-size: 1800% 1800%;
-  	-webkit-animation: rainbow 18s ease infinite;
-  	-z-animation: rainbow 18s ease infinite;
-  	-o-animation: rainbow 18s ease infinite;
-	animation: rainbow 18s ease infinite;
-	opacity: 1;
+	.rainbow { 
+		width: 100%;
+		height: 100%;
+		/* left:0;
+		right: 0;
+		top: 0;
+		bottom: 0; */
+		position: absolute;
+	  	background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+	  	background-size: 100% 1000%;
+	  	-webkit-animation: rainbow 18s ease infinite;
+	  	-z-animation: rainbow 18s ease infinite;
+	  	-o-animation: rainbow 18s ease infinite;
+		animation: rainbow 18s ease infinite;
+		opacity: 1;
 
-	display: flex;
-	justify-content: center;
-	overflow-x: hidden;
-	flex-direction: column;
+		display: flex;
+		/*justify-content: center;*/
+		overflow-x: hidden;
+		flex-direction: column;
 
-	/*
+		/*
 
-	I can't get the background url to work? it looks really cool when i paste this in the DOM though
+		I can't get the background url to work? it looks really cool when i paste this in the DOM though
 
-	background: url(../images/meCaliCut.jpg) no-repeat center center fixed;
-    	-webkit-background-size: cover;
-    	-moz-background-size: cover;
-    	-o-background-size: cover;
-    	background-size: cover;
+		background: url(../images/meCaliCut.jpg) no-repeat center center fixed;
+	    	-webkit-background-size: cover;
+	    	-moz-background-size: cover;
+	    	-o-background-size: cover;
+	    	background-size: cover;
 
-    */
-}
-  
-@-webkit-keyframes rainbow {
-	0%{background-position:0% 82%}
-	50%{background-position:100% 19%}
-	100%{background-position:0% 82%}
-}
-@-moz-keyframes rainbow {
-	0%{background-position:0% 82%}
-	50%{background-position:100% 19%}
-	100%{background-position:0% 82%}
-}
-@-o-keyframes rainbow {
-	0%{background-position:0% 82%}
-	50%{background-position:100% 19%}
-	100%{background-position:0% 82%}
-}
-@keyframes rainbow { 
-	0%{background-position:0% 82%}
-	50%{background-position:100% 19%}
-	100%{background-position:0% 82%}
+	    */
+	}
+	  
+	@-webkit-keyframes rainbow {
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
+	@-moz-keyframes rainbow {
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
+	@-o-keyframes rainbow {
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
+	@keyframes rainbow { 
+		0%{background-position:0% 82%}
+		50%{background-position:100% 19%}
+		100%{background-position:0% 82%}
+	}
 }
