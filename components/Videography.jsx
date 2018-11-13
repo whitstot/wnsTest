@@ -106,9 +106,9 @@ export default class Videography extends Component {
 						src="../images/MeaganWeddingShorter.mp4" 
 						type="video/mp4" 
 						preload="true" 
-						playsInline="true" 
-						autoPlay="true" 
-						loop="true"> 
+						playsInline={true} 
+						autoPlay={true} 
+						loop={true}> 
 					</video>
 				}
 				<div className="logoWrapper">

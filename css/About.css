@@ -8,7 +8,8 @@
 		display: flex;
 		width: 100%;
 	    justify-content: space-around;
-	    align-items: start;
+		align-items: start;
+		overflow-x: hidden;
 	}
 	.wrapperText {
 		display: flex;
@@ -16,6 +17,7 @@
 		align-items: center;
 		flex-direction: row;
 		margin-top:4%;
+		overflow: hidden;
 	}
 	.hi {
 		font-size: x-large;
@@ -37,7 +39,9 @@
 	    width: 50%;
 	    padding: 1%;
 	    border-right: 1px solid lightgray;
-	    margin-right: 2%;
+		margin-right: 2%;
+		transition: transform 0.5s ease;
+		transform: translate(0%, 150%)
 	}
 	ul {
 		margin-left: 15px;
@@ -60,14 +64,18 @@
 	    color: black;
 	    background: lightgray;
 	    margin-bottom: 50px;
-	    margin-right: 40px;
+		margin-right: 40px;
+		transition: transform 0.5s ease;
+		transform: translate(150%, -150%)
 	}
 	.section3 {
 		font-size: x-large;
 	    font-family: 'Playfair Display', serif;
     	color: dimgray;
 	    padding: 30px 20px 30px 0px;
-	    border-top: 1px solid lightgray;
+		border-top: 1px solid lightgray;
+		transition: transform 0.5s ease;
+		transform: translate(150%, 150%)
 	}
 	.section23wrapper {
 		width: 50%;
@@ -78,8 +86,15 @@
 		padding: 10px 0px;
 	}
 	.aboutImg {
-		transform: scale(0.9);
+		transform: scale(0.8);
 		border-radius: 15px;
+		transition: transform 0.5s ease;
+	}
+	.grow {
+		transform: scale(0.9);
+	}
+	.comeIn {
+		transform: translate(0%, 0%);
 	}
 }
 

@@ -11,7 +11,11 @@ export default class Element extends Component {
 		super(props);
 
 		this.state = {
-			portrait: window.matchMedia("(orientation: portrait)").matches
+			portrait: window.matchMedia("(orientation: portrait)").matches,
+			pictureClass: 'aboutImg',
+			section1Class: 'section1',
+			section2Class: 'section2',
+			section3Class: 'section3'
 		}
 	}
 	componentWillMount() {
@@ -21,6 +25,15 @@ export default class Element extends Component {
 		this.setPhotoDimensions();
 		window.addEventListener('resize', this.setPhotoDimensions.bind(this))
 		window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
+
+		window.setTimeout(()=>{
+			this.setState({
+				pictureClass: 'aboutImg grow',
+				section1Class: 'section1 comeIn',
+				section2Class: 'section2 comeIn',
+				section3Class: 'section3 comeIn'
+			})
+		}, 20);
 	}
 	setPhotoDimensions() {
 		let el = this.refs['me'],
@@ -56,11 +69,11 @@ export default class Element extends Component {
 		return (
 			<div>
 				<div className="aboutWrapper">
-					<img ref={(eref) => {this.refs['me'] = findDOMNode(eref)}} className="aboutImg" src="../images/myselfTall.jpg" alt=""/>
+					<img ref={(eref) => {this.refs['me'] = findDOMNode(eref)}} className={this.state.pictureClass} src="../images/myselfTall.jpg" alt=""/>
 					<div className="wrapperText">
-						<div className="section1">
+						<div className={this.state.section1Class}>
 							<center className="hi"> Hi! I'm </center>
-							<center className="myName">Whitney Stotler 😀</center>
+							<center className="myName">Whitney Stotler</center>
 							<ul>
 								<li>Jesus follower </li>
 								<li>Worship Leader </li>
@@ -74,7 +87,7 @@ export default class Element extends Component {
 							</div>
 						</div>
 						<div className="section23wrapper">
-							<div className="section2">
+							<div className={this.state.section2Class}>
 								<div className="romansRoad"> Romans 3:23 - "For all have sinned and fall short of the glory of God" </div>
 								<div className="romansRoad"> Romans 6:23 - "For the wages of sin is death, but the free gift of God is eternal life through Christ Jesus our Lord." </div>
 								<div className="romansRoad"> Romans 5:8 - "But God showed His great love for us by sending His son to die for us WHILE WE WERE STILL SINNERS" </div>
@@ -82,7 +95,7 @@ export default class Element extends Component {
 								<div className="romansRoad">Romans 10:13 - "For all who call on the name of the Lord will be saved." </div>
 							</div>
 
-							<div className="section3">
+							<div className={this.state.section3Class}>
 								God knows we can never be fulfilled except through Him. He loved us enough to give us a way back to Him, despite our sinfullness and lack of holiness. He wanted us, yet didn't need us, and left the throne to come bring us back home. "Child, you are loved." 
 							</div>
 						</div>

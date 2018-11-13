@@ -238,7 +238,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Graphic </div>
 								<br/>
-								<div className="portraitText"> Funny story, I actually made this one right before my basketball game in a hotel room. I guess you could say I love photoshop. </div>
+								<div className="portraitText"> Funny story, I actually made this one right before my basketball game in a hotel room. </div>
 							</div>
 						</div>
 					}

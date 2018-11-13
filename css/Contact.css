@@ -1,0 +1,58 @@
+
+
+
+
+/* Media Queries */
+
+@media (min-width: 1051px) {
+	/* desktop */
+    .contactWrapper {
+        display: flex;
+        flex-direction: column;
+        height: 525px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 6% 21%;
+        background: white;
+        box-shadow: lightcoral 10px 10px;
+        font-family: 'Indie Flower', cursive;
+        transform: translate(-150%, 150%);
+        transition: transform 0.5s ease;
+    }
+    .bringMeIn {
+        transform: translate(0%, 0%);
+    }
+    .contactImg {
+        height: 80px;
+    }
+    .addressStamp {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        padding: 0px 15px;
+    }
+    .emailMe {
+        height: 58%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 25px;
+    }
+    .emailMeHref {
+        color: lightcoral;
+    }
+    .contactBackground {
+        height: 100%;
+        width: 100%;
+        background-color: pink;
+        position: absolute;
+    }
+}
+
+
+@media (max-width: 1050px) {
+	/* mobile */
+
+}
