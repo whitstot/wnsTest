@@ -45,7 +45,7 @@
 @media (min-width: 1101px) {
     .enterSite {
         position: fixed;
-        font-size: xx-large;
+        font-size: medium;
         bottom: 2%;
         width: 100%;
         justify-content: center;

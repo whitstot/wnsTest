@@ -1,13 +1,5 @@
 /* For All Dimensions */
 
-.arrows {
-    padding: 15px;
-    font-size: xx-large;
-    font-family: 'Open Sans', sans-serif;
-    cursor: pointer;
-    user-select: none;
-    margin: 0px 2%;
-}
 a {
     cursor: pointer;
 }
@@ -16,17 +8,41 @@ a {
 }
 .leftInvisibleArrow {
     position: absolute;
-    height: 70%;
+    height: 60%;
     width: 25%;
     left: 0px;
     z-index: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 3%;
+    font-family: 'Open Sans', sans-serif;
+    user-select: none; 
+
+        /* Webkit-touch-callout: none; 
+        Webkit-user-select: none;  
+        KhtmlUserSelect: none;  
+        MozUserSelect: none;   
+        MsUserSelect: none;    */
 }
 .rightInvisibleArrow {
     position: absolute;
-    height: 70%;
+    height: 60%;
     width: 25%;
     right: 0px;
     z-index: 1;
+    margin-right: 3%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+    font-family: 'Open Sans', sans-serif;
+    user-select: none; 
+
+        /* Webkit-touch-callout: none; 
+        Webkit-user-select: none;  
+        KhtmlUserSelect: none;  
+        MozUserSelect: none;   
+        MsUserSelect: none;    */
 }
 
 .start {
@@ -49,6 +65,14 @@ a {
 
 @media (min-width: 1051px) {
     /* desktop */
+    .arrows {
+        padding: 15px;
+        font-size: xx-large;
+        font-family: 'Open Sans', sans-serif;
+        cursor: pointer;
+        user-select: none;
+        margin: 0px 2%;
+    }
     .imgWrapper {
         display: flex;
         margin-top: 2%;
@@ -80,8 +104,17 @@ a {
 
 @media (max-width: 1050px) {
     /* mobile */
+    .arrows {
+        padding: 50px 15px;
+        font-family: 'Open Sans', sans-serif;
+        user-select: none;
+        margin: 0px 2%;
+    }
     img {
         width: 100%;
+    }
+    .photoOpenedImg {
+        transform: scale(0.8)
     }
     .imageAndTextWrapper {
         transition: transform 0.2s ease;
@@ -90,6 +123,7 @@ a {
         display: flex;
         align-items: center;
         flex-direction: column;
+        overflow-x: hidden;
     }
     .mobileArrowsWrapper {
         display: flex;
@@ -101,7 +135,6 @@ a {
         flex-direction: column;
         font-size: large;
         font-family: 'Raleway', sans-serif;
-        margin: 10% 0% 1% 0%;
         align-items: center;
     }
     .portraitText {
