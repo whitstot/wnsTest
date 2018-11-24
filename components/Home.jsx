@@ -15,6 +15,12 @@ export default class Home extends Component {
 	constructor(props) {
 		super(props);
 
+		//we have to do this to be able to remove the event listener
+		//every time you bind the function, you get a new one back
+		//so we are essentially removing a different function 
+		//unless we do it like this
+		this.boundPopHistory = this.popHistory.bind(this);
+
 	/* 	photoshop
 		videography
 		webDesign
@@ -22,18 +28,67 @@ export default class Home extends Component {
 		contact   */
 
 		this.state = {
-			componentToRender: 'photoshop'
+			componentToRender: 'photoshop',
+			photoshop: 'graphic menuItem tabSelected',
+			videography: 'menuItem',
+			webDesign: 'menuItem', 
+			about: 'menuItem', 
+			contact: 'menuItem contact'
 		}
 	}
 	componentWillMount() {
 		this.refs = [];
 	}
-	renderNewComponent(component) {
-		$(this.refs[this.state.componentToRender]).removeClass('tabSelected');
-		$(this.refs[component]).addClass('tabSelected');
+	componentDidMount() {
+		window.addEventListener('popstate', this.boundPopHistory);
+		this.pushHistory();
+	}
+	componentDidUpdate() {
+		this.pushHistory()
+	}
+	popHistory() {
+		if (window.history.state !== null) {
+			//all this is just to set the tab color pink by setting the state to the correct class name
+			let currentComponent = this.state.componentToRender,
+				newComponent = window.history.state,
+				currentComponentClass = this.state[currentComponent],
+				newComponentClass = this.state[newComponent];
+
+			currentComponentClass = currentComponentClass.split(' tabSelected')[0];
+			newComponentClass = newComponentClass + ' tabSelected';
+
+			this.setState({
+				'componentToRender': window.history.state,
+				[currentComponent]: currentComponentClass,
+				[newComponent]: newComponentClass
+			})
+		}
+		else {
+			console.log('remove me')
+			window.removeEventListener('popstate', this.boundPopHistory);
+			this.goToOpener();
+		}
+	}
+	pushHistory() {
+		if (window.history.state !== this.state.componentToRender) {
+			window.history.pushState(this.state.componentToRender, this.state.componentToRender, './' + this.state.componentToRender);
+		}
+	}
+	renderNewComponent(newComponent) {
+		//all this is just to set the tab color pink by setting the state to the correct class name
+		let currentComponent = this.state.componentToRender,
+			currentComponentClass = this.state[currentComponent],
+			newComponentClass = this.state[newComponent];
+
+		currentComponentClass = currentComponentClass.split(' tabSelected')[0];
+		newComponentClass = newComponentClass + ' tabSelected';
+
 		this.setState({
-			componentToRender: component
+			'componentToRender': newComponent,
+			[currentComponent]: currentComponentClass,
+			[newComponent]: newComponentClass
 		})
+
 		this.closeMenu();
 	}
 	toggleMenu() {
@@ -43,11 +98,13 @@ export default class Home extends Component {
 		this.refs['dropDownMenu'].classList.remove('dropDownMenuOpen');
 	}
 	goToOpener() {
+		window.removeEventListener('popstate', this.boundPopHistory);
+		window.history.pushState('opener', 'opener', './');
 		this.props.changeToOpener();
 	}
 	render() {
 		return (
-			<div>
+			<div style={{backgroundColor: 'ghostwhite'}}>
 				<div className="wrapper">
 
 					<img onClick={this.goToOpener.bind(this)} className="logo" src="../images/myLogo.jpg" alt=""/>
@@ -56,35 +113,35 @@ export default class Home extends Component {
 						<div 
 							ref={(eref) => {this.refs['photoshop'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this, 'photoshop')} 
-							className="graphic menuItem tabSelected"> 
+							className={this.state.photoshop}> 
 								Photoshop Projects 
 						</div>
 						<div> | </div>
 						<div 
 							ref={(eref) => {this.refs['videography'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this,'videography')} 
-							className="menuItem"> 
+							className={this.state.videography}> 
 								Videography 
 						</div>
 						<div> | </div>
 						<div 
 							ref={(eref) => {this.refs['webDesign'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this,'webDesign')} 
-							className="menuItem"> 
+							className={this.state.webDesign}> 
 								Web Design 
 						</div>
 						<div> | </div>
 						<div 
 							ref={(eref) => {this.refs['about'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this,'about')} 
-							className="menuItem"> 
+							className={this.state.about}> 
 								About Me 
 						</div>
 						<div> | </div>
 						<div 
 							ref={(eref) => {this.refs['contact'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this,'contact')} 
-							className="contact menuItem"> 
+							className={this.state.contact}> 
 								Contact 
 						</div>
 					</div>

@@ -10,6 +10,8 @@ export default class Element extends Component {
 	constructor(props) {
 		super(props);
 
+		this.boundOpenerPopHistory = this.openerPopHistory.bind(this)
+
 		this.state = {
 			componentToRender: 'opener',
 			portrait: window.matchMedia("(orientation: portrait)").matches
@@ -20,6 +22,25 @@ export default class Element extends Component {
 	}
 	componentDidMount() {
 		window.addEventListener('resize', this.setPhotoHeight.bind(this))
+
+		window.onunload = function(){
+    		console.log("unload event detected!");
+		}
+	}
+	openerPopHistory() {
+		if (window.history.state !== 'opener') {
+			this.setState({
+				componentToRender: 'home'
+			})
+		}
+	}
+	componentDidUpdate() {
+		if (this.state.componentToRender === 'opener') {
+			window.addEventListener('popstate', this.boundOpenerPopHistory)
+		}
+		else {
+			window.removeEventListener('popstate', this.boundOpenerPopHistory)
+		}
 	}
 	setPhotoHeight() {
 		let portrait = this.state.portrait,

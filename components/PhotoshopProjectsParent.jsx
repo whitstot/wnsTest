@@ -18,6 +18,14 @@ export default class PhotoshopProjectsParent extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentDidUpdate() {
+		this.pushHistory()
+	}
+	pushHistory() {
+		if (this.state.componentToRender !== 'photoshop') {
+			window.history.pushState('photoshop', 'photoshop', './photoshop');
+		}
+	}
 	renderNewComponent(component) {
 		this.setState({
 			componentToRender: component
