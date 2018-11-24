@@ -47,6 +47,7 @@ export default class Home extends Component {
 		this.pushHistory()
 	}
 	popHistory() {
+		console.log(window.history.state)
 		if (window.history.state !== null) {
 			//all this is just to set the tab color pink by setting the state to the correct class name
 			let currentComponent = this.state.componentToRender,
@@ -71,7 +72,7 @@ export default class Home extends Component {
 	}
 	pushHistory() {
 		if (window.history.state !== this.state.componentToRender) {
-			window.history.pushState(this.state.componentToRender, this.state.componentToRender, './' + this.state.componentToRender);
+			window.history.pushState(this.state.componentToRender, this.state.componentToRender, './');
 		}
 	}
 	renderNewComponent(newComponent) {
@@ -99,7 +100,6 @@ export default class Home extends Component {
 	}
 	goToOpener() {
 		window.removeEventListener('popstate', this.boundPopHistory);
-		window.history.pushState('opener', 'opener', './');
 		this.props.changeToOpener();
 	}
 	render() {

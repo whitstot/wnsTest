@@ -30440,9 +30440,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 var Element =
 /*#__PURE__*/
@@ -30453,6 +30453,7 @@ function (_Component) {
     _classCallCheck(this, Element);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
+    _this.boundOpenerPopHistory = _this.openerPopHistory.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.state = {
       componentToRender: 'opener',
       portrait: window.matchMedia("(orientation: portrait)").matches
@@ -30469,6 +30470,26 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       window.addEventListener('resize', this.setPhotoHeight.bind(this));
+
+      window.onunload = function () {
+        console.log("unload event detected!");
+      };
+    }
+  }, {
+    key: "openerPopHistory",
+    value: function openerPopHistory() {
+      this.setState({
+        componentToRender: 'home'
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      if (this.state.componentToRender === 'opener') {
+        window.addEventListener('popstate', this.boundOpenerPopHistory);
+      } else {
+        window.removeEventListener('popstate', this.boundOpenerPopHistory);
+      }
     }
   }, {
     key: "setPhotoHeight",
@@ -30734,6 +30755,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -30746,9 +30769,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 var Home =
 /*#__PURE__*/
@@ -30758,7 +30781,12 @@ function (_Component) {
 
     _classCallCheck(this, Home);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props)); //we have to do this to be able to remove the event listener
+    //every time you bind the function, you get a new one back
+    //so we are essentially removing a different function 
+    //unless we do it like this
+
+    _this.boundPopHistory = _this.popHistory.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     /* 	photoshop
     	videography
     	webDesign
@@ -30766,7 +30794,12 @@ function (_Component) {
     	contact   */
 
     _this.state = {
-      componentToRender: 'photoshop'
+      componentToRender: 'photoshop',
+      photoshop: 'graphic menuItem tabSelected',
+      videography: 'menuItem',
+      webDesign: 'menuItem',
+      about: 'menuItem',
+      contact: 'menuItem contact'
     };
     return _this;
   }
@@ -30777,13 +30810,61 @@ function (_Component) {
       this.refs = [];
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.addEventListener('popstate', this.boundPopHistory);
+      this.pushHistory();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.pushHistory();
+    }
+  }, {
+    key: "popHistory",
+    value: function popHistory() {
+      console.log(window.history.state);
+
+      if (window.history.state !== null) {
+        var _this$setState;
+
+        //all this is just to set the tab color pink by setting the state to the correct class name
+        var currentComponent = this.state.componentToRender,
+            newComponent = window.history.state,
+            currentComponentClass = this.state[currentComponent],
+            newComponentClass = this.state[newComponent];
+        currentComponentClass = currentComponentClass.split(' tabSelected')[0];
+        newComponentClass = newComponentClass + ' tabSelected';
+        this.setState((_this$setState = {
+          'componentToRender': window.history.state
+        }, _defineProperty(_this$setState, currentComponent, currentComponentClass), _defineProperty(_this$setState, newComponent, newComponentClass), _this$setState));
+      } else {
+        console.log('remove me');
+        window.removeEventListener('popstate', this.boundPopHistory);
+        this.goToOpener();
+      }
+    }
+  }, {
+    key: "pushHistory",
+    value: function pushHistory() {
+      if (window.history.state !== this.state.componentToRender) {
+        window.history.pushState(this.state.componentToRender, this.state.componentToRender, './');
+      }
+    }
+  }, {
     key: "renderNewComponent",
-    value: function renderNewComponent(component) {
-      (0, _jquery.default)(this.refs[this.state.componentToRender]).removeClass('tabSelected');
-      (0, _jquery.default)(this.refs[component]).addClass('tabSelected');
-      this.setState({
-        componentToRender: component
-      });
+    value: function renderNewComponent(newComponent) {
+      var _this$setState2;
+
+      //all this is just to set the tab color pink by setting the state to the correct class name
+      var currentComponent = this.state.componentToRender,
+          currentComponentClass = this.state[currentComponent],
+          newComponentClass = this.state[newComponent];
+      currentComponentClass = currentComponentClass.split(' tabSelected')[0];
+      newComponentClass = newComponentClass + ' tabSelected';
+      this.setState((_this$setState2 = {
+        'componentToRender': newComponent
+      }, _defineProperty(_this$setState2, currentComponent, currentComponentClass), _defineProperty(_this$setState2, newComponent, newComponentClass), _this$setState2));
       this.closeMenu();
     }
   }, {
@@ -30799,6 +30880,7 @@ function (_Component) {
   }, {
     key: "goToOpener",
     value: function goToOpener() {
+      window.removeEventListener('popstate', this.boundPopHistory);
       this.props.changeToOpener();
     }
   }, {
@@ -30806,7 +30888,11 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react.default.createElement("div", null, _react.default.createElement("div", {
+      return _react.default.createElement("div", {
+        style: {
+          backgroundColor: 'ghostwhite'
+        }
+      }, _react.default.createElement("div", {
         className: "wrapper"
       }, _react.default.createElement("img", {
         onClick: this.goToOpener.bind(this),
@@ -30820,31 +30906,31 @@ function (_Component) {
           _this2.refs['photoshop'] = (0, _reactDom.findDOMNode)(eref);
         },
         onClick: this.renderNewComponent.bind(this, 'photoshop'),
-        className: "graphic menuItem tabSelected"
+        className: this.state.photoshop
       }, "Photoshop Projects"), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
         ref: function ref(eref) {
           _this2.refs['videography'] = (0, _reactDom.findDOMNode)(eref);
         },
         onClick: this.renderNewComponent.bind(this, 'videography'),
-        className: "menuItem"
+        className: this.state.videography
       }, "Videography"), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
         ref: function ref(eref) {
           _this2.refs['webDesign'] = (0, _reactDom.findDOMNode)(eref);
         },
         onClick: this.renderNewComponent.bind(this, 'webDesign'),
-        className: "menuItem"
+        className: this.state.webDesign
       }, "Web Design"), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
         ref: function ref(eref) {
           _this2.refs['about'] = (0, _reactDom.findDOMNode)(eref);
         },
         onClick: this.renderNewComponent.bind(this, 'about'),
-        className: "menuItem"
+        className: this.state.about
       }, "About Me"), _react.default.createElement("div", null, " | "), _react.default.createElement("div", {
         ref: function ref(eref) {
           _this2.refs['contact'] = (0, _reactDom.findDOMNode)(eref);
         },
         onClick: this.renderNewComponent.bind(this, 'contact'),
-        className: "contact menuItem"
+        className: this.state.contact
       }, "Contact")), _react.default.createElement("div", {
         onClick: this.toggleMenu.bind(this),
         className: "menuMobile"
@@ -31013,7 +31099,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n\tbackground-color: black;\n}\n.tabSelected {\n\tcolor: lightpink;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: fixed;\n    top: 0px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n\tpadding: 0px 7px 1px 7px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n\tmargin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n\tcursor: pointer;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t\tcursor: pointer;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n\t.dropDownMenu {\n\t\tdisplay: none;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tjustify-content: center;\n\t\t/* height: 85px; */\n\t\tmargin: 5px;\n\t\talign-items: flex-end;\n\t\tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 30px;\n\t}\n\t.menuBar1 {\n\t\theight: 4px;\n\t\twidth: 30px;\n\t\tbackground-color: white;\n\t\tmargin: 3px;\n\t}\n\t.menuBar2 {\n\t\theight: 4px;\n\t\twidth: 20px;\n\t\tbackground-color: white;\n\t\tmargin: 3px;\n\t}\n\t.menuBar3{\n\t\theight: 4px;\n\t\twidth: 25px;\n\t\tbackground-color: white;\n\t\tmargin: 3px;\n\t}\n\t.dropDownMenuOpen {\n\t\tz-index: 99;\n\t\tdisplay: flex;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, ".logo {\n\twidth: 130px;\n\theight: 91px;\n}\n.logo:hover {\n\tcursor: pointer;\n\topacity: 0.85;\n}\n.menu{\n\tdisplay: none;\n}\n.wrapper {\n\tdisplay: flex;\n\tborder-bottom: 1px solid lightgray;\n\tbackground-color: black;\n}\n.tabSelected {\n\tcolor: lightpink;\n}\n\n/* Mobile Menu */\n.menuMobile {\n\tdisplay: none;\n}\n.dropDownMenu {\n\tposition: fixed;\n    top: 0px;\n\theight: 100%;\n\twidth: 100%;\n\tbackground-color: white;\n\tdisplay: none;\n\tflex-direction: column;\n\talign-items: center;\n\ttransition: 0.5s ease;\n}\n.mobileMenuItem {\n\tcolor: #ffb3b3;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tpadding: 10px;\n\tfont-size: x-large;\n}\n.mobileMenuItem:hover {\n\tcolor: #ff9999;\n}\n.topMobileMenuItem {\n\tmargin-top: 33%;\n}\n.esc {\n\tcolor: white;\n\tfont-family: 'Raleway', sans-serif;\n\tfont-weight: 500;\n\tposition: absolute;\n    right: 0px;\n\tpadding: 0px 7px 1px 7px;\n    background-color: #ffb3b3;\n    border-radius: 100%;\n\tmargin: 13px;\n}\n.esc:hover {\n\tbackground-color: #ff9999;\n\tcursor: pointer;\n}\n\n/* Media Queries */\n\n@media (min-width: 680px) {\n\t/* desktop */\n\t.menu {\n\t\tdisplay: flex;\n\t\tjustify-content: space-around;\n\t\twidth: 100%;\n\t\talign-items: flex-end;\n\t\tpadding-bottom: 12px;\n\t\tfont-family: 'Raleway', sans-serif;\n\t\tfont-weight: 500;\n\t\tcolor: lightgray;\n\t}\n\t.contact {\n\t\tmargin-right: 3%;\n\t}\n\t.graphic {\n\t\tmargin-left: 3%;\n\t\tcursor: pointer;\n\t}\n\t.menuItem:hover {\n\t\tcursor: pointer;\n\t\topacity: 0.85;\n\t}\n\t.dropDownMenu {\n\t\tdisplay: none;\n\t}\n}\n@media (max-width: 679px) {\n\t/* mobile */\n\t.wrapper {\n\t\tjustify-content: space-between;\n\t}\n\t.menuMobile {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tjustify-content: center;\n\t\t/* height: 85px; */\n\t\tmargin: 5px;\n\t\talign-items: flex-end;\n\t\tcursor: pointer;\n\t}\n\t.menuMobile div {\n\t\ttransition: 0.3s;\n\t}\n\t.menuMobile:hover div {\n\t\twidth: 30px;\n\t}\n\t.menuBar1 {\n\t\theight: 4px;\n\t\twidth: 30px;\n\t\tbackground-color: white;\n\t\tmargin: 3px;\n\t}\n\t.menuBar2 {\n\t\theight: 4px;\n\t\twidth: 20px;\n\t\tbackground-color: white;\n\t\tmargin: 3px;\n\t}\n\t.menuBar3{\n\t\theight: 4px;\n\t\twidth: 25px;\n\t\tbackground-color: white;\n\t\tmargin: 3px;\n\t}\n\t.dropDownMenuOpen {\n\t\tz-index: 99;\n\t\tdisplay: flex;\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -31081,6 +31167,18 @@ function (_Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       this.refs = [];
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.pushHistory();
+    }
+  }, {
+    key: "pushHistory",
+    value: function pushHistory() {
+      if (this.state.componentToRender !== 'photoshop') {
+        window.history.pushState('photoshop', 'photoshop', './photoshop');
+      }
     }
   }, {
     key: "renderNewComponent",

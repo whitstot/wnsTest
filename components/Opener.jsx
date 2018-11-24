@@ -28,11 +28,9 @@ export default class Element extends Component {
 		}
 	}
 	openerPopHistory() {
-		if (window.history.state !== 'opener') {
-			this.setState({
-				componentToRender: 'home'
-			})
-		}
+		this.setState({
+			componentToRender: 'home'
+		})
 	}
 	componentDidUpdate() {
 		if (this.state.componentToRender === 'opener') {
