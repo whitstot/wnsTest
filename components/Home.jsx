@@ -28,7 +28,7 @@ export default class Home extends Component {
 		contact   */
 
 		this.state = {
-			componentToRender: 'photoshop',
+			componentToRender: 'videography',
 			photoshop: 'graphic menuItem tabSelected',
 			videography: 'menuItem',
 			webDesign: 'menuItem', 

@@ -76,7 +76,7 @@ export default class Element extends Component {
 		return (
 			<div ref={(eref) => {this.refs['openerWrapper'] = findDOMNode(eref)}} className="opener">
 				{(this.state.portrait === false && this.state.componentToRender === 'opener') &&
-					<img className="openerImage" src='../images/websiteOpenerGalaxy.jpg'/>
+					<img className="openerImage" src='../images/websiteOpener.jpg'/>
 				}
 
 				{(this.state.portrait === true && this.state.componentToRender === 'opener') &&

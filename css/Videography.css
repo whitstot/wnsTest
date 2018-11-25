@@ -218,14 +218,15 @@
 	}
 	.weddingPrices {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		padding-bottom: 25px;
-		/* height: 500px; */
+	    /* flex-direction: column; */
+	    width: 100%;
+	    padding-bottom: 25px;
+	    /* height: 500px; */
+	    flex-wrap: wrap;
+	    justify-content: space-around;
 	}
 	.weddingPricesDiv {
-		background-color: #80b1b3;
+		/*background-color: #80b1b3;*/
 	    display: flex;
 	    flex-direction: column;
 	    /* padding: 10px 20px; */
@@ -233,32 +234,45 @@
 	    color: dimgray;
 	    border-radius: 10px;
 	    margin-top: 2%;
+	    width: 45%;
+	    border: 1px solid #80b1b3;
 	}
 	.weddingPricesFavorite {
-		background-color: #395e60;
+		/*background-color: #395e60;*/
+		border: 1px solid #395e60;
 	}
 	.weddingPricesInner {
 		/*background-color: #cfe1e2;*/
     	background-color: ghostwhite;
     	padding: 13px;
-    	border-radius: 7px;
+    	border-radius: 0px 0px 7px 7px;
 	}
 	.weddingPricesInnerFavorite {
 		/* background: #ffe6e6; */
 		background-color: ghostwhite;
+		border-radius: 0px 0px 7px 7px;
 	}
 	li.videographyLI {
 		font-family: 'Playfair Display', serif;
-		
+		font-size: medium;
+	}
+	li.videographyLIChild {
+		font-size: small;
 	}
 	ul.videographyUL {
-		margin-left: 0px;
-		margin-top: 10px;
+		/*margin-left: 0px;*/
+		margin-top: 0px;
+		padding-left: 15px;
+	}
+	ul.videographyULChild {
+		padding-left: 20px;
 	}
 	.weddingHeader {
 		font-size: 21px;
     	text-align: center;
     	font-family: 'Roboto', serif;
+    	background-color: #80b1b3;
+    	border-radius: 7px 7px 0px 0px;
 	}
 	.price {
 		font-family: 'Roboto', serif;
@@ -267,5 +281,7 @@
 	}
 	.weddingHeaderFav {
 		color: white;
+    	background-color: #395e60;
+    	border-radius: 7px 7px 0px 0px;
 	}
 }

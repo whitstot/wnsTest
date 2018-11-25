@@ -18,17 +18,27 @@ export default class Videography extends Component {
 		this.refs = [];
 	}
 	componentDidMount() {
-		this.setVideoDimensions();
+		this.setVideoDimensions('firstRun');
+
+		window.setTimeout(() => {
+			this.setVideoDimensions();
+		}, 20)
+
 		window.addEventListener('resize', this.setVideoDimensions.bind(this))
 	}
-	setVideoDimensions() {
+	setVideoDimensions(e) {
 		let windowWidth = window.innerWidth,
 			portrait = this.state.portrait,
 			widthToSet = 'unset',
-			heightToSet = 'unset';
+			heightToSet = 'unset',
+			heightForVimeoPortrait = 'unset';
 
 		if (windowWidth <= 1050) {
 			//portrait
+
+			if (e !== 'firstRun') {
+				heightForVimeoPortrait = parseFloat(getComputedStyle(this.refs['iframeShayna']).width) / 1.761049723756906 + 'px';
+			}
 
 			//set all the refs correctly
 			this.refs['iframeRach'].style.width = widthToSet;
@@ -36,10 +46,10 @@ export default class Videography extends Component {
 			this.refs['iframeMeagan'].style.width = widthToSet;
 			this.refs['iframeShayna'].style.width = widthToSet;
 
-			this.refs['iframeRach'].style.height = heightToSet;
-			this.refs['iframeDesirae'].style.height = heightToSet;
-			this.refs['iframeMeagan'].style.height = heightToSet;
-			this.refs['iframeShayna'].style.height = heightToSet;
+			this.refs['iframeRach'].style.height = heightForVimeoPortrait;
+			this.refs['iframeDesirae'].style.height = heightForVimeoPortrait;
+			this.refs['iframeMeagan'].style.height = heightForVimeoPortrait;
+			this.refs['iframeShayna'].style.height = heightForVimeoPortrait;
 
 			// this.refs['descriptionRach'].style.width = widthToSet;
 			// this.refs['descriptionDesirae'].style.width = widthToSet;
@@ -183,7 +193,7 @@ export default class Videography extends Component {
 							<a  className="description" 
 								href="https://www.youtube.com/watch?v=lQf5ixa_Jo0"
 								ref={(eref) => {this.refs['descriptionShayna'] = findDOMNode(eref)}}>
-									Tevin and Shayna Wedding
+									Tevin and Shayna Talton Wedding
 							</a>
 						</div>
 					</div>
@@ -202,25 +212,25 @@ export default class Videography extends Component {
 						<div className="weddingPricesInner">
 							<ul className="videographyUL">
 								<li className="videographyLI"> Cinematic Wedding Video </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Set to your choice of music </li>
-									<li className="videographyLI"> Approx 10 minutes in length </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Set to your choice of music </li>
+									<li className="videographyLI videographyLIChild"> Approx 10 minutes in length </li>
 								</ul>
 								<li className="videographyLI"> Full length video of ceremony with audio  </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Edited with 3 camera angles </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Edited with 3 camera angles </li>
 								</ul>
 							
 								<li className="videographyLI"> 3 Videographers on site </li>
 								<li className="videographyLI"> Full day of shooting </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Prep </li>
-									<li className="videographyLI"> Ceremony </li>
-									<li className="videographyLI"> Reception </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Prep </li>
+									<li className="videographyLI videographyLIChild"> Ceremony </li>
+									<li className="videographyLI videographyLIChild"> Reception </li>
 								</ul>
 								<li className="videographyLI"> 5 DVD’s </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Additional available for $15 each </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Additional available for $15 each </li>
 								</ul>
 								<li className="videographyLI"> HD Web Upload on our site and social media </li>
 							</ul>
@@ -234,20 +244,20 @@ export default class Videography extends Component {
 						<div className="weddingPricesInner weddingPricesInnerFavorite">
 							<ul className="videographyUL">
 								<li className="videographyLI"> Cinematic Wedding Video </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Set to your choice of music </li>
-									<li className="videographyLI"> Approx 10 minutes in length </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Set to your choice of music </li>
+									<li className="videographyLI videographyLIChild"> Approx 10 minutes in length </li>
 								</ul>
 								<li className="videographyLI"> 2 Videographers on site </li>
 								<li className="videographyLI"> Full day of shooting </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Prep </li>
-									<li className="videographyLI"> Ceremony </li>
-									<li className="videographyLI"> Reception </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Prep </li>
+									<li className="videographyLI videographyLIChild"> Ceremony </li>
+									<li className="videographyLI videographyLIChild"> Reception </li>
 								</ul>
 								<li className="videographyLI"> 5 DVD’s </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Additional available for $15 each </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Additional available for $15 each </li>
 								</ul>
 								<li className="videographyLI"> HD Web Upload on our site and social media </li>
 							</ul>
@@ -261,19 +271,19 @@ export default class Videography extends Component {
 						<div className="weddingPricesInner">
 							<ul className="videographyUL">
 								<li className="videographyLI"> Cinematic Wedding Video </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Set to your choice of music </li>
-									<li className="videographyLI"> Approx 7 minutes in length </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Set to your choice of music </li>
+									<li className="videographyLI videographyLIChild"> Approx 7 minutes in length </li>
 								</ul>
 								<li className="videographyLI"> 2 Videographers on site </li>
 								<li className="videographyLI"> Shots of: </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Ceremony </li>
-									<li className="videographyLI"> Reception </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Ceremony </li>
+									<li className="videographyLI videographyLIChild"> Reception </li>
 								</ul>
 								<li className="videographyLI"> 5 DVD’s </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Additional available for $15 each </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Additional available for $15 each </li>
 								</ul>
 								<li className="videographyLI"> HD Web Upload on our site and social media </li>
 							</ul>
@@ -287,15 +297,15 @@ export default class Videography extends Component {
 						<div className="weddingPricesInner">
 							<ul className="videographyUL">
 								<li className="videographyLI"> Cinematic Wedding Video </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Set to your choice of music </li>
-									<li className="videographyLI"> Approx 5 minutes in length </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Set to your choice of music </li>
+									<li className="videographyLI videographyLIChild"> Approx 5 minutes in length </li>
 								</ul>
 								<li className="videographyLI"> 1 Videographer on site (limited) </li>
 								<li className="videographyLI"> Shots of: </li>
-								<ul className="videographyUL">
-									<li className="videographyLI"> Ceremony </li>
-									<li className="videographyLI"> Reception </li>
+								<ul className="videographyUL videographyULChild">
+									<li className="videographyLI videographyLIChild"> Ceremony </li>
+									<li className="videographyLI videographyLIChild"> Reception </li>
 								</ul>
 								<li className="videographyLI"> 3 DVD’s </li>
 								<li className="videographyLI"> HD Web Upload on our site and social media </li>
