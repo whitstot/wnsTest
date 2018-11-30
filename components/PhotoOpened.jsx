@@ -20,7 +20,8 @@ export default class PhotoOpened extends Component {
 			'MAC', 
 			'mountains',
 			'lauraUnderwater',
-			'ECUsched'
+			'ECUsched',
+			'jessWed'
 		];	
 
 		this.rightArrow = false;
@@ -296,6 +297,18 @@ export default class PhotoOpened extends Component {
 								<div> Sports Photos </div>
 								<br/>
 								<div className="portraitText"> ECU Womens Basketball schedule for 2018-2019 </div>
+							</div>
+						</div>
+					}	
+					{this.state.imageToRender === 'jessWed' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/JessWedding.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 3 </div>
+								<br/>
+								<div> Wedding Newspaper </div>
+								<br/>
+								<div className="portraitText"> This is my sister Jessica and her now husband, Logan Cash. I made these for her wedding day. We passed them out while acting like we were on the Titanic all day. Her wedding was located at the Dresser Mansion in Tulsa, OK. </div>
 							</div>
 						</div>
 					}	
