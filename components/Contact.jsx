@@ -10,7 +10,8 @@ export default class Element extends Component {
 		super(props);
 
 		this.state = {
-			class: 'contactWrapper'
+			class: 'contactWrapper',
+			portrait: window.matchMedia("(orientation: portrait)").matches
 		}
 	}
 	componentWillMount() {
@@ -22,26 +23,40 @@ export default class Element extends Component {
 				class: 'contactWrapper bringMeIn'
 			})
 		}, 20);
+		window.addEventListener('resize', this.checkMobile.bind(this))
+	}
+	checkMobile() {
+		let windowWidth = window.innerWidth,
+			portrait = this.state.portrait;
+
+		this.refs['background'].style.height = window.innerHeight;
+
+		if (windowWidth <= 1050) {
+			portrait = true;
+		}
+		else if (windowWidth > 1050) {
+			portrait = false;
+		}
+		if (portrait !== this.state.portrait) {
+			this.setState({
+				portrait: portrait
+			})
+		}
 	}
 	render() {
 		return (
-			<div className="contactBackground">
-				<div className={this.state.class}>
-					<div className="addressStamp">
-						<div> 
-							Billy Bob <br/>
-							1234 CR 5678 <br/>
-							Small Town USA <br/>
-							
-						</div>
-						<img className="contactImg" src="../images/flagStamp.jpg"/>
-					</div>
-					<div className="emailMe">
-						If you want to get ahold of me, <br/> just shoot me an email!
-						<a className="emailMeHref" href="mailto:whitneynstotler@gmail.com?Subject=Let's%20Chat&Body=I'd%20like%20to%20talk%20about%20:"> Email Me</a>
-					</div>
-				</div>
+			<div className="emailMe" ref={(eref) => {this.refs['background'] = findDOMNode(eref)}} style={{height: window.innerHeight + 'px'}}>
+				<a className="emailMeHref" href="mailto:whitneynstotler@gmail.com?Subject=Let's%20Chat"> EMAIL ME</a>
 			</div>
 		)
 	} 
 }
+
+
+
+
+
+
+
+
+
