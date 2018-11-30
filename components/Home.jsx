@@ -9,6 +9,7 @@ import Videography from './Videography.jsx';
 import WebDesign from './WebDesign.jsx';
 import About from './About.jsx';
 import Contact from './Contact.jsx';
+import Resume from './Resume.jsx';
 
 
 export default class Home extends Component {
@@ -25,14 +26,17 @@ export default class Home extends Component {
 		videography
 		webDesign
 		about
-		contact   */
+		contact 
+		resume
+		  */
 
 		this.state = {
-			componentToRender: 'photoshop',
+			componentToRender: 'resume',
 			photoshop: 'graphic menuItem tabSelected',
 			videography: 'menuItem',
 			webDesign: 'menuItem', 
 			about: 'menuItem', 
+			resume: 'menuItem',
 			contact: 'menuItem contact'
 		}
 	}
@@ -140,6 +144,13 @@ export default class Home extends Component {
 						</div>
 						<div> | </div>
 						<div 
+							ref={(eref) => {this.refs['resume'] = findDOMNode(eref)}} 
+							onClick={this.renderNewComponent.bind(this,'resume')} 
+							className={this.state.resume}> 
+								Resume
+						</div>
+						<div> | </div>
+						<div 
 							ref={(eref) => {this.refs['contact'] = findDOMNode(eref)}} 
 							onClick={this.renderNewComponent.bind(this,'contact')} 
 							className={this.state.contact}> 
@@ -160,6 +171,7 @@ export default class Home extends Component {
 					<div onClick={this.renderNewComponent.bind(this,'videography')} className="mobileMenuItem"> Videography </div>
 					<div onClick={this.renderNewComponent.bind(this,'webDesign')} className="mobileMenuItem"> Web Design </div>
 					<div onClick={this.renderNewComponent.bind(this,'about')} className="mobileMenuItem"> About Me </div>
+					<div onClick={this.renderNewComponent.bind(this,'resume')} className="mobileMenuItem"> Resume </div>
 					<div onClick={this.renderNewComponent.bind(this,'contact')} className="mobileMenuItem"> Contact </div>
 				</div>
 
@@ -174,6 +186,9 @@ export default class Home extends Component {
 				}
 				{this.state.componentToRender === 'about' &&
 					<About />
+				}
+				{this.state.componentToRender === 'resume' &&
+					<Resume />
 				}
 				{this.state.componentToRender === 'contact' &&
 					<Contact />
