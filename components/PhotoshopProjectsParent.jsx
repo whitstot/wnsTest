@@ -23,7 +23,7 @@ export default class PhotoshopProjectsParent extends Component {
 	}
 	pushHistory() {
 		if (this.state.componentToRender !== 'photoshop') {
-			window.history.pushState('photoshop', 'photoshop', './photoshop');
+			window.history.pushState('photoshop', 'photoshop', './');
 		}
 	}
 	renderNewComponent(component) {

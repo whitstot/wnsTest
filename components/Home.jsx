@@ -31,7 +31,7 @@ export default class Home extends Component {
 		  */
 
 		this.state = {
-			componentToRender: 'resume',
+			componentToRender: 'photoshop',
 			photoshop: 'graphic menuItem tabSelected',
 			videography: 'menuItem',
 			webDesign: 'menuItem', 

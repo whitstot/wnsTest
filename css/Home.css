@@ -64,7 +64,7 @@
 
 /* Media Queries */
 
-@media (min-width: 680px) {
+@media (min-width: 830px) {
 	/* desktop */
 	.menu {
 		display: flex;
@@ -91,7 +91,7 @@
 		display: none;
 	}
 }
-@media (max-width: 679px) {
+@media (max-width: 829px) {
 	/* mobile */
 	.wrapper {
 		justify-content: space-between;

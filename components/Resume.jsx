@@ -11,19 +11,33 @@ export default class Element extends Component {
 		super(props);
 
 		this.state = {
-			
+			imgClass: 'imgResume'
 		}
 	}
 	componentWillMount() {
 		this.refs = [];
 	}
 	componentDidMount() {
+		window.setTimeout(() => {
+			this.setState({
+				imgClass: 'imgResume comeIn'
+			})
+		}, 20)
+		window.setTimeout(() => {
+			this.setState({
+				imgClass: 'imgResume comeIn scale'
+			})
+		}, 1000)
 
+		//this is only here because theres for some reason an excessive amount of scrolling after the transition, and this fixes it?
+		window.setTimeout(() => {
+			this.refs['resumeWrapper'].style.height = "100%"
+		}, 1020)
 	}
 	render() {
 		return (
-			<div>
-                <img src="../images/ResumeSimple.jpg"/>
+			<div ref={(eref) => {this.refs['resumeWrapper'] = findDOMNode(eref)}} className="resumeWrapper">
+                <img className={this.state.imgClass} src="../images/ResumeSimple.png"/>
 			</div>
 		)
 	} 

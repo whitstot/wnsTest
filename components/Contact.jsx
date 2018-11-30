@@ -12,8 +12,8 @@ export default class Element extends Component {
 		this.boundResizeFunc = this.resizeFunc.bind(this);
 
 		this.state = {
-			class: 'contactWrapper',
-			portrait: window.matchMedia("(orientation: portrait)").matches
+			portrait: window.matchMedia("(orientation: portrait)").matches,
+			emailMeHrefClass: 'emailMeHref'
 		}
 	}
 	componentWillMount() {
@@ -25,9 +25,9 @@ export default class Element extends Component {
 	componentDidMount() {
 		window.setTimeout(()=>{
 			this.setState({
-				class: 'contactWrapper bringMeIn'
+				emailMeHrefClass: 'emailMeHref addBorder'
 			})
-		}, 20);
+		}, 100);
 		window.addEventListener('resize', this.boundResizeFunc)
 	}
 	resizeFunc() {
@@ -51,7 +51,7 @@ export default class Element extends Component {
 	render() {
 		return (
 			<div className="emailMe" ref={(eref) => {this.refs['background'] = findDOMNode(eref)}} style={{height: window.innerHeight + 'px'}}>
-				<a className="emailMeHref" href="mailto:whitneynstotler@gmail.com?Subject=Let's%20Chat"> EMAIL ME</a>
+				<a className={this.state.emailMeHrefClass} href="mailto:whitneynstotler@gmail.com?Subject=Let's%20Chat"> EMAIL ME</a>
 			</div>
 		)
 	} 

@@ -44,21 +44,22 @@
 	}
 	.JWFilms {
 		font-family: 'Sacramento', cursive;
-	    font-size: 240px;
+	    font-size: 220px;
 	    display: flex;
 	    justify-content: center;
 	    color: white;
 	}
 	.slogan {
 		font-family: 'Amatic SC', cursive;
-		font-size: 42px;
+		font-size: 35px;
 		display: flex;
 		justify-content: center;
 		color: white;
 	}
 	.logoWrapper {
 		position: absolute;
-		top: 35%;
+		/*top: 35%;*/
+		top: 275px;
 		width: 100%;
 	}
 	.meAndJosh {
@@ -88,7 +89,7 @@
 		/* height: 500px; */
 	}
 	.weddingPricesDiv {
-		background-color: #80b1b3;
+		background-color: pink;
 		display: flex;
 		flex-direction: column;
 		padding: 5px 7px;
@@ -101,7 +102,7 @@
 		transform: scale(1.05);
 	}
 	.weddingPricesFavorite {
-		background-color: #395e60;
+		background-color: lightcoral;
 	}
 	.weddingPricesInner {
 		/*background-color: #cfe1e2;*/
@@ -226,7 +227,7 @@
 	    justify-content: space-around;
 	}
 	.weddingPricesDiv {
-		/*background-color: #80b1b3;*/
+		/*background-color: pink;*/
 	    display: flex;
 	    flex-direction: column;
 	    /* padding: 10px 20px; */
@@ -235,11 +236,11 @@
 	    border-radius: 10px;
 	    margin-top: 2%;
 	    width: 45%;
-	    border: 1px solid #80b1b3;
+	    border: 1px solid pink;
 	}
 	.weddingPricesFavorite {
-		/*background-color: #395e60;*/
-		border: 1px solid #395e60;
+		/*background-color: lightcoral;*/
+		border: 1px solid lightcoral;
 	}
 	.weddingPricesInner {
 		/*background-color: #cfe1e2;*/
@@ -271,7 +272,7 @@
 		font-size: 21px;
     	text-align: center;
     	font-family: 'Roboto', serif;
-    	background-color: #80b1b3;
+    	background-color: pink;
     	border-radius: 7px 7px 0px 0px;
 	}
 	.price {
@@ -281,7 +282,7 @@
 	}
 	.weddingHeaderFav {
 		color: white;
-    	background-color: #395e60;
+    	background-color: lightcoral;
     	border-radius: 7px 7px 0px 0px;
 	}
 }

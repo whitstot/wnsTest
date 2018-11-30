@@ -115,17 +115,16 @@ export default class Videography extends Component {
 	render() {
 		return (
 			<div>
-				{this.state.portrait === false &&
-					<video 
-						style={{width: '100%', height: 'auto'}}
-						src="../images/MeaganWeddingShorter.mp4" 
-						type="video/mp4" 
-						preload="true" 
-						playsInline={true} 
-						autoPlay={true} 
-						loop={true}> 
-					</video>
-				}
+				<video 
+					style={{width: '100%', height: 'auto'}}
+					src="../images/MeaganWeddingShorter.mp4" 
+					type="video/mp4" 
+					preload="true" 
+					playsInline={true} 
+					autoPlay={true} 
+					loop={true}> 
+				</video>
+					
 				<div className="logoWrapper">
 					<div className="JWFilms">
 						JW Films

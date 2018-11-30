@@ -1,10 +1,38 @@
 
 
+
+
+
+.imgResume {    
+	width: 100%;
+    border: 0.5px solid lightgray;
+    /*border-bottom-width: 0px;*/
+    transform: translate(0%, 150%);
+    transition: transform 1s ease;
+    box-shadow: 10px 10px 13px lightslategrey;
+}
+.comeIn {
+	transform: translate(0%, 0%);
+}
+.scale {
+	transition: transform 1.5s ease;
+	transform: scale(0.9);
+}
+.resumeWrapper {
+	width: 100%;
+	position: absolute;
+}
+
+
+
+
+
+
 /* Media Queries */
 
 @media (min-width: 1051px) {
 	/* desktop */
-	
+
 }
 
 
