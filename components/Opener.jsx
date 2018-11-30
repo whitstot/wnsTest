@@ -10,7 +10,8 @@ export default class Element extends Component {
 	constructor(props) {
 		super(props);
 
-		this.boundOpenerPopHistory = this.openerPopHistory.bind(this)
+		this.boundOpenerPopHistory = this.openerPopHistory.bind(this);
+		this.boundSetPhotoHeight = this.setPhotoHeight.bind(this);
 
 		this.state = {
 			componentToRender: 'opener',
@@ -20,8 +21,11 @@ export default class Element extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.boundSetPhotoHeight)
+	}
 	componentDidMount() {
-		window.addEventListener('resize', this.setPhotoHeight.bind(this))
+		window.addEventListener('resize', this.boundSetPhotoHeight)
 
 		window.onunload = function(){
     		console.log("unload event detected!");

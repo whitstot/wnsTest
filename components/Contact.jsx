@@ -9,6 +9,8 @@ export default class Element extends Component {
 	constructor(props) {
 		super(props);
 
+		this.boundResizeFunc = this.resizeFunc.bind(this);
+
 		this.state = {
 			class: 'contactWrapper',
 			portrait: window.matchMedia("(orientation: portrait)").matches
@@ -17,15 +19,18 @@ export default class Element extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.boundResizeFunc)
+	}
 	componentDidMount() {
 		window.setTimeout(()=>{
 			this.setState({
 				class: 'contactWrapper bringMeIn'
 			})
 		}, 20);
-		window.addEventListener('resize', this.checkMobile.bind(this))
+		window.addEventListener('resize', this.boundResizeFunc)
 	}
-	checkMobile() {
+	resizeFunc() {
 		let windowWidth = window.innerWidth,
 			portrait = this.state.portrait;
 

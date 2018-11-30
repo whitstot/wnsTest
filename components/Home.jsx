@@ -28,7 +28,7 @@ export default class Home extends Component {
 		contact   */
 
 		this.state = {
-			componentToRender: 'contact',
+			componentToRender: 'photoshop',
 			photoshop: 'graphic menuItem tabSelected',
 			videography: 'menuItem',
 			webDesign: 'menuItem', 
@@ -39,6 +39,9 @@ export default class Home extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentWillUnmount() {
+		window.removeEventListener('popstate', this.boundPopHistory)
+	}
 	componentDidMount() {
 		window.addEventListener('popstate', this.boundPopHistory);
 		this.pushHistory();
@@ -47,7 +50,6 @@ export default class Home extends Component {
 		this.pushHistory()
 	}
 	popHistory() {
-		console.log(window.history.state)
 		if (window.history.state !== null) {
 			//all this is just to set the tab color pink by setting the state to the correct class name
 			let currentComponent = this.state.componentToRender,
@@ -65,7 +67,6 @@ export default class Home extends Component {
 			})
 		}
 		else {
-			console.log('remove me')
 			window.removeEventListener('popstate', this.boundPopHistory);
 			this.goToOpener();
 		}

@@ -26,6 +26,7 @@ export default class PhotoOpened extends Component {
 		this.rightArrow = false;
 		this.leftArrow = false;
 		this.bringIn = false;
+		this.boundSetPhotoDimensions = this.setPhotoDimensions.bind(this);
 
 		this.state = {
 			imageToRender: this.props.photo,
@@ -36,10 +37,14 @@ export default class PhotoOpened extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.boundSetPhotoDimensions)
+		window.removeEventListener('orientationchange', this.boundSetPhotoDimensions)
+	}
 	componentDidMount() {
 		this.setPhotoDimensions();
-		window.addEventListener('resize', this.setPhotoDimensions.bind(this))
-		window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
+		window.addEventListener('resize', this.boundSetPhotoDimensions)
+		window.addEventListener("orientationchange", this.boundSetPhotoDimensions);
 
 		window.setTimeout(()=>{
 			this.setPhotoDimensions();

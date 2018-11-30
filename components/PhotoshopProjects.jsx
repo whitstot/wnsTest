@@ -10,6 +10,8 @@ export default class PhotoshopProjects extends Component {
 	constructor(props) {
 		super(props);
 
+		this.boundIEResize = this.IEResize.bind(this)
+
 		this.state = {
 			usingIE: false
 		}
@@ -17,9 +19,12 @@ export default class PhotoshopProjects extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.boundIEResize)
+	}
 	componentDidMount() {
 		if ((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
-			window.addEventListener('resize', this.IEResize.bind(this));
+			window.addEventListener('resize', this.boundIEResize);
 			this.setState({
 				usingIE: true
 			})

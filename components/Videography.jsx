@@ -10,12 +10,17 @@ export default class Videography extends Component {
 	constructor(props) {
 		super(props);
 
+		this.boundSetVideoDimensions = this.setVideoDimensions.bind(this);
+
 		this.state = {
 			portrait: window.matchMedia("(orientation: portrait)").matches
 		}
 	}
 	componentWillMount() {
 		this.refs = [];
+	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.boundSetVideoDimensions)
 	}
 	componentDidMount() {
 		this.setVideoDimensions('firstRun');
@@ -24,7 +29,7 @@ export default class Videography extends Component {
 			this.setVideoDimensions();
 		}, 20)
 
-		window.addEventListener('resize', this.setVideoDimensions.bind(this))
+		window.addEventListener('resize', this.boundSetVideoDimensions)
 	}
 	setVideoDimensions(e) {
 		let windowWidth = window.innerWidth,

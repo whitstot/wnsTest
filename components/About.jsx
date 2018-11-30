@@ -10,6 +10,8 @@ export default class Element extends Component {
 	constructor(props) {
 		super(props);
 
+		this.boundSetPhotoDimensions = this.setPhotoDimensions.bind(this);
+
 		this.state = {
 			portrait: window.matchMedia("(orientation: portrait)").matches,
 			pictureClass: 'aboutImg',
@@ -21,10 +23,14 @@ export default class Element extends Component {
 	componentWillMount() {
 		this.refs = [];
 	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.boundSetPhotoDimensions)
+		window.removeEventListener('orientationchange', this.boundSetPhotoDimensions)
+	}
 	componentDidMount() {
 		this.setPhotoDimensions();
-		window.addEventListener('resize', this.setPhotoDimensions.bind(this))
-		window.addEventListener("orientationchange", this.setPhotoDimensions.bind(this));
+		window.addEventListener('resize', this.boundSetPhotoDimensions)
+		window.addEventListener("orientationchange", this.boundSetPhotoDimensions);
 
 		window.setTimeout(()=>{
 			this.setState({
