@@ -39,9 +39,11 @@
 	font-weight: 500;
 	padding: 10px;
 	font-size: x-large;
+	user-select: none;
+	cursor: pointer;
 }
 .mobileMenuItem:hover {
-	color: #ff9999;
+	color: #b30000;
 }
 .topMobileMenuItem {
 	margin-top: 33%;

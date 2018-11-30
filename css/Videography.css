@@ -89,7 +89,7 @@
 		/* height: 500px; */
 	}
 	.weddingPricesDiv {
-		background-color: pink;
+		background-color: thistle;
 		display: flex;
 		flex-direction: column;
 		padding: 5px 7px;
@@ -102,7 +102,7 @@
 		transform: scale(1.05);
 	}
 	.weddingPricesFavorite {
-		background-color: lightcoral;
+		background-color: purple;
 	}
 	.weddingPricesInner {
 		/*background-color: #cfe1e2;*/
@@ -185,19 +185,22 @@
 		font-size: xx-large;
 		display: flex;
 		justify-content: center;
-		color: darkgoldenrod;
-		margin-top: 5%;
+		color: white;
+		/*margin-top: 5%;*/
 	}
 	.slogan {
 		font-family: 'Amatic SC', cursive;
 		font-size: large;
 		display: flex;
 		justify-content: center;
-		margin-bottom: 10%;
+		color: white;
+		/*margin-bottom: 10%;*/
 	}
 	.logoWrapper {
-		top: 35%;
 		width: 100%;
+		padding: 7px 0px 11px 0px;
+		background-color: thistle;
+		opacity: 0.8;
 	}
 	.meAndJosh {
 		display: flex;
@@ -227,7 +230,7 @@
 	    justify-content: space-around;
 	}
 	.weddingPricesDiv {
-		/*background-color: pink;*/
+		/*background-color: thistle;*/
 	    display: flex;
 	    flex-direction: column;
 	    /* padding: 10px 20px; */
@@ -236,11 +239,11 @@
 	    border-radius: 10px;
 	    margin-top: 2%;
 	    width: 45%;
-	    border: 1px solid pink;
+	    border: 1px solid thistle;
 	}
 	.weddingPricesFavorite {
-		/*background-color: lightcoral;*/
-		border: 1px solid lightcoral;
+		/*background-color: purple;*/
+		border: 1px solid purple;
 	}
 	.weddingPricesInner {
 		/*background-color: #cfe1e2;*/
@@ -272,7 +275,7 @@
 		font-size: 21px;
     	text-align: center;
     	font-family: 'Roboto', serif;
-    	background-color: pink;
+    	background-color: thistle;
     	border-radius: 7px 7px 0px 0px;
 	}
 	.price {
@@ -282,7 +285,7 @@
 	}
 	.weddingHeaderFav {
 		color: white;
-    	background-color: lightcoral;
+    	background-color: purple;
     	border-radius: 7px 7px 0px 0px;
 	}
 }
