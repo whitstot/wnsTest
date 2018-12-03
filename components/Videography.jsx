@@ -4,6 +4,11 @@ import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/Videography.css';
 import Footer from './Footer.jsx';
+import '../css/Loading.css';
+
+var Preload = require('react-preload').Preload;
+var loadingIndicator = (<div className="rainbowLoading">Loading...</div>);
+var images = [];
 
 
 export default class Videography extends Component {
@@ -115,17 +120,30 @@ export default class Videography extends Component {
 	render() {
 		return (
 			<div>
-				{this.state.portrait === false &&
-					<video 
-						style={{width: '100%', height: 'auto'}}
-						src="../images/MeaganWeddingShorter.mp4" 
-						type="video/mp4" 
-						preload="true" 
-						playsInline={true} 
-						autoPlay={true} 
-						loop={true}> 
-					</video>
-				}
+
+				<Preload
+				    loadingIndicator={loadingIndicator}
+				    images={images}
+				    autoResolveDelay={30}
+				    onError={console.warn('Error in Vidography.jsx Preload')}
+				    onSuccess={console.log('Success!')}
+				    resolveOnError={true}
+				    mountChildren={true}
+				>
+
+					{this.state.portrait === false &&
+						<video 
+							style={{width: '100%', height: 'auto'}}
+							src="../images/MeaganWeddingShorter.mp4" 
+							type="video/mp4" 
+							preload="true" 
+							playsInline={true} 
+							autoPlay={true} 
+							loop={true}> 
+						</video>
+					}
+
+				</Preload>
 					
 				<div className="logoWrapper">
 					<div className="JWFilms">

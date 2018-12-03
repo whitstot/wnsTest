@@ -4,6 +4,11 @@ import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/PhotoshopProjects.css';
 import Footer from './Footer.jsx';
+import '../css/Loading.css';
+
+var Preload = require('react-preload').Preload;
+var loadingIndicator = (<div className="rainbowLoading">Loading...</div>);
+var images = [];
 
 
 export default class PhotoshopProjects extends Component {
@@ -46,6 +51,7 @@ export default class PhotoshopProjects extends Component {
 			this.refs['IEimgLaura'].style.width = widthToSet + 'px';
 			this.refs['IEimgECU'].style.width = widthToSet + 'px';
 			this.refs['IEimgJess'].style.width = widthToSet + 'px';
+			this.refs['IEimgRoomies'].style.width = widthToSet + 'px';
 
 			this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
 			this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
@@ -58,6 +64,7 @@ export default class PhotoshopProjects extends Component {
 			this.refs['IEimgLaura'].style.height = widthToSet + 'px';
 			this.refs['IEimgECU'].style.height = widthToSet + 'px';
 			this.refs['IEimgJess'].style.height = widthToSet + 'px';
+			this.refs['IEimgRoomies'].style.height = widthToSet + 'px';
 		}
 	}
 	IEResize() {
@@ -75,6 +82,7 @@ export default class PhotoshopProjects extends Component {
 		this.refs['IEimgLaura'].style.width = widthToSet + 'px';
 		this.refs['IEimgECU'].style.width = widthToSet + 'px';
 		this.refs['IEimgJess'].style.width = widthToSet + 'px';
+		this.refs['IEimgRoomies'].style.width = widthToSet + 'px';
 
 		this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
 		this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
@@ -87,11 +95,23 @@ export default class PhotoshopProjects extends Component {
 		this.refs['IEimgLaura'].style.height = widthToSet + 'px';
 		this.refs['IEimgECU'].style.height = widthToSet + 'px';
 		this.refs['IEimgJess'].style.height = widthToSet + 'px';
+		this.refs['IEimgRoomies'].style.height = widthToSet + 'px';
 	}
 	render() {
 
 		return (
 			<div>
+
+				<Preload
+				    loadingIndicator={loadingIndicator}
+				    images={images}
+				    autoResolveDelay={30}
+				    onError={console.warn('Error in Vidography.jsx Preload')}
+				    onSuccess={console.log('Success!')}
+				    resolveOnError={true}
+				    mountChildren={true}
+				>
+
 				{this.state.usingIE === true && 
 					<div className="IEwrapperMain">
 						<div className="IEtriple">
@@ -111,7 +131,8 @@ export default class PhotoshopProjects extends Component {
 						</div>
 						<div className="IEtriple">
 							<img ref={(eref) => {this.refs['IEimgECU'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/ECUscheduleSquare.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src=".../images/JessWeddingSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src=".../images/JessWeddingSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgRoomies'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src=".../images/RoomieChristmas2018.jpg" alt=""/>
 						</div>
 					</div>
 				}
@@ -129,8 +150,11 @@ export default class PhotoshopProjects extends Component {
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'lauraUnderwater')} src="../images/LauraUnderwaterHouseSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'ECUsched')} src="../images/ECUscheduleSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
 					</div>
 				}
+
+				</Preload>
 
 				<Footer />
 			</div>

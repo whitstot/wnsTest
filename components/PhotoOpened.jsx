@@ -21,7 +21,8 @@ export default class PhotoOpened extends Component {
 			'mountains',
 			'lauraUnderwater',
 			'ECUsched',
-			'jessWed'
+			'jessWed',
+			'roomieChristmas'
 		];	
 
 		this.rightArrow = false;
@@ -72,6 +73,12 @@ export default class PhotoOpened extends Component {
 				})
 			}, 20)
 		}
+
+		window.setTimeout(() => {
+			//setting arrow height based on pic height
+			this.refs['leftArrow'].style.height = getComputedStyle(this.refs['img']).height;
+			this.refs['rightArrow'].style.height = getComputedStyle(this.refs['img']).height;
+		}, 100)
 	}
 	setPhotoDimensions() {
 		let el = this.refs['img'],
@@ -87,6 +94,10 @@ export default class PhotoOpened extends Component {
 			el.setAttribute('width', widthToSet);
 			el.removeAttribute('height');
 			portrait = true;
+
+			//setting arrow height based on pic height
+			this.refs['leftArrow'].style.height = getComputedStyle(el).height;
+			this.refs['rightArrow'].style.height = getComputedStyle(el).height;
 		}
 		//else if(mediaQueryList.matches === false) {
 		else if (windowWidth > 1050) {
@@ -169,8 +180,18 @@ export default class PhotoOpened extends Component {
 
 					{this.state.portrait === true &&
 						<div>
-							<div onClick={this.leftArrowClicked.bind(this)} className="leftInvisibleArrow"> &#60; </div>
-							<div onClick={this.rightArrowClicked.bind(this)} className="rightInvisibleArrow"> &#62; </div>
+							<div 
+								ref={(eref) => {this.refs['leftArrow'] = findDOMNode(eref)}}
+								onClick={this.leftArrowClicked.bind(this)} 
+								className="leftInvisibleArrow"> 
+									&#60; 
+							</div>
+							<div 
+								ref={(eref) => {this.refs['rightArrow'] = findDOMNode(eref)}}
+								onClick={this.rightArrowClicked.bind(this)} 
+								className="rightInvisibleArrow"> 
+									&#62; 
+							</div>
 						</div>
 					}
 
@@ -308,10 +329,24 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Wedding Newspaper </div>
 								<br/>
-								<div className="portraitText"> This is my sister Jessica and her now husband, Logan Cash. I made these for her wedding day. We passed them out while acting like we were on the Titanic all day. Her wedding was located at the Dresser Mansion in Tulsa, OK. </div>
+								<div className="portraitText"> This is my sister Jessica and her now husband, Logan Cash. I made these for her wedding day! We passed them out while acting like we were on the Titanic. </div>
+								<br/>
+								<div> Her wedding was located at the Dresser Mansion in Tulsa, OK. </div>
 							</div>
 						</div>
-					}	
+					}
+					{this.state.imageToRender === 'roomieChristmas' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/RoomieChristmas2018.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 2 </div>
+								<br/>
+								<div> Christmas Cards </div>
+								<br/>
+								<div className="portraitText"> Merry Christmas from the Tracy, Johnson, Stotler household! </div>
+							</div>
+						</div>
+					}		
 
 					{this.state.portrait === false &&
 						<div onClick={this.rightArrowClicked.bind(this)} className="arrows">&#62;</div>
