@@ -101,8 +101,8 @@ export default class Videography extends Component {
 			this.refs['josh'].style.height = heightToSet + 'px';
 			this.refs['josh'].style.width = heightToSet + 'px';
 
-			this.refs['squareHolder'].style.width = windowWidth + 'px';
-			this.refs['squareHolder'].style.height = (windowWidth / 1.777777074508402) + 'px';
+			this.refs['squareHolder'].style.width = (windowWidth - 20) + 'px';
+			this.refs['squareHolder'].style.height = ((windowWidth / 1.777777074508402) - 20) + 'px';
 
 			portrait = false;
 		}

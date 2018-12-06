@@ -115,8 +115,8 @@ export default class PhotoshopProjects extends Component {
 						</div>
 						<div className="IEtriple">
 							<img ref={(eref) => {this.refs['IEimgECU'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/ECUscheduleSquare.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src=".../images/JessWeddingSquare.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgRoomieChristmas'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src=".../images/RoomieChristmas2018.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgRoomieChristmas'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
 						</div>
 					</div>
 				}

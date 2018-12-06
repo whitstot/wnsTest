@@ -31481,7 +31481,7 @@ function (_Component) {
         },
         className: "IEgraphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'jessWed'),
-        src: ".../images/JessWeddingSquare.jpg",
+        src: "../images/JessWeddingSquare.jpg",
         alt: ""
       }), _react.default.createElement("img", {
         ref: function ref(eref) {
@@ -31489,7 +31489,7 @@ function (_Component) {
         },
         className: "IEgraphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
-        src: ".../images/RoomieChristmas2018.jpg",
+        src: "../images/RoomieChristmas2018.jpg",
         alt: ""
       }))), this.state.usingIE === false && _react.default.createElement("div", {
         className: "grid"
@@ -32351,8 +32351,8 @@ function (_Component) {
         this.refs['me'].style.width = heightToSet + 'px';
         this.refs['josh'].style.height = heightToSet + 'px';
         this.refs['josh'].style.width = heightToSet + 'px';
-        this.refs['squareHolder'].style.width = windowWidth + 'px';
-        this.refs['squareHolder'].style.height = windowWidth / 1.777777074508402 + 'px';
+        this.refs['squareHolder'].style.width = windowWidth - 20 + 'px';
+        this.refs['squareHolder'].style.height = windowWidth / 1.777777074508402 - 20 + 'px';
         portrait = false;
       } //if the orientation changes this will update the state
 
