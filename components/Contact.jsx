@@ -5,7 +5,7 @@ import { findDOMNode } from 'react-dom';
 import '../css/Contact.css';
 
 
-export default class Element extends Component {
+export default class Contact extends Component {
 	constructor(props) {
 		super(props);
 

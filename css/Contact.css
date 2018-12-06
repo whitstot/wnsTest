@@ -26,11 +26,6 @@ thus the huge block of code
         padding: 60px;
         user-select: none;
     }
-    .contactImg {
-        height: 100%;
-        width: auto;
-        position: fixed;
-    }
     .emailMe {
         width: 100%;
         /*position: fixed;*/
@@ -69,11 +64,6 @@ thus the huge block of code
         cursor: pointer;
         transition: border 0.5s ease;
         padding: 47px;
-    }
-    .contactImg {
-        height: 100%;
-        width: auto;
-        position: fixed;
     }
     .addBorder {
         border: 2.5px solid white;

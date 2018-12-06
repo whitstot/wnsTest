@@ -5,10 +5,6 @@ import { findDOMNode } from 'react-dom';
 import '../css/Resume.css';
 import '../css/Loading.css';
 
-var Preload = require('react-preload').Preload;
-var loadingIndicator = (<div className="rainbowLoading">Loading...</div>);
-var images = [];
-
 
 export default class Element extends Component {
 	constructor(props) {
@@ -41,17 +37,7 @@ export default class Element extends Component {
 	render() {
 		return (
 			<div ref={(eref) => {this.refs['resumeWrapper'] = findDOMNode(eref)}} className="resumeWrapper">
-				<Preload
-				    loadingIndicator={loadingIndicator}
-				    images={images}
-				    autoResolveDelay={30}
-				    onError={console.warn('Error in Vidography.jsx Preload')}
-				    onSuccess={console.log('Success!')}
-				    resolveOnError={true}
-				    mountChildren={true}
-				>
-                <img className={this.state.imgClass} src="../images/ResumeSimple3.jpg"/>
-                </Preload>
+                <a href="../images/ResumeSimple.pdf"><img className={this.state.imgClass} src="../images/ResumeSimple3.jpg"/></a>
 			</div>
 		)
 	} 
