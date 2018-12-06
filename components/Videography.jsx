@@ -4,7 +4,6 @@ import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/Videography.css';
 import Footer from './Footer.jsx';
-import '../css/Loading.css';
 
 
 export default class Videography extends Component {
@@ -116,7 +115,6 @@ export default class Videography extends Component {
 	render() {
 		return (
 			<div>
-
 				{this.state.portrait === false &&
 					<video 
 						style={{width: '100%', height: 'auto'}}
