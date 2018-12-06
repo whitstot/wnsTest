@@ -31335,6 +31335,7 @@ function (_Component) {
         this.refs['IEimgLaura'].style.width = widthToSet + 'px';
         this.refs['IEimgECU'].style.width = widthToSet + 'px';
         this.refs['IEimgJess'].style.width = widthToSet + 'px';
+        this.refs['IEimgRoomieChristmas'].style.width = widthToSet + 'px';
         this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
         this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
         this.refs['IEimgThunder'].style.height = widthToSet + 'px';
@@ -31346,6 +31347,7 @@ function (_Component) {
         this.refs['IEimgLaura'].style.height = widthToSet + 'px';
         this.refs['IEimgECU'].style.height = widthToSet + 'px';
         this.refs['IEimgJess'].style.height = widthToSet + 'px';
+        this.refs['IEimgRoomieChristmas'].style.height = widthToSet + 'px';
       }
     }
   }, {
@@ -31364,6 +31366,7 @@ function (_Component) {
       this.refs['IEimgLaura'].style.width = widthToSet + 'px';
       this.refs['IEimgECU'].style.width = widthToSet + 'px';
       this.refs['IEimgJess'].style.width = widthToSet + 'px';
+      this.refs['IEimgRoomieChristmas'].style.width = widthToSet + 'px';
       this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
       this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
       this.refs['IEimgThunder'].style.height = widthToSet + 'px';
@@ -31375,6 +31378,7 @@ function (_Component) {
       this.refs['IEimgLaura'].style.height = widthToSet + 'px';
       this.refs['IEimgECU'].style.height = widthToSet + 'px';
       this.refs['IEimgJess'].style.height = widthToSet + 'px';
+      this.refs['IEimgRoomieChristmas'].style.height = widthToSet + 'px';
     }
   }, {
     key: "render",
@@ -31476,8 +31480,16 @@ function (_Component) {
           _this2.refs['IEimgJess'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'mountains'),
+        onClick: this.props.renderNewComponent.bind(this, 'jessWed'),
         src: ".../images/JessWeddingSquare.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgRoomieChristmas'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
+        src: ".../images/RoomieChristmas2018.jpg",
         alt: ""
       }))), this.state.usingIE === false && _react.default.createElement("div", {
         className: "grid"
@@ -31535,6 +31547,11 @@ function (_Component) {
         className: "graphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'jessWed'),
         src: "../images/JessWeddingSquare.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
+        src: "../images/RoomieChristmas2018.jpg",
         alt: ""
       })), _react.default.createElement(_Footer.default, null));
     }
@@ -32362,7 +32379,7 @@ function (_Component) {
           height: 'auto',
           position: 'relative'
         },
-        src: "../images/MeaganWeddingShorter.mp4",
+        src: "../images/MeaganWeddingLowQuality.mp4",
         type: "video/mp4",
         preload: "true",
         playsInline: true,

@@ -123,7 +123,7 @@ export default class Videography extends Component {
 						<div ref={(eref) => {this.refs['squareHolder'] = findDOMNode(eref)}} className="squareHolder"></div>
 						<video 
 							style={{width: '100%', height: 'auto', position: 'relative'}}
-							src="../images/MeaganWeddingShorter.mp4" 
+							src="../images/MeaganWeddingLowQuality.mp4" 
 							type="video/mp4" 
 							preload="true" 
 							playsInline={true} 
