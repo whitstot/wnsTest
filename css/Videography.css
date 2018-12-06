@@ -137,6 +137,10 @@
 	.weddingHeaderFav {
 		color: white;
 	}
+	.squareHolder {
+		background: black;
+	    position: absolute;
+	}
 }
 
 @media (max-width: 1050px) {

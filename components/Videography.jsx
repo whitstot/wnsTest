@@ -96,10 +96,13 @@ export default class Videography extends Component {
 
 			/* -------------------------------------------------- */
 
-			this.refs['me'].style.height = heightToSet + 'px'
-			this.refs['me'].style.width = heightToSet + 'px'
-			this.refs['josh'].style.height = heightToSet + 'px'
-			this.refs['josh'].style.width = heightToSet + 'px'
+			this.refs['me'].style.height = heightToSet + 'px';
+			this.refs['me'].style.width = heightToSet + 'px';
+			this.refs['josh'].style.height = heightToSet + 'px';
+			this.refs['josh'].style.width = heightToSet + 'px';
+
+			this.refs['squareHolder'].style.width = windowWidth + 'px';
+			this.refs['squareHolder'].style.height = (windowWidth / 1.777777074508402) + 'px';
 
 			portrait = false;
 		}
@@ -116,15 +119,18 @@ export default class Videography extends Component {
 		return (
 			<div>
 				{this.state.portrait === false &&
-					<video 
-						style={{width: '100%', height: 'auto'}}
-						src="../images/MeaganWeddingShorter.mp4" 
-						type="video/mp4" 
-						preload="true" 
-						playsInline={true} 
-						autoPlay={true} 
-						loop={true}> 
-					</video>
+					<div>
+						<div ref={(eref) => {this.refs['squareHolder'] = findDOMNode(eref)}} className="squareHolder"></div>
+						<video 
+							style={{width: '100%', height: 'auto', position: 'relative'}}
+							src="../images/MeaganWeddingShorter.mp4" 
+							type="video/mp4" 
+							preload="true" 
+							playsInline={true} 
+							autoPlay={true} 
+							loop={true}> 
+						</video>
+					</div>
 				}
 					
 				<div className="logoWrapper">

@@ -4,11 +4,6 @@ import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/Opener.css';
 import Home from './Home.jsx';
-import '../css/Loading.css';
-
-var Preload = require('react-preload').Preload;
-var loadingIndicator = (<div className="rainbowLoading">Loading...</div>);
-var images = [];
 
 
 export default class Element extends Component {
@@ -84,15 +79,6 @@ export default class Element extends Component {
 	render() {
 		return (
 			<div ref={(eref) => {this.refs['openerWrapper'] = findDOMNode(eref)}} className="opener">
-			<Preload
-			    loadingIndicator={loadingIndicator}
-			    images={images}
-			    autoResolveDelay={30}
-			    onError={console.warn('Error in Vidography.jsx Preload')}
-			    onSuccess={console.log('Success!')}
-			    resolveOnError={true}
-			    mountChildren={true}
-			>
 
 				{(this.state.portrait === false && this.state.componentToRender === 'opener') &&
 					<img className="openerImage" src='../images/websiteOpener.jpg'/>
@@ -101,7 +87,6 @@ export default class Element extends Component {
 				{(this.state.portrait === true && this.state.componentToRender === 'opener') &&
 					<img className="openerImage" src='../images/websiteOpenerPortrait.jpg'/>
 				}
-			</Preload>
 
 				{this.state.componentToRender === 'opener' && 
 					<center onClick={this.changeComponentToHome.bind(this)} className="enterSite">

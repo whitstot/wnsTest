@@ -73,12 +73,6 @@ export default class PhotoOpened extends Component {
 				})
 			}, 20)
 		}
-
-		window.setTimeout(() => {
-			//setting arrow height based on pic height
-			this.refs['leftArrow'].style.height = getComputedStyle(this.refs['img']).height;
-			this.refs['rightArrow'].style.height = getComputedStyle(this.refs['img']).height;
-		}, 100)
 	}
 	setPhotoDimensions() {
 		let el = this.refs['img'],
@@ -197,7 +191,7 @@ export default class PhotoOpened extends Component {
 
 					{this.state.imageToRender === 'worldRace' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/worldRace.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/worldRace.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 4 </div>
 								<br/>
@@ -209,7 +203,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'kimmiLion' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
-							<img className="photoOpenedImg" style={{opacity: '0.95', filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/KimmiLionBrown.jpg" alt=""/>
+							<img className="photoOpenedImg" style={{opacity: '0.95', filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/KimmiLionBrown.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 2 </div> 
 								<br/>
@@ -221,7 +215,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'thunderCoffee' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
-							<a href="https://www.thundercoffeefargo.com/"><img className="imageWithLink photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/thunderCoffeeSquare.jpg" alt=""/></a>
+							<a href="https://www.thundercoffeefargo.com/"><img className="imageWithLink photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/thunderCoffeeSquare.jpg" alt=""/></a>
 							<div className="textWrapper"> 
 								<div> Level: 1 </div>
 								<br/>
@@ -235,7 +229,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'jade' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 2 </div>
 								<br/>
@@ -247,7 +241,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'whitsFlowerFarm' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>	
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 1 </div>
 								<br/>
@@ -259,7 +253,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'meFlowerFace' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/meFlowerFace.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/meFlowerFace.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div>Level: 4 </div>
 								<br/>
@@ -271,7 +265,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'MAC' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="imageWithLink photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/MAC2myselfBlue.jpg" alt=""/></a>
+							<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="imageWithLink photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/MAC2myselfBlue.jpg" alt=""/></a>
 							<div className="textWrapper"> 
 								<div>Level: 4 </div>
 								<br/>
@@ -287,7 +281,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'mountains' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/twinPeaks.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/twinPeaks.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div>Level: 2 </div>
 								<br/>
@@ -299,7 +293,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'lauraUnderwater' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" style={{filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/LauraUnderwaterHouse.jpg" alt=""/>
+							<img className="photoOpenedImg" style={{filter: 'brightness(1.2)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/LauraUnderwaterHouse.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 3 </div>
 								<br/>
@@ -311,7 +305,7 @@ export default class PhotoOpened extends Component {
 					}	
 					{this.state.imageToRender === 'ECUsched' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/ECUschedule.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/ECUschedule.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 3 </div>
 								<br/>
@@ -323,7 +317,7 @@ export default class PhotoOpened extends Component {
 					}	
 					{this.state.imageToRender === 'jessWed' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/JessWedding.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/JessWedding.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 3 </div>
 								<br/>
@@ -337,7 +331,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'roomieChristmas' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} src="../images/RoomieChristmas2018.jpg" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/RoomieChristmas2018.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 2 </div>
 								<br/>
