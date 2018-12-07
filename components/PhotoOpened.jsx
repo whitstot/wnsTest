@@ -235,7 +235,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Explosion Effect </div>
 								<br/>
-								<div className="portraitText"> This is Jade. Everyone say "Hi Jade!" :D This picture was taken for one of her senior photos at ECU. The Explosion Effect is a Glitter Storm Photoshop Action, and it's probably my favorite. Works really well with action shots. </div>
+								<div className="portraitText"> This is Jade. Everyone say "Hi Jade!" :D This picture was taken for one of her senior photos at ECU. The Explosion Effect is a Glitter Storm Photoshop Action and it's probably my favorite. This effect works really well with action shots. </div>
 							</div>
 						</div>
 					}
@@ -271,7 +271,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Hard Logo </div>
 								<br/>
-								<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad, and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click her name below! </div>
+								<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click her name below! </div>
 								<br/>
 								<a href="https://maccoplin.wixsite.com/mreevesphoto">Mackenzie Reeves - Photography</a>
 								<br/>
@@ -323,7 +323,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Wedding Newspaper </div>
 								<br/>
-								<div className="portraitText"> This is my sister Jessica and her now husband, Logan Cash. Their wedding was held at the Dresser Mansion in Tulsa, OK. </div>
+								<div className="portraitText"> This just in! The Cash's are officially married! </div>
 							</div>
 						</div>
 					}

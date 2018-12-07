@@ -80,10 +80,10 @@ export default class Element extends Component {
 						<div className={this.state.section1Class}>
 							<center className="hi"> Hi! I'm </center>
 							<center className="myName">Whitney Stotler</center>
-							<p className="section1paragraph"> Welcome to my portfolio website! As you've noticed, I like to do a variety of things. If you want to look at my skill set, look over at the resume tab. If you just wanted to know more about me, you came to the right place! The first thing you should know is I love Jesus! I help out a lot at my church and lead worship around the state. I used to be one of the chaplains for the Ada High Basketball Girls and worked at Camp WOW. I grew up a farm girl, and family vacations were camping/riding trails in the Ouachita Mountains with our dirtbikes. I'm also a former college basketball player, playing for Seminole State College and East Central University. Go Tigers! My favorite movie is Jurassic Park (Jurassic World doesn't compare, don't @ me). My favorite color is <del> food </del> pink. I love to worship and play my guitar. And I'm pretty obsessed with photoshop. 
+							<p className="section1paragraph"> Welcome to my portfolio website! As you've noticed, I like to do a variety of things. If you want to look at my skill set, look at the resume tab. If you just want to know more about me, you came to the right place! The first thing you should know is--I love Jesus! I help out a lot at my church and lead worship around the state. In the past, I was one of the chaplains for the Ada High Basketball Girls and have been on staff at Camp WOW. I grew up a farm girl and family vacations were camping/riding trails in the Ouachita Mountains with our dirtbikes. In college I played basketball for Seminole State College and later on East Central University. Go Tigers! My favorite movie is Jurassic Park (Jurassic World doesn't compare, don't @ me). My favorite color is <del> food </del> pink. I love to lead worship, play my guitar, and I'm pretty obsessed with photoshop. 
 							</p>
 							<p className="section1paragraph">
-								For the past four years, my life has been continually changing. I recognized my need for a savior on July 11, 2014, and my life did a 180˚. The Lord been transforming my heart since. I have a heart for those who don't yet know Him, and a deep desire to worship Him because of His goodness. In the past, I would use my singing for the glory of myself, but now I see who deserves the praise. If you came to this site, you've seen me showcase some of my artwork and abilities, but I want to point you to someone better. 
+								The past four years, my life has been continually changing. I recognized my need for a savior on July 11, 2014, and my life did a 180˚. The Lord has been transforming my heart ever since. I have a heart for those who don't yet know Him and a deep desire to worship Him because of His goodness. In the past, I would use my singing for the glory of myself, but now I see Who deserves the praise. If you came to this site, you've seen me showcase some of my artwork and abilities, but I want to point you to Someone better. 
 							</p>
 						</div>
 						<div className="section23wrapper">
@@ -96,7 +96,7 @@ export default class Element extends Component {
 							</div>
 
 							<div className={this.state.section3Class}>
-								God knows we can never be fulfilled except through Him. He loved us enough to give us a way back to Him, despite our sinfullness and lack of holiness. He wanted us, yet didn't need us, and left the throne to come bring us back home. "Child, you are loved." 
+								God knows we can never be fulfilled except through Him. He loved us enough to give us a way back to Him, despite our sinfullness and lack of holiness. He wanted us, yet didn't need us, and left the throne to come bring us back home. Child, you are loved. 
 							</div>
 						</div>
 					</div>

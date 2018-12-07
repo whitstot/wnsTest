@@ -35,8 +35,8 @@ export default class Element extends Component {
 	render() {
 		return (
 			<div ref={(eref) => {this.refs['resumeWrapper'] = findDOMNode(eref)}} className="resumeWrapper">
-                <a href="../images/ResumeSimpleWebsiteSmaller.jpg" target="_blank">
-                	<img className={this.state.imgClass} src="../images/ResumeSimpleWebsiteSmaller.jpg"/>
+                <a href="../images/ResumeSimpleWebsite.pdf" target="_blank">
+                	<img className={this.state.imgClass} src="../images/ResumeSimpleWebsite.jpg"/>
                 </a>
 			</div>
 		)
