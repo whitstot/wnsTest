@@ -31,6 +31,9 @@ export default class Videography extends Component {
 
 		window.addEventListener('resize', this.boundSetVideoDimensions)
 	}
+	componentDidUpdate() {
+		//this.boundSetVideoDimensions();
+	}
 	setVideoDimensions(e) {
 		let windowWidth = window.innerWidth,
 			portrait = this.state.portrait,
@@ -40,69 +43,73 @@ export default class Videography extends Component {
 
 		if (windowWidth <= 1050) {
 			//portrait
+			if(this.state.portrait === true) {
 
-			if (e !== 'firstRun') {
-				heightForVimeoPortrait = parseFloat(getComputedStyle(this.refs['iframeShayna']).width) / 1.761049723756906 + 'px';
+				if (e !== 'firstRun') {
+					heightForVimeoPortrait = parseFloat(getComputedStyle(this.refs['iframeShayna']).width) / 1.761049723756906 + 'px';
+				}
+
+				//set all the refs correctly
+				this.refs['iframeRach'].style.width = widthToSet;
+				this.refs['iframeDesirae'].style.width = widthToSet;
+				this.refs['iframeMeagan'].style.width = widthToSet;
+				this.refs['iframeShayna'].style.width = widthToSet;
+
+				this.refs['iframeRach'].style.height = heightForVimeoPortrait;
+				this.refs['iframeDesirae'].style.height = heightForVimeoPortrait;
+				this.refs['iframeMeagan'].style.height = heightForVimeoPortrait;
+				this.refs['iframeShayna'].style.height = heightForVimeoPortrait;
+
+				// this.refs['descriptionRach'].style.width = widthToSet;
+				// this.refs['descriptionDesirae'].style.width = widthToSet;
+				// this.refs['descriptionMeagan'].style.width = widthToSet;
+				// this.refs['descriptionShayna'].style.width = widthToSet;
+
+				// this.refs['descriptionRach'].style.height = heightToSet;
+				// this.refs['descriptionDesirae'].style.height = heightToSet;
+				// this.refs['descriptionMeagan'].style.height = heightToSet;
+				// this.refs['descriptionShayna'].style.height = heightToSet;
 			}
-
-			//set all the refs correctly
-			this.refs['iframeRach'].style.width = widthToSet;
-			this.refs['iframeDesirae'].style.width = widthToSet;
-			this.refs['iframeMeagan'].style.width = widthToSet;
-			this.refs['iframeShayna'].style.width = widthToSet;
-
-			this.refs['iframeRach'].style.height = heightForVimeoPortrait;
-			this.refs['iframeDesirae'].style.height = heightForVimeoPortrait;
-			this.refs['iframeMeagan'].style.height = heightForVimeoPortrait;
-			this.refs['iframeShayna'].style.height = heightForVimeoPortrait;
-
-			// this.refs['descriptionRach'].style.width = widthToSet;
-			// this.refs['descriptionDesirae'].style.width = widthToSet;
-			// this.refs['descriptionMeagan'].style.width = widthToSet;
-			// this.refs['descriptionShayna'].style.width = widthToSet;
-
-			// this.refs['descriptionRach'].style.height = heightToSet;
-			// this.refs['descriptionDesirae'].style.height = heightToSet;
-			// this.refs['descriptionMeagan'].style.height = heightToSet;
-			// this.refs['descriptionShayna'].style.height = heightToSet;
 
 			portrait = true;
 		}
 		else if (windowWidth > 1050) {
 			//landscape
-			widthToSet = windowWidth / 2.994780793319415;
-			heightToSet = widthToSet / 1.777365491651206;
+			if(this.state.portrait === false) {
+				widthToSet = windowWidth / 2.994780793319415;
+				heightToSet = widthToSet / 1.777365491651206;
 
-			//set all the refs correctly
-			this.refs['iframeRach'].style.width = widthToSet + 'px';
-			this.refs['iframeDesirae'].style.width = widthToSet + 'px';
-			this.refs['iframeMeagan'].style.width = widthToSet + 'px';
-			this.refs['iframeShayna'].style.width = widthToSet + 'px';
+				//set all the refs correctly
+				this.refs['iframeRach'].style.width = widthToSet + 'px';
+				this.refs['iframeDesirae'].style.width = widthToSet + 'px';
+				this.refs['iframeMeagan'].style.width = widthToSet + 'px';
+				this.refs['iframeShayna'].style.width = widthToSet + 'px';
 
-			this.refs['iframeRach'].style.height = heightToSet + 'px';
-			this.refs['iframeDesirae'].style.height = heightToSet + 'px';
-			this.refs['iframeMeagan'].style.height = heightToSet + 'px';
-			this.refs['iframeShayna'].style.height = heightToSet + 'px';
+				this.refs['iframeRach'].style.height = heightToSet + 'px';
+				this.refs['iframeDesirae'].style.height = heightToSet + 'px';
+				this.refs['iframeMeagan'].style.height = heightToSet + 'px';
+				this.refs['iframeShayna'].style.height = heightToSet + 'px';
 
-			// this.refs['descriptionRach'].style.width = widthToSet + 'px';
-			// this.refs['descriptionDesirae'].style.width = widthToSet + 'px';
-			// this.refs['descriptionMeagan'].style.width = widthToSet + 'px';
-			// this.refs['descriptionShayna'].style.width = widthToSet + 'px';
+				// this.refs['descriptionRach'].style.width = widthToSet + 'px';
+				// this.refs['descriptionDesirae'].style.width = widthToSet + 'px';
+				// this.refs['descriptionMeagan'].style.width = widthToSet + 'px';
+				// this.refs['descriptionShayna'].style.width = widthToSet + 'px';
 
-			// this.refs['descriptionRach'].style.height = heightToSet + 'px';
-			// this.refs['descriptionDesirae'].style.height = heightToSet + 'px';
-			// this.refs['descriptionMeagan'].style.height = heightToSet + 'px';
-			// this.refs['descriptionShayna'].style.height = heightToSet + 'px';
+				// this.refs['descriptionRach'].style.height = heightToSet + 'px';
+				// this.refs['descriptionDesirae'].style.height = heightToSet + 'px';
+				// this.refs['descriptionMeagan'].style.height = heightToSet + 'px';
+				// this.refs['descriptionShayna'].style.height = heightToSet + 'px';
 
-			/* -------------------------------------------------- */
+				/* -------------------------------------------------- */
 
-			this.refs['me'].style.height = heightToSet + 'px';
-			this.refs['me'].style.width = heightToSet + 'px';
-			this.refs['josh'].style.height = heightToSet + 'px';
-			this.refs['josh'].style.width = heightToSet + 'px';
+				this.refs['me'].style.height = heightToSet + 'px';
+				this.refs['me'].style.width = heightToSet + 'px';
+				this.refs['josh'].style.height = heightToSet + 'px';
+				this.refs['josh'].style.width = heightToSet + 'px';
 
-			this.refs['squareHolder'].style.width = (windowWidth - 20) + 'px';
-			this.refs['squareHolder'].style.height = ((windowWidth / 1.777777074508402) - 20) + 'px';
+				this.refs['squareHolder'].style.width = (windowWidth - 20) + 'px';
+				this.refs['squareHolder'].style.height = ((windowWidth / 1.777777074508402) - 20) + 'px';
+			}
 
 			portrait = false;
 		}
