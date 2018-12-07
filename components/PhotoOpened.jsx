@@ -259,7 +259,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Graphic </div>
 								<br/>
-								<div className="portraitText"> Funny story, I actually made this one right before my basketball game in a hotel room. </div>
+								<div className="portraitText"> "Bloom where you are planted."</div>
 							</div>
 						</div>
 					}
@@ -271,7 +271,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Hard Logo </div>
 								<br/>
-								<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad, and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click her name below -> </div>
+								<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad, and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click her name below! </div>
 								<br/>
 								<a href="https://maccoplin.wixsite.com/mreevesphoto">Mackenzie Reeves - Photography</a>
 								<br/>
@@ -287,7 +287,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Graphic </div>
 								<br/>
-								<div className="portraitText"> </div>
+								<div className="portraitText"> "How beautiful on the mountains are the feet of those who bring good news, who proclaim peace, who bring good tidings, who proclaim salvation, who say to Zion, "Your God reigns!" - Isaiah 52:7 </div>
 							</div>
 						</div>
 					}
@@ -323,9 +323,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Wedding Newspaper </div>
 								<br/>
-								<div className="portraitText"> This is my sister Jessica and her now husband, Logan Cash. I made these for her wedding day! We passed them out while acting like we were on the Titanic. </div>
-								<br/>
-								<div> Her wedding was located at the Dresser Mansion in Tulsa, OK. </div>
+								<div className="portraitText"> This is my sister Jessica and her now husband, Logan Cash. Their wedding was held at the Dresser Mansion in Tulsa, OK. </div>
 							</div>
 						</div>
 					}
