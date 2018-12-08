@@ -52,6 +52,7 @@ export default class Contact extends Component {
 		return (
 			<div className="emailMe" ref={(eref) => {this.refs['background'] = findDOMNode(eref)}} style={{height: window.innerHeight + 'px'}}>
 				<a className={this.state.emailMeHrefClass} href="mailto:whitneynstotler@gmail.com?Subject=Let's%20Chat"> EMAIL ME</a>
+				<div className="email">whitneynstotler@gmail.com</div>
 			</div>
 		)
 	} 

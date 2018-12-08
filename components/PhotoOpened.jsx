@@ -271,7 +271,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Hard Logo </div>
 								<br/>
-								<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click her name below! </div>
+								<div className="portraitText"> Mackenzie Reeves is a photographer/youtuber in OKC. Her stuff is pretty rad and she's hilarious. Click the photo to be taken to her youtube channel! But if you want to go to her photography page, click the link below! </div>
 								<br/>
 								<a href="https://maccoplin.wixsite.com/mreevesphoto">Mackenzie Reeves - Photography</a>
 								<br/>
@@ -311,7 +311,7 @@ export default class PhotoOpened extends Component {
 								<br/>
 								<div> Sports Photos </div>
 								<br/>
-								<div className="portraitText"> ECU Womens Basketball schedule for 2018-2019 </div>
+								<div className="portraitText"> ECU Womens Basketball Schedule for 2018-2019 </div>
 							</div>
 						</div>
 					}	

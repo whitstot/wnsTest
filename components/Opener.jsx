@@ -15,7 +15,8 @@ export default class Element extends Component {
 
 		this.state = {
 			componentToRender: 'opener',
-			portrait: window.matchMedia("(orientation: portrait)").matches
+			portrait: window.matchMedia("(orientation: portrait)").matches,
+			imageClassName: 'openerImage'
 		}
 	}
 	componentWillMount() {
@@ -62,6 +63,11 @@ export default class Element extends Component {
 			})
 		}
 	}
+	photoLoaded() {
+		this.setState({
+			imageClassName: 'openerImage openerImageLoaded'
+		})
+	}
 	changeComponentToHome() {
 		$(this.refs['openerWrapper']).removeClass('opener');
 
@@ -81,11 +87,11 @@ export default class Element extends Component {
 			<div ref={(eref) => {this.refs['openerWrapper'] = findDOMNode(eref)}} className="opener">
 
 				{(this.state.portrait === false && this.state.componentToRender === 'opener') &&
-					<img className="openerImage" src='../images/websiteOpener.jpg'/>
+					<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpener.jpg'/>
 				}
 
 				{(this.state.portrait === true && this.state.componentToRender === 'opener') &&
-					<img className="openerImage" src='../images/websiteOpenerPortrait.jpg' />
+					<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpenerPortrait.jpg' />
 				}
 
 				{this.state.componentToRender === 'opener' && 

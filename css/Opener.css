@@ -5,6 +5,11 @@
 }
 .openerImage {
 	width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.openerImageLoaded {
+    opacity: 1;
 }
 
 /* Media Queries */
