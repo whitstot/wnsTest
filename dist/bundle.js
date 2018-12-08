@@ -11801,10 +11801,8 @@ var _Opener = _interopRequireDefault(__webpack_require__(29));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.setTimeout(function () {
-  //just to display my loading icon and give it a second to preload everything
-  _reactDom.default.render(_react.default.createElement(_Opener.default, null), document.getElementById('ReactId'));
-}, 5000);
+// window.setTimeout(() => {			//just to display my loading icon in loal host
+_reactDom.default.render(_react.default.createElement(_Opener.default, null), document.getElementById('ReactId')); // }, 5000)
 
 /***/ }),
 /* 18 */
@@ -30461,7 +30459,9 @@ function (_Component) {
     _this.state = {
       componentToRender: 'opener',
       portrait: window.matchMedia("(orientation: portrait)").matches,
-      imageClassName: 'openerImage'
+      imageClassName: 'openerImage',
+      enterSiteClassName: 'enterSite',
+      loaderClassName: 'lds-roller'
     };
     return _this;
   }
@@ -30523,9 +30523,21 @@ function (_Component) {
   }, {
     key: "photoLoaded",
     value: function photoLoaded() {
+      var _this2 = this;
+
       this.setState({
-        imageClassName: 'openerImage openerImageLoaded'
+        loaderClassName: 'lds-roller lds-roller-complete'
       });
+      window.setTimeout(function () {
+        _this2.setState({
+          imageClassName: 'openerImage openerImageLoaded'
+        });
+      }, 500);
+      window.setTimeout(function () {
+        _this2.setState({
+          enterSiteClassName: 'enterSite openerImageLoaded'
+        });
+      }, 1500);
     }
   }, {
     key: "changeComponentToHome",
@@ -30546,24 +30558,28 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react.default.createElement("div", {
         ref: function ref(eref) {
-          _this2.refs['openerWrapper'] = (0, _reactDom.findDOMNode)(eref);
+          _this3.refs['openerWrapper'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "opener"
-      }, this.state.portrait === false && this.state.componentToRender === 'opener' && _react.default.createElement("img", {
+      }, this.state.portrait === false && this.state.componentToRender === 'opener' && _react.default.createElement("div", null, _react.default.createElement("img", {
         className: this.state.imageClassName,
         onLoad: this.photoLoaded.bind(this),
         src: "../images/websiteOpener.jpg"
-      }), this.state.portrait === true && this.state.componentToRender === 'opener' && _react.default.createElement("img", {
+      }), _react.default.createElement("div", {
+        "class": this.state.loaderClassName
+      }, _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null))), this.state.portrait === true && this.state.componentToRender === 'opener' && _react.default.createElement("div", null, _react.default.createElement("img", {
         className: this.state.imageClassName,
         onLoad: this.photoLoaded.bind(this),
         src: "../images/websiteOpenerPortrait.jpg"
-      }), this.state.componentToRender === 'opener' && _react.default.createElement("center", {
+      }), _react.default.createElement("div", {
+        "class": this.state.loaderClassName
+      }, _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null), _react.default.createElement("div", null))), this.state.componentToRender === 'opener' && _react.default.createElement("center", {
         onClick: this.changeComponentToHome.bind(this),
-        className: "enterSite"
+        className: this.state.enterSiteClassName
       }, "ENTER", _react.default.createElement("br", null), "SITE"), this.state.componentToRender === 'home' && _react.default.createElement(_Home.default, {
         changeToOpener: this.changeComponentToOpener.bind(this)
       }));
@@ -30636,7 +30652,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.opener {\n    height: 100%;\n    background-color: black;\n}\n.openerImage {\n\twidth: 100%;\n    opacity: 0;\n    transition: opacity 1s ease;\n}\n.openerImageLoaded {\n    opacity: 1;\n}\n\n/* Media Queries */\n\n/* phone */\n@media (max-width: 700px) {\n    .enterSite {\n        position: fixed;\n        font-size: small;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}\n\n/* ipad */\n@media (min-width: 701px) and (max-width: 1100px) {\n    .enterSite {\n        position: fixed;\n        font-size: large;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}\n\n/* desktop */\n@media (min-width: 1101px) {\n    .enterSite {\n        position: fixed;\n        font-size: medium;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 10px 0px;\n        cursor: pointer;\n        color: white;\n    }\n}", ""]);
+exports.push([module.i, "\n.opener {\n    height: 100%;\n    background-color: black;\n}\n.openerImage {\n\twidth: 100%;\n    opacity: 0;\n    transition: opacity 3s ease;\n}\n.openerImageLoaded {\n    opacity: 1;\n}\n\n/* Media Queries */\n\n/* phone */\n@media (max-width: 700px) {\n    .enterSite {\n        opacity: 0;\n        transition: opacity 1s ease;\n        position: fixed;\n        font-size: small;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n    .openerImageLoaded {\n        opacity: 1;\n    }\n}\n\n/* ipad */\n@media (min-width: 701px) and (max-width: 1100px) {\n    .enterSite {\n        opacity: 0;\n        transition: opacity 1s ease;\n        position: fixed;\n        font-size: large;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 120px 0px;\n        cursor: pointer;\n        color: white;\n    }\n    .openerImageLoaded {\n        opacity: 1;\n    }\n}\n\n/* desktop */\n@media (min-width: 1101px) {\n    .enterSite {\n        opacity: 0;\n        transition: opacity 1s ease;\n        position: fixed;\n        font-size: medium;\n        bottom: 2%;\n        width: 100%;\n        justify-content: center;\n        display: flex;\n        font-family: 'Raleway', sans-serif;\n        padding: 100px 0px 10px 0px;\n        cursor: pointer;\n        color: white;\n    }\n    .openerImageLoaded {\n        opacity: 1;\n    }\n}", ""]);
 
 // exports
 
@@ -31069,7 +31085,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n\tbackground-color: ghostwhite;\n}\n#ReactId {\n\theight: 100%;\n\twidth: 100%;\n}\n* {\n\tbox-sizing: border-box;\n}\n", ""]);
+exports.push([module.i, "html, body {\n\theight: 100%;\n\twidth: 100%;\n\tmargin: 0px;\n\tpadding: 0px;\n\tbackground-color: ghostwhite;\n}\n#ReactId {\n\theight: 100%;\n\twidth: 100%;\n}\n* {\n\tbox-sizing: border-box;\n}\n\n/* --------------------------------\n\n\t\tLoading Icon Stuff\n\n*/\n\n.lds-roller {\n  \tdisplay: flex;\n    position: fixed;\n    width: 64px;\n    height: 64px;\n    justify-content: center;\n    align-items: center;\n    right: 50%;\n    top: 40%;\n    opacity: 1;\n    transition: opacity 0.5s ease;\n}\n.lds-roller div {\n  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n  transform-origin: 32px 32px;\n}\n.lds-roller div:after {\n  content: \" \";\n  display: block;\n  position: absolute;\n  width: 6px;\n  height: 6px;\n  border-radius: 50%;\n  background: #fcf;\n  margin: -3px 0 0 -3px;\n}\n.lds-roller div:nth-child(1) {\n  animation-delay: -0.036s;\n}\n.lds-roller div:nth-child(1):after {\n  top: 50px;\n  left: 50px;\n}\n.lds-roller div:nth-child(2) {\n  animation-delay: -0.072s;\n}\n.lds-roller div:nth-child(2):after {\n  top: 54px;\n  left: 45px;\n}\n.lds-roller div:nth-child(3) {\n  animation-delay: -0.108s;\n}\n.lds-roller div:nth-child(3):after {\n  top: 57px;\n  left: 39px;\n}\n.lds-roller div:nth-child(4) {\n  animation-delay: -0.144s;\n}\n.lds-roller div:nth-child(4):after {\n  top: 58px;\n  left: 32px;\n}\n.lds-roller div:nth-child(5) {\n  animation-delay: -0.18s;\n}\n.lds-roller div:nth-child(5):after {\n  top: 57px;\n  left: 25px;\n}\n.lds-roller div:nth-child(6) {\n  animation-delay: -0.216s;\n}\n.lds-roller div:nth-child(6):after {\n  top: 54px;\n  left: 19px;\n}\n.lds-roller div:nth-child(7) {\n  animation-delay: -0.252s;\n}\n.lds-roller div:nth-child(7):after {\n  top: 50px;\n  left: 14px;\n}\n.lds-roller div:nth-child(8) {\n  animation-delay: -0.288s;\n}\n.lds-roller div:nth-child(8):after {\n  top: 45px;\n  left: 10px;\n}\n@keyframes lds-roller {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n.lds-roller-complete {\n\topacity: 0;\n}", ""]);
 
 // exports
 

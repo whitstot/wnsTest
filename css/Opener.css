@@ -6,7 +6,7 @@
 .openerImage {
 	width: 100%;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 3s ease;
 }
 .openerImageLoaded {
     opacity: 1;
@@ -17,6 +17,8 @@
 /* phone */
 @media (max-width: 700px) {
     .enterSite {
+        opacity: 0;
+        transition: opacity 1s ease;
         position: fixed;
         font-size: small;
         bottom: 2%;
@@ -28,11 +30,16 @@
         cursor: pointer;
         color: white;
     }
+    .openerImageLoaded {
+        opacity: 1;
+    }
 }
 
 /* ipad */
 @media (min-width: 701px) and (max-width: 1100px) {
     .enterSite {
+        opacity: 0;
+        transition: opacity 1s ease;
         position: fixed;
         font-size: large;
         bottom: 2%;
@@ -44,11 +51,16 @@
         cursor: pointer;
         color: white;
     }
+    .openerImageLoaded {
+        opacity: 1;
+    }
 }
 
 /* desktop */
 @media (min-width: 1101px) {
     .enterSite {
+        opacity: 0;
+        transition: opacity 1s ease;
         position: fixed;
         font-size: medium;
         bottom: 2%;
@@ -59,5 +71,8 @@
         padding: 100px 0px 10px 0px;
         cursor: pointer;
         color: white;
+    }
+    .openerImageLoaded {
+        opacity: 1;
     }
 }

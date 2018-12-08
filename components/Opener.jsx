@@ -16,7 +16,9 @@ export default class Element extends Component {
 		this.state = {
 			componentToRender: 'opener',
 			portrait: window.matchMedia("(orientation: portrait)").matches,
-			imageClassName: 'openerImage'
+			imageClassName: 'openerImage',
+			enterSiteClassName: 'enterSite',
+			loaderClassName: 'lds-roller'
 		}
 	}
 	componentWillMount() {
@@ -65,8 +67,20 @@ export default class Element extends Component {
 	}
 	photoLoaded() {
 		this.setState({
-			imageClassName: 'openerImage openerImageLoaded'
+			loaderClassName: 'lds-roller lds-roller-complete'
 		})
+
+		window.setTimeout(() => {
+			this.setState({
+				imageClassName: 'openerImage openerImageLoaded'
+			})
+		}, 500)
+
+		window.setTimeout(() => {
+			this.setState({
+				enterSiteClassName: 'enterSite openerImageLoaded'
+			})
+		}, 1500)
 	}
 	changeComponentToHome() {
 		$(this.refs['openerWrapper']).removeClass('opener');
@@ -87,15 +101,21 @@ export default class Element extends Component {
 			<div ref={(eref) => {this.refs['openerWrapper'] = findDOMNode(eref)}} className="opener">
 
 				{(this.state.portrait === false && this.state.componentToRender === 'opener') &&
-					<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpener.jpg'/>
+					<div>
+						<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpener.jpg'/>
+						<div class={this.state.loaderClassName}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+					</div>
 				}
 
 				{(this.state.portrait === true && this.state.componentToRender === 'opener') &&
-					<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpenerPortrait.jpg' />
+					<div>
+						<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpenerPortrait.jpg' />
+						<div class={this.state.loaderClassName}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+					</div>
 				}
 
 				{this.state.componentToRender === 'opener' && 
-					<center onClick={this.changeComponentToHome.bind(this)} className="enterSite">
+					<center onClick={this.changeComponentToHome.bind(this)} className={this.state.enterSiteClassName}>
 						ENTER
 						<br/>
 						SITE
