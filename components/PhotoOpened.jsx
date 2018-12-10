@@ -22,7 +22,8 @@ export default class PhotoOpened extends Component {
 			'lauraUnderwater',
 			'ECUsched',
 			'jessWed',
-			'roomieChristmas'
+			'roomieChristmas',
+			'tshirt1'
 		];	
 
 		this.rightArrow = false;
@@ -336,6 +337,18 @@ export default class PhotoOpened extends Component {
 								<div> Christmas Cards </div>
 								<br/>
 								<div className="portraitText"> Merry Christmas from the Tracy, Johnson, Stotler household! </div>
+							</div>
+						</div>
+					}	
+					{this.state.imageToRender === 'tshirt1' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/tshirtGrayCloseup.png" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 1 </div>
+								<br/>
+								<div> Shirt Designs </div>
+								<br/>
+								<div className="portraitText"> "Every painted sky, a canvas of your grace" </div>
 							</div>
 						</div>
 					}		

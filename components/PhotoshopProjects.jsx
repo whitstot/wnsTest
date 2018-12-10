@@ -47,6 +47,7 @@ export default class PhotoshopProjects extends Component {
 			this.refs['IEimgECU'].style.width = widthToSet + 'px';
 			this.refs['IEimgJess'].style.width = widthToSet + 'px';
 			this.refs['IEimgRoomieChristmas'].style.width = widthToSet + 'px';
+			this.refs['IEimgTshirt1'].style.width = widthToSet + 'px';
 
 			this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
 			this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
@@ -60,6 +61,7 @@ export default class PhotoshopProjects extends Component {
 			this.refs['IEimgECU'].style.height = widthToSet + 'px';
 			this.refs['IEimgJess'].style.height = widthToSet + 'px';
 			this.refs['IEimgRoomieChristmas'].style.height = widthToSet + 'px';
+			this.refs['IEimgTshirt1'].style.height = widthToSet + 'px';
 		}
 	}
 	IEResize() {
@@ -78,6 +80,7 @@ export default class PhotoshopProjects extends Component {
 		this.refs['IEimgECU'].style.width = widthToSet + 'px';
 		this.refs['IEimgJess'].style.width = widthToSet + 'px';
 		this.refs['IEimgRoomieChristmas'].style.width = widthToSet + 'px';
+		this.refs['IEimgTshirt1'].style.width = widthToSet + 'px';
 
 		this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
 		this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
@@ -91,6 +94,7 @@ export default class PhotoshopProjects extends Component {
 		this.refs['IEimgECU'].style.height = widthToSet + 'px';
 		this.refs['IEimgJess'].style.height = widthToSet + 'px';
 		this.refs['IEimgRoomieChristmas'].style.height = widthToSet + 'px';
+		this.refs['IEimgTshirt1'].style.height = widthToSet + 'px';
 	}
 	render() {
 
@@ -118,6 +122,9 @@ export default class PhotoshopProjects extends Component {
 							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
 							<img ref={(eref) => {this.refs['IEimgRoomieChristmas'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
 						</div>
+						<div className="IEtriple">
+							<img ref={(eref) => {this.refs['IEimgTshirt1'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'tshirt1')} src="../images/tshirtGray.png" alt=""/>
+						</div>
 					</div>
 				}
 
@@ -135,6 +142,7 @@ export default class PhotoshopProjects extends Component {
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'ECUsched')} src="../images/ECUscheduleSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'tshirt1')} src="../images/tshirtGray.png" alt=""/>
 					</div>
 				}
 

@@ -31365,6 +31365,7 @@ function (_Component) {
         this.refs['IEimgECU'].style.width = widthToSet + 'px';
         this.refs['IEimgJess'].style.width = widthToSet + 'px';
         this.refs['IEimgRoomieChristmas'].style.width = widthToSet + 'px';
+        this.refs['IEimgTshirt1'].style.width = widthToSet + 'px';
         this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
         this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
         this.refs['IEimgThunder'].style.height = widthToSet + 'px';
@@ -31377,6 +31378,7 @@ function (_Component) {
         this.refs['IEimgECU'].style.height = widthToSet + 'px';
         this.refs['IEimgJess'].style.height = widthToSet + 'px';
         this.refs['IEimgRoomieChristmas'].style.height = widthToSet + 'px';
+        this.refs['IEimgTshirt1'].style.height = widthToSet + 'px';
       }
     }
   }, {
@@ -31396,6 +31398,7 @@ function (_Component) {
       this.refs['IEimgECU'].style.width = widthToSet + 'px';
       this.refs['IEimgJess'].style.width = widthToSet + 'px';
       this.refs['IEimgRoomieChristmas'].style.width = widthToSet + 'px';
+      this.refs['IEimgTshirt1'].style.width = widthToSet + 'px';
       this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
       this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
       this.refs['IEimgThunder'].style.height = widthToSet + 'px';
@@ -31408,6 +31411,7 @@ function (_Component) {
       this.refs['IEimgECU'].style.height = widthToSet + 'px';
       this.refs['IEimgJess'].style.height = widthToSet + 'px';
       this.refs['IEimgRoomieChristmas'].style.height = widthToSet + 'px';
+      this.refs['IEimgTshirt1'].style.height = widthToSet + 'px';
     }
   }, {
     key: "render",
@@ -31520,6 +31524,16 @@ function (_Component) {
         onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
         src: "../images/RoomieChristmas2018.jpg",
         alt: ""
+      })), _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgTshirt1'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'tshirt1'),
+        src: "../images/tshirtGray.png",
+        alt: ""
       }))), this.state.usingIE === false && _react.default.createElement("div", {
         className: "grid"
       }, _react.default.createElement("img", {
@@ -31581,6 +31595,11 @@ function (_Component) {
         className: "graphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
         src: "../images/RoomieChristmas2018.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'tshirt1'),
+        src: "../images/tshirtGray.png",
         alt: ""
       })), _react.default.createElement(_Footer.default, null));
     }
@@ -31774,7 +31793,7 @@ function (_Component) {
     _classCallCheck(this, PhotoOpened);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoOpened).call(this, props));
-    _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitsFlowerFarm', 'meFlowerFace', 'MAC', 'mountains', 'lauraUnderwater', 'ECUsched', 'jessWed', 'roomieChristmas'];
+    _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitsFlowerFarm', 'meFlowerFace', 'MAC', 'mountains', 'lauraUnderwater', 'ECUsched', 'jessWed', 'roomieChristmas', 'tshirt1'];
     _this.rightArrow = false;
     _this.leftArrow = false;
     _this.bringIn = false;
@@ -32153,7 +32172,22 @@ function (_Component) {
         className: "textWrapper"
       }, _react.default.createElement("div", null, " Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Christmas Cards "), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "portraitText"
-      }, " Merry Christmas from the Tracy, Johnson, Stotler household! "))), this.state.portrait === false && _react.default.createElement("div", {
+      }, " Merry Christmas from the Tracy, Johnson, Stotler household! "))), this.state.imageToRender === 'tshirt1' && _react.default.createElement("div", {
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
+      }, _react.default.createElement("img", {
+        className: "photoOpenedImg",
+        ref: function ref(eref) {
+          _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        onLoad: this.boundSetPhotoDimensions,
+        src: "../images/tshirtGrayCloseup.png",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "textWrapper"
+      }, _react.default.createElement("div", null, " Level: 1 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Shirt Designs "), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "portraitText"
+      }, " \"Every painted sky, a canvas of your grace\" "))), this.state.portrait === false && _react.default.createElement("div", {
         onClick: this.rightArrowClicked.bind(this),
         className: "arrows"
       }, ">"), this.state.portrait === true && _react.default.createElement("div", {
