@@ -20,7 +20,7 @@ thus the huge block of code
         text-decoration: none;
         font-size: 30px;
         margin-top: 13%;
-        position: fixed;
+        position: absolute;
         cursor: pointer;
         transition: border 0.5s ease;
         padding: 60px;
@@ -68,7 +68,7 @@ thus the huge block of code
         text-decoration: none; 
         font-size: 25px;
         margin-top: 245px;
-        position: fixed;
+        position: absolute;
         cursor: pointer;
         transition: border 0.5s ease;
         padding: 47px;

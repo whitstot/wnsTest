@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import { findDOMNode } from 'react-dom';
 import '../css/Resume.css';
+import Footer from './Footer.jsx';
 
 export default class Element extends Component {
 	constructor(props) {
@@ -38,6 +39,8 @@ export default class Element extends Component {
                 <a href="../images/ResumeSimpleWebsite.jpg" target="_blank">
                 	<img className={this.state.imgClass} src="../images/ResumeSimpleWebsite.jpg"/>
                 </a>
+
+                <Footer />
 			</div>
 		)
 	} 

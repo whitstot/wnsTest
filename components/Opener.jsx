@@ -6,7 +6,7 @@ import '../css/Opener.css';
 import Home from './Home.jsx';
 
 
-export default class Element extends Component {
+export default class Opener extends Component {
 	constructor(props) {
 		super(props);
 
@@ -103,14 +103,14 @@ export default class Element extends Component {
 				{(this.state.portrait === false && this.state.componentToRender === 'opener') &&
 					<div>
 						<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpener.jpg'/>
-						<div class={this.state.loaderClassName}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+						<div className={this.state.loaderClassName}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 					</div>
 				}
 
 				{(this.state.portrait === true && this.state.componentToRender === 'opener') &&
 					<div>
 						<img className={this.state.imageClassName} onLoad={this.photoLoaded.bind(this)} src='../images/websiteOpenerPortrait.jpg' />
-						<div class={this.state.loaderClassName}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+						<div className={this.state.loaderClassName}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 					</div>
 				}
 

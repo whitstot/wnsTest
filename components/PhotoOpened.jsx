@@ -90,9 +90,11 @@ export default class PhotoOpened extends Component {
 			el.removeAttribute('height');
 			portrait = true;
 
-			//setting arrow height based on pic height
-			this.refs['leftArrow'].style.height = getComputedStyle(el).height;
-			this.refs['rightArrow'].style.height = getComputedStyle(el).height;
+			if (this.state.portrait === true) {
+				//setting arrow height based on pic height
+				this.refs['leftArrow'].style.height = getComputedStyle(el).height;
+				this.refs['rightArrow'].style.height = getComputedStyle(el).height;
+			}
 		}
 		//else if(mediaQueryList.matches === false) {
 		else if (windowWidth > 1050) {

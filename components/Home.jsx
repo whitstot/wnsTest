@@ -37,7 +37,9 @@ export default class Home extends Component {
 			webDesign: 'menuItem', 
 			about: 'menuItem', 
 			resume: 'menuItem',
-			contact: 'menuItem contact'
+			contact: 'menuItem contact',
+			mobileMenuClassName: 'dropDownMenu',
+			mobileMenuBackgroundClassName: 'dropDownMenuBackground'
 		}
 	}
 	componentWillMount() {
@@ -97,11 +99,17 @@ export default class Home extends Component {
 
 		this.closeMenu();
 	}
-	toggleMenu() {
-		$(this.refs['dropDownMenu']).toggleClass('dropDownMenuOpen');
+	openMenu() {
+		this.setState({
+			mobileMenuClassName: 'dropDownMenu dropDownMenuOpen',
+			mobileMenuBackgroundClassName: 'dropDownMenuBackground dropDownMenuBackgroundOpen'
+		})
 	}
 	closeMenu() {
-		this.refs['dropDownMenu'].classList.remove('dropDownMenuOpen');
+		this.setState({
+			mobileMenuClassName: 'dropDownMenu',
+			mobileMenuBackgroundClassName: 'dropDownMenuBackground'
+		})
 	}
 	goToOpener() {
 		window.removeEventListener('popstate', this.boundPopHistory);
@@ -156,14 +164,16 @@ export default class Home extends Component {
 						</div>
 					</div>
 					
-					<div onClick={this.toggleMenu.bind(this)} className="menuMobile">
+					<div onClick={this.openMenu.bind(this)} className="menuMobile">
 						<div className="menuBar1"> </div>
 						<div className="menuBar2"> </div>
 						<div className="menuBar3"> </div>
 					</div>
 				</div>
 
-				<div ref={eref => {this.refs['dropDownMenu'] = findDOMNode(eref)}} className="dropDownMenu">
+				<div className={this.state.mobileMenuBackgroundClassName}></div>
+
+				<div className={this.state.mobileMenuClassName}>
 					<div onClick={this.closeMenu.bind(this)} className="esc"> × </div>
 					<div onClick={this.renderNewComponent.bind(this, 'photoshop')} className="mobileMenuItem topMobileMenuItem"> Graphics </div>
 					<div onClick={this.renderNewComponent.bind(this,'videography')} className="mobileMenuItem"> Videography </div>

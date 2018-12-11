@@ -11,7 +11,7 @@
 }
 .wrapper {
 	display: flex;
-	border-bottom: 1px solid lightgray;
+	/*border-bottom: 1px solid ghostwhite;*/
 	background-color: black;
 }
 .tabSelected {
@@ -23,15 +23,26 @@
 	display: none;
 }
 .dropDownMenu {
-	position: fixed;
+	position: absolute;
     top: 0px;
 	height: 100%;
 	width: 100%;
-	background-color: white;
+/*	background-color: white;*/
 	display: none;
 	flex-direction: column;
 	align-items: center;
-	transition: 0.5s ease;
+}
+.dropDownMenuBackground {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background-color: white;
+	top: 0px;
+	display: none;
+	z-index: 1;
+}
+.dropDownMenuBackgroundOpen {
+	display: block;
 }
 .mobileMenuItem {
 	color: #ffb3b3;
