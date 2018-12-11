@@ -32181,7 +32181,7 @@ function (_Component) {
           _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
         },
         onLoad: this.boundSetPhotoDimensions,
-        src: "../images/tshirtGrayCloseup.png",
+        src: "../images/tshirtGrayCloseup.jpg",
         alt: ""
       }), _react.default.createElement("div", {
         className: "textWrapper"

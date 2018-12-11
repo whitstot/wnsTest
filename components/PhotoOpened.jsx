@@ -342,7 +342,7 @@ export default class PhotoOpened extends Component {
 					}	
 					{this.state.imageToRender === 'tshirt1' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/tshirtGrayCloseup.png" alt=""/>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/tshirtGrayCloseup.jpg" alt=""/>
 							<div className="textWrapper"> 
 								<div> Level: 1 </div>
 								<br/>
