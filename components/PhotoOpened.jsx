@@ -376,6 +376,8 @@ export default class PhotoOpened extends Component {
 								<div> Level: 2 </div>
 								<br/>
 								<div> Kids Event Poster </div>
+								<br/>
+								<div> Eggstravaganza! </div>
 							</div>
 						</div>
 					}
