@@ -136,12 +136,15 @@ export default class PhotoshopProjects extends Component {
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jade')} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitsFlowerFarm')} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'meFlowerFace')} src="../images/meFlowerFace.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'lauraUnderwater')} src="../images/LauraUnderwaterHouseSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'ECUsched')} src="../images/ECUscheduleSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'safari')} src="../images/tcKidsSafariSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotus')} src="../images/whynotus.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotusgirl')} src="../images/whynotusGirl.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'tshirt1')} src="../images/tshirtGray.png" alt=""/>
 					</div>
 				}

@@ -17,12 +17,15 @@ export default class PhotoOpened extends Component {
 			'jade', 
 			'whitsFlowerFarm', 
 			'meFlowerFace', 
-			'MAC', 
+			'roomieChristmas', 
 			'mountains',
 			'lauraUnderwater',
 			'ECUsched',
+			'safari',
+			'whynotus',
+			'whynotusgirl',
+			'MAC',
 			'jessWed',
-			'roomieChristmas',
 			'tshirt1'
 		];	
 
@@ -353,7 +356,41 @@ export default class PhotoOpened extends Component {
 								<div className="portraitText"> "Every painted sky, a canvas of your grace" </div>
 							</div>
 						</div>
-					}		
+					}
+					{this.state.imageToRender === 'whynotusgirl' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/whynotusGirl.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 2 </div>
+								<br/>
+								<div> Sermon Series </div>
+								<br/>
+								<div>"Why Not Us?"</div>
+							</div>
+						</div>
+					}	
+					{this.state.imageToRender === 'safari' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/tcKidsSafari.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 2 </div>
+								<br/>
+								<div> Kids Event Poster </div>
+							</div>
+						</div>
+					}
+					{this.state.imageToRender === 'whynotus' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" style={{filter: 'brightness(1.1)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/whynotus.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 2 </div>
+								<br/>
+								<div> Sermon Series </div>
+								<br/>
+								<div>"Why Not Us?"</div>
+							</div>
+						</div>
+					}	
 
 					{this.state.portrait === false &&
 						<div onClick={this.rightArrowClicked.bind(this)} className="arrows">&#62;</div>
