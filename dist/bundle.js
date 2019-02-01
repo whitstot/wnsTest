@@ -32994,7 +32994,7 @@ function (_Component) {
         className: "webParagraph2wrap"
       }, _react.default.createElement("div", {
         className: this.state.webParagraph2Class
-      }, "Currently, I am a Front-End Web Developer at The Chickasaw Nation. If you're wanting your website created, contact me under the contact tab!"))));
+      }, "I am a former Front-End Web Developer for The Chickasaw Nation. If you're wanting your website created, contact me under the contact tab!"))));
     }
   }]);
 
@@ -33216,9 +33216,9 @@ function (_Component) {
         className: "myName"
       }, "Whitney Stotler"), _react.default.createElement("p", {
         className: "section1paragraph"
-      }, " Welcome to my portfolio website! As you've noticed, I like to do a variety of things. If you want to look at my skill set, look at the resume tab. If you just want to know more about me, you came to the right place! The first thing you should know is--I love Jesus! I help out a lot at my church and lead worship around the state. In the past, I was one of the chaplains for the Ada High Basketball Girls and have been on staff at Camp WOW. I grew up a farm girl and family vacations were camping/riding trails in the Ouachita Mountains with our dirtbikes. In college I played basketball for Seminole State College and later on East Central University. Go Tigers! My favorite movie is Jurassic Park (Jurassic World doesn't compare, don't @ me). My favorite color is ", _react.default.createElement("del", null, " food "), " pink. I love to lead worship, play my guitar, and I'm pretty obsessed with photoshop."), _react.default.createElement("p", {
+      }, " Welcome to my portfolio website! As you've noticed, I like to do a variety of things. If you want to look at my skill set, look at the resume tab. If you just want to know more about me, you came to the right place! The first thing you should know is--I love Jesus! I help out a lot at my church and lead worship around the state. In the past, I was one of the chaplains for the Ada High Basketball Girls and have been on staff at Camp WOW. I grew up a farm girl and family vacations were camping/riding trails in the Ouachita Mountains with our dirtbikes. In college I played basketball for Seminole State College and later on East Central University. Go Tigers! My favorite movie is Jurassic Park (Jurassic World doesn't compare, don't @ me). My favorite color is ", _react.default.createElement("del", null, " food "), " pink. I love to sing, play my guitar, and I'm pretty obsessed with photoshop."), _react.default.createElement("p", {
         className: "section1paragraph"
-      }, "The past four years, my life has been continually changing. I recognized my need for a savior on July 11, 2014, and my life did a 180\u02DA. The Lord has been transforming my heart ever since. I have a heart for those who don't yet know Him and a deep desire to worship Him because of His goodness. In the past, I would use my singing for the glory of myself, but now I see Who deserves the praise. If you came to this site, you've seen me showcase some of my artwork and abilities, but I want to point you to Someone better.")), _react.default.createElement("div", {
+      }, "The past four years my life has been continually changing. I recognized my need for a savior on July 11, 2014, and my life did a 180\u02DA. The Lord has been transforming my heart ever since. I have a heart for those who don't yet know Him and a deep desire to worship Him because of His goodness. In the past, I would use my singing for the glory of myself, but now I see Who deserves the praise. If you came to this site, you've seen me showcase some of my artwork and abilities, but I want to point you to Someone better.")), _react.default.createElement("div", {
         className: "section23wrapper"
       }, _react.default.createElement("div", {
         className: this.state.section2Class
