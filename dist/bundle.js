@@ -31376,6 +31376,9 @@ function (_Component) {
         this.refs['IEimgSafari'].style.width = widthToSet + 'px';
         this.refs['IEimgWhyNotUs'].style.width = widthToSet + 'px';
         this.refs['IEimgWhyNotUsGirl'].style.width = widthToSet + 'px';
+        this.refs['IEimgWhitInception'].style.width = widthToSet + 'px';
+        this.refs['IEimgMyLogoFlower'].style.width = widthToSet + 'px';
+        this.refs['IEimgNewChapter'].style.width = widthToSet + 'px';
         this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
         this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
         this.refs['IEimgThunder'].style.height = widthToSet + 'px';
@@ -31392,6 +31395,9 @@ function (_Component) {
         this.refs['IEimgSafari'].style.height = widthToSet + 'px';
         this.refs['IEimgWhyNotUs'].style.height = widthToSet + 'px';
         this.refs['IEimgWhyNotUsGirl'].style.height = widthToSet + 'px';
+        this.refs['IEimgWhitInception'].style.height = widthToSet + 'px';
+        this.refs['IEimgMyLogoFlower'].style.height = widthToSet + 'px';
+        this.refs['IEimgNewChapter'].style.height = widthToSet + 'px';
       }
     }
   }, {
@@ -31415,6 +31421,9 @@ function (_Component) {
       this.refs['IEimgSafari'].style.width = widthToSet + 'px';
       this.refs['IEimgWhyNotUs'].style.width = widthToSet + 'px';
       this.refs['IEimgWhyNotUsGirl'].style.width = widthToSet + 'px';
+      this.refs['IEimgWhitInception'].style.width = widthToSet + 'px';
+      this.refs['IEimgMyLogoFlower'].style.width = widthToSet + 'px';
+      this.refs['IEimgNewChapter'].style.width = widthToSet + 'px';
       this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
       this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
       this.refs['IEimgThunder'].style.height = widthToSet + 'px';
@@ -31431,6 +31440,9 @@ function (_Component) {
       this.refs['IEimgSafari'].style.height = widthToSet + 'px';
       this.refs['IEimgWhyNotUs'].style.height = widthToSet + 'px';
       this.refs['IEimgWhyNotUsGirl'].style.height = widthToSet + 'px';
+      this.refs['IEimgWhitInception'].style.height = widthToSet + 'px';
+      this.refs['IEimgMyLogoFlower'].style.height = widthToSet + 'px';
+      this.refs['IEimgNewChapter'].style.height = widthToSet + 'px';
     }
   }, {
     key: "render",
@@ -31477,11 +31489,11 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("img", {
         ref: function ref(eref) {
-          _this2.refs['IEimgWhit'] = (0, _reactDom.findDOMNode)(eref);
+          _this2.refs['IEimgWhitInception'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'whitsFlowerFarm'),
-        src: "../images/whitsFlowerFarmSquare.jpg",
+        onClick: this.props.renderNewComponent.bind(this, 'whitInception'),
+        src: "../images/whitleyInceptionSquare.jpg",
         alt: ""
       }), _react.default.createElement("img", {
         ref: function ref(eref) {
@@ -31495,31 +31507,13 @@ function (_Component) {
         className: "IEtriple"
       }, _react.default.createElement("img", {
         ref: function ref(eref) {
-          _this2.refs['IEimgRoomieChristmas'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
-        src: "../images/RoomieChristmas2018.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        ref: function ref(eref) {
-          _this2.refs['IEimgTwinPeaks'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'mountains'),
-        src: "../images/twinPeaks.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        ref: function ref(eref) {
           _this2.refs['IEimgLaura'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'lauraUnderwater'),
         src: "../images/LauraUnderwaterHouseSquare.jpg",
         alt: ""
-      })), _react.default.createElement("div", {
-        className: "IEtriple"
-      }, _react.default.createElement("img", {
+      }), _react.default.createElement("img", {
         ref: function ref(eref) {
           _this2.refs['IEimgECU'] = (0, _reactDom.findDOMNode)(eref);
         },
@@ -31529,19 +31523,37 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("img", {
         ref: function ref(eref) {
-          _this2.refs['IEimgSafari'] = (0, _reactDom.findDOMNode)(eref);
+          _this2.refs['IEimgNewChapter'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'safari'),
-        src: "../images/tcKidsSafariSquare.jpg",
+        onClick: this.props.renderNewComponent.bind(this, 'newChapter'),
+        src: "../images/newChapterSquare.jpg",
+        alt: ""
+      })), _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgJess'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'jessWed'),
+        src: "../images/JessWeddingSquare.jpg",
         alt: ""
       }), _react.default.createElement("img", {
         ref: function ref(eref) {
-          _this2.refs['IEimgWhyNotUs'] = (0, _reactDom.findDOMNode)(eref);
+          _this2.refs['IEimgMyLogoFlower'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'whynotus'),
-        src: "../images/whynotus.jpg",
+        onClick: this.props.renderNewComponent.bind(this, 'myLogoFlower'),
+        src: "../images/myLogoFlower.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgWhit'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'whitsFlowerFarm'),
+        src: "../images/whitsFlowerFarmSquare.jpg",
         alt: ""
       })), _react.default.createElement("div", {
         className: "IEtriple"
@@ -31555,29 +31567,55 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("img", {
         ref: function ref(eref) {
-          _this2.refs['IEimgMAC'] = (0, _reactDom.findDOMNode)(eref);
+          _this2.refs['IEimgRoomieChristmas'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'MAC'),
-        src: "../images/MAC2myselfBlue.jpg",
+        onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
+        src: "../images/RoomieChristmas2018.jpg",
         alt: ""
       }), _react.default.createElement("img", {
-        ref: function ref(eref) {
-          _this2.refs['IEimgJess'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        className: "IEgraphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'jessWed'),
-        src: "../images/JessWeddingSquare.jpg",
-        alt: ""
-      })), _react.default.createElement("div", {
-        className: "IEtriple"
-      }, _react.default.createElement("img", {
         ref: function ref(eref) {
           _this2.refs['IEimgTshirt1'] = (0, _reactDom.findDOMNode)(eref);
         },
         className: "IEgraphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'tshirt1'),
         src: "../images/tshirtGray.png",
+        alt: ""
+      })), _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgSafari'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'safari'),
+        src: "../images/tcKidsSafariSquare.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgTwinPeaks'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'mountains'),
+        src: "../images/twinPeaks.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgWhyNotUs'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'whynotus'),
+        src: "../images/whynotus.jpg",
+        alt: ""
+      })), _react.default.createElement("div", {
+        className: "IEtriple"
+      }, _react.default.createElement("img", {
+        ref: function ref(eref) {
+          _this2.refs['IEimgMAC'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "IEgraphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'MAC'),
+        src: "../images/MAC2myselfBlue.jpg",
         alt: ""
       }))), this.state.usingIE === false && _react.default.createElement("div", {
         className: "grid"
@@ -31603,23 +31641,13 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("img", {
         className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'whitsFlowerFarm'),
-        src: "../images/whitsFlowerFarmSquare.jpg",
+        onClick: this.props.renderNewComponent.bind(this, 'whitInception'),
+        src: "../images/whitleyInceptionSquare.jpg",
         alt: ""
       }), _react.default.createElement("img", {
         className: "graphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'meFlowerFace'),
         src: "../images/meFlowerFace.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
-        src: "../images/RoomieChristmas2018.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'mountains'),
-        src: "../images/twinPeaks.jpg",
         alt: ""
       }), _react.default.createElement("img", {
         className: "graphicDesignImg",
@@ -31633,23 +31661,8 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("img", {
         className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'safari'),
-        src: "../images/tcKidsSafariSquare.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'whynotus'),
-        src: "../images/whynotus.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'whynotusgirl'),
-        src: "../images/whynotusGirl.jpg",
-        alt: ""
-      }), _react.default.createElement("img", {
-        className: "graphicDesignImg",
-        onClick: this.props.renderNewComponent.bind(this, 'MAC'),
-        src: "../images/MAC2myselfBlue.jpg",
+        onClick: this.props.renderNewComponent.bind(this, 'newChapter'),
+        src: "../images/newChapterSquare.jpg",
         alt: ""
       }), _react.default.createElement("img", {
         className: "graphicDesignImg",
@@ -31658,8 +31671,48 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("img", {
         className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'myLogoFlower'),
+        src: "../images/myLogoFlower.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'whitsFlowerFarm'),
+        src: "../images/whitsFlowerFarmSquare.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'whynotusgirl'),
+        src: "../images/whynotusGirl.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'roomieChristmas'),
+        src: "../images/RoomieChristmas2018.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
         onClick: this.props.renderNewComponent.bind(this, 'tshirt1'),
         src: "../images/tshirtGray.png",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'safari'),
+        src: "../images/tcKidsSafariSquare.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'mountains'),
+        src: "../images/twinPeaks.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'whynotus'),
+        src: "../images/whynotus.jpg",
+        alt: ""
+      }), _react.default.createElement("img", {
+        className: "graphicDesignImg",
+        onClick: this.props.renderNewComponent.bind(this, 'MAC'),
+        src: "../images/MAC2myselfBlue.jpg",
         alt: ""
       })), _react.default.createElement(_Footer.default, null));
     }
@@ -31853,7 +31906,7 @@ function (_Component) {
     _classCallCheck(this, PhotoOpened);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoOpened).call(this, props));
-    _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitsFlowerFarm', 'meFlowerFace', 'roomieChristmas', 'mountains', 'lauraUnderwater', 'ECUsched', 'safari', 'whynotus', 'whynotusgirl', 'MAC', 'jessWed', 'tshirt1'];
+    _this.photoArray = ['worldRace', 'kimmiLion', 'thunderCoffee', 'jade', 'whitInception', 'meFlowerFace', 'lauraUnderwater', 'ECUsched', 'newChapter', 'jessWed', 'myLogoFlower', 'whitsFlowerFarm', 'whynotusgirl', 'roomieChristmas', 'tshirt1', 'safari', 'mountains', 'whynotus', 'MAC'];
     _this.rightArrow = false;
     _this.leftArrow = false;
     _this.bringIn = false;
@@ -32292,7 +32345,57 @@ function (_Component) {
         alt: ""
       }), _react.default.createElement("div", {
         className: "textWrapper"
-      }, _react.default.createElement("div", null, " Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Sermon Series "), _react.default.createElement("br", null), _react.default.createElement("div", null, "\"Why Not Us?\""))), this.state.portrait === false && _react.default.createElement("div", {
+      }, _react.default.createElement("div", null, " Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Sermon Series "), _react.default.createElement("br", null), _react.default.createElement("div", null, "\"Why Not Us?\""))), this.state.imageToRender === 'whitInception' && _react.default.createElement("div", {
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
+      }, _react.default.createElement("img", {
+        className: "photoOpenedImg",
+        style: {
+          filter: 'brightness(1.1)'
+        },
+        ref: function ref(eref) {
+          _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        onLoad: this.boundSetPhotoDimensions,
+        src: "../images/whitleyInception.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "textWrapper"
+      }, _react.default.createElement("div", null, " Level: 2 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "portraitText"
+      }, " This is Whitley, one of my roommates. Everyone say \"Hi Whitley!\" She might have just traveled through time or auditioned for Inception. Either way, those clothes actually came straight out of her closet--minus my grandma's travel bag. "))), this.state.imageToRender === 'newChapter' && _react.default.createElement("div", {
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
+      }, _react.default.createElement("img", {
+        className: "photoOpenedImg",
+        style: {
+          filter: 'brightness(1.1)'
+        },
+        ref: function ref(eref) {
+          _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        onLoad: this.boundSetPhotoDimensions,
+        src: "../images/newChapter.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "textWrapper"
+      }, _react.default.createElement("div", null, " Level: 3 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Graphic "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Exodus 14 "))), this.state.imageToRender === 'myLogoFlower' && _react.default.createElement("div", {
+        onTransitionEnd: this.transitionEnd.bind(this),
+        className: this.state.className
+      }, _react.default.createElement("img", {
+        className: "photoOpenedImg",
+        style: {
+          filter: 'brightness(1.1)'
+        },
+        ref: function ref(eref) {
+          _this4.refs['img'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        onLoad: this.boundSetPhotoDimensions,
+        src: "../images/myLogoFlower.jpg",
+        alt: ""
+      }), _react.default.createElement("div", {
+        className: "textWrapper"
+      }, _react.default.createElement("div", null, " Level: 4 "), _react.default.createElement("br", null), _react.default.createElement("div", null, " Hard Logo "), _react.default.createElement("br", null), _react.default.createElement("div", null, " If you swing over to the resume tab, you'll see this logo in action! "))), this.state.portrait === false && _react.default.createElement("div", {
         onClick: this.rightArrowClicked.bind(this),
         className: "arrows"
       }, ">"), this.state.portrait === true && _react.default.createElement("div", {

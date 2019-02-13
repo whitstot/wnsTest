@@ -15,18 +15,21 @@ export default class PhotoOpened extends Component {
 			'kimmiLion', 
 			'thunderCoffee', 
 			'jade', 
-			'whitsFlowerFarm', 
+			'whitInception',
 			'meFlowerFace', 
-			'roomieChristmas', 
-			'mountains',
 			'lauraUnderwater',
 			'ECUsched',
-			'safari',
-			'whynotus',
-			'whynotusgirl',
-			'MAC',
+			'newChapter',
 			'jessWed',
-			'tshirt1'
+			'myLogoFlower',
+			'whitsFlowerFarm',
+			'whynotusgirl',
+			'roomieChristmas', 
+			'tshirt1',
+			'safari',
+			'mountains',
+			'whynotus',
+			'MAC'
 		];	
 
 		this.rightArrow = false;
@@ -390,6 +393,42 @@ export default class PhotoOpened extends Component {
 								<div> Sermon Series </div>
 								<br/>
 								<div>"Why Not Us?"</div>
+							</div>
+						</div>
+					}
+					{this.state.imageToRender === 'whitInception' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" style={{filter: 'brightness(1.1)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/whitleyInception.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 2 </div>
+								<br/>
+								<div> Graphic </div>
+								<br/>
+								<div className="portraitText"> This is Whitley, one of my roommates. Everyone say "Hi Whitley!" She might have just traveled through time or auditioned for Inception. Either way, those clothes actually came straight out of her closet--minus my grandma's travel bag. </div>
+							</div>
+						</div>
+					}
+					{this.state.imageToRender === 'newChapter' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" style={{filter: 'brightness(1.1)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/newChapter.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 3 </div>
+								<br/>
+								<div> Graphic </div>
+								<br/>
+								<div> Exodus 14 </div>
+							</div>
+						</div>
+					}
+					{this.state.imageToRender === 'myLogoFlower' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" style={{filter: 'brightness(1.1)'}} ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/myLogoFlower.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 4 </div>
+								<br/>
+								<div> Hard Logo </div>
+								<br/>
+								<div> If you swing over to the resume tab, you'll see this logo in action! </div>
 							</div>
 						</div>
 					}	

@@ -51,6 +51,9 @@ export default class PhotoshopProjects extends Component {
 			this.refs['IEimgSafari'].style.width = widthToSet + 'px';
 			this.refs['IEimgWhyNotUs'].style.width = widthToSet + 'px';
 			this.refs['IEimgWhyNotUsGirl'].style.width = widthToSet + 'px';
+			this.refs['IEimgWhitInception'].style.width = widthToSet + 'px';
+			this.refs['IEimgMyLogoFlower'].style.width = widthToSet + 'px';
+			this.refs['IEimgNewChapter'].style.width = widthToSet + 'px';
 
 			this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
 			this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
@@ -68,6 +71,9 @@ export default class PhotoshopProjects extends Component {
 			this.refs['IEimgSafari'].style.height = widthToSet + 'px';
 			this.refs['IEimgWhyNotUs'].style.height = widthToSet + 'px';
 			this.refs['IEimgWhyNotUsGirl'].style.height = widthToSet + 'px';
+			this.refs['IEimgWhitInception'].style.height = widthToSet + 'px';
+			this.refs['IEimgMyLogoFlower'].style.height = widthToSet + 'px';
+			this.refs['IEimgNewChapter'].style.height = widthToSet + 'px';
 		}
 	}
 	IEResize() {
@@ -90,6 +96,9 @@ export default class PhotoshopProjects extends Component {
 		this.refs['IEimgSafari'].style.width = widthToSet + 'px';
 		this.refs['IEimgWhyNotUs'].style.width = widthToSet + 'px';
 		this.refs['IEimgWhyNotUsGirl'].style.width = widthToSet + 'px';
+		this.refs['IEimgWhitInception'].style.width = widthToSet + 'px';
+		this.refs['IEimgMyLogoFlower'].style.width = widthToSet + 'px';
+		this.refs['IEimgNewChapter'].style.width = widthToSet + 'px';
 
 		this.refs['IEimgWorldRace'].style.height = widthToSet + 'px';
 		this.refs['IEimgKimmmi'].style.height = widthToSet + 'px';
@@ -107,11 +116,15 @@ export default class PhotoshopProjects extends Component {
 		this.refs['IEimgSafari'].style.height = widthToSet + 'px';
 		this.refs['IEimgWhyNotUs'].style.height = widthToSet + 'px';
 		this.refs['IEimgWhyNotUsGirl'].style.height = widthToSet + 'px';
+		this.refs['IEimgWhitInception'].style.height = widthToSet + 'px';
+		this.refs['IEimgMyLogoFlower'].style.height = widthToSet + 'px';
+		this.refs['IEimgNewChapter'].style.height = widthToSet + 'px';
 	}
 	render() {
 
 		return (
 			<div>
+
 				{this.state.usingIE === true && 
 					<div className="IEwrapperMain">
 						<div className="IEtriple">
@@ -121,27 +134,31 @@ export default class PhotoshopProjects extends Component {
 						</div>
 						<div className="IEtriple">
 							<img ref={(eref) => {this.refs['IEimgJade'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jade')} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgWhit'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitsFlowerFarm')} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgWhitInception'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitInception')} src="../images/whitleyInceptionSquare.jpg" alt=""/>
 							<img ref={(eref) => {this.refs['IEimgFlowerFace'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'meFlowerFace')} src="../images/meFlowerFace.jpg" alt=""/>
 						</div>
 						<div className="IEtriple">
-							<img ref={(eref) => {this.refs['IEimgRoomieChristmas'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgTwinPeaks'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
 							<img ref={(eref) => {this.refs['IEimgLaura'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'lauraUnderwater')} src="../images/LauraUnderwaterHouseSquare.jpg" alt=""/>	
+							<img ref={(eref) => {this.refs['IEimgECU'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/ECUscheduleSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgNewChapter'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'newChapter')} src="../images/newChapterSquare.jpg" alt=""/>
 						</div>
 						<div className="IEtriple">
-							<img ref={(eref) => {this.refs['IEimgECU'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/ECUscheduleSquare.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgSafari'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'safari')} src="../images/tcKidsSafariSquare.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgWhyNotUs'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotus')} src="../images/whynotus.jpg" alt=""/>
-							
+							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgMyLogoFlower'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'myLogoFlower')} src="../images/myLogoFlower.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgWhit'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitsFlowerFarm')} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
 						</div>
 						<div className="IEtriple">
 							<img ref={(eref) => {this.refs['IEimgWhyNotUsGirl'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotusgirl')} src="../images/whynotusGirl.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgMAC'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
-							<img ref={(eref) => {this.refs['IEimgJess'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgRoomieChristmas'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgTshirt1'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'tshirt1')} src="../images/tshirtGray.png" alt=""/>
 						</div>
 						<div className="IEtriple">
-							<img ref={(eref) => {this.refs['IEimgTshirt1'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'tshirt1')} src="../images/tshirtGray.png" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgSafari'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'safari')} src="../images/tcKidsSafariSquare.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgTwinPeaks'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
+							<img ref={(eref) => {this.refs['IEimgWhyNotUs'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotus')} src="../images/whynotus.jpg" alt=""/>
+						</div>
+						<div className="IEtriple">
+							<img ref={(eref) => {this.refs['IEimgMAC'] = findDOMNode(eref)}} className="IEgraphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
 						</div>
 					</div>	
 				}
@@ -152,18 +169,21 @@ export default class PhotoshopProjects extends Component {
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'kimmiLion')} src="../images/KimmiLionBrown.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'thunderCoffee')} src="../images/thunderCoffeeSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jade')} src="../images/jadeExplosionFinishedSquare1.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitsFlowerFarm')} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitInception')} src="../images/whitleyInceptionSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'meFlowerFace')} src="../images/meFlowerFace.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'lauraUnderwater')} src="../images/LauraUnderwaterHouseSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'ECUsched')} src="../images/ECUscheduleSquare.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'safari')} src="../images/tcKidsSafariSquare.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotus')} src="../images/whynotus.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotusgirl')} src="../images/whynotusGirl.jpg" alt=""/>
-						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'newChapter')} src="../images/newChapterSquare.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'jessWed')} src="../images/JessWeddingSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'myLogoFlower')} src="../images/myLogoFlower.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whitsFlowerFarm')} src="../images/whitsFlowerFarmSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotusgirl')} src="../images/whynotusGirl.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'roomieChristmas')} src="../images/RoomieChristmas2018.jpg" alt=""/>
 						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'tshirt1')} src="../images/tshirtGray.png" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'safari')} src="../images/tcKidsSafariSquare.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'mountains')} src="../images/twinPeaks.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'whynotus')} src="../images/whynotus.jpg" alt=""/>
+						<img className="graphicDesignImg" onClick={this.props.renderNewComponent.bind(this, 'MAC')} src="../images/MAC2myselfBlue.jpg" alt=""/>
 					</div>
 				}
 
