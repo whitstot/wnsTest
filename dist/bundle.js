@@ -31347,7 +31347,10 @@ function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
+      var chromeInfo = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./),
+          chromeVersion = parseFloat(chromeInfo[2]);
+
+      if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true || chromeVersion < 58) {
         window.addEventListener('resize', this.boundIEResize);
         this.setState({
           usingIE: true
