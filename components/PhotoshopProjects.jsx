@@ -23,10 +23,50 @@ export default class PhotoshopProjects extends Component {
 		window.removeEventListener('resize', this.boundIEResize)
 	}
 	componentDidMount() { 
-	    let chromeInfo = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./),
-	    	chromeVersion = parseFloat(chromeInfo[2]);
+		//just to have these defined for later
+		//these varibale are if the CSS Grid would NOT be compatible
+		let chromeCSSGrid = false,
+			edgeCSSGrid = false,
+			firefoxCSSGrid = false;
 
-		if ((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true ) || chromeVersion < 58) {
+
+
+		//      TO DO: SAFARI AND OPERA
+
+
+  		// Opera 8.0+
+		//let isOpera = (!!window.opr && !!opr.addons) || (!!window.opera) || (navigator.userAgent.indexOf(' OPR/') >= 0);
+		// Firefox 1.0+
+		let isFirefox = typeof InstallTrigger !== 'undefined';
+		// Safari 3.0+ "[object HTMLElementConstructor]" 
+		//let isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+		// Internet Explorer 
+		let isIE = (navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true );
+		// Edge 20+
+		let isEdge = !isIE && !!window.StyleMedia;
+		// Chrome 1 - 71
+		let isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+
+		if (isChrome) {
+			let chromeInfo = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./),
+	    		chromeVersion = parseInt(chromeInfo[2]),
+	    		chromeCSSGrid = (chromeVersion < 57);
+		}
+		if (isEdge) {
+			let edgeInfo = /\b(MSIE |Trident.*?rv:|Edge\/)(\d+)/.exec(uaString),
+  				edgeVersion = parseInt(edgeInfo[2]),
+  				edgeCSSGrid = (edgeVersion < 16);
+		}
+		if (isFirefox) {
+			let firefoxInfo = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./),
+				firefoxVersion = parseInt(firefoxInfo[1]),
+				firefoxCSSGrid = (firefoxVersion < 52)
+		}
+
+
+		//if any of these variables are true, then their browser version cannot handle a CSS Grid
+		if (isIE || edgeCSSGrid || chromeCSSGrid || firefoxCSSGrid) {
 			window.addEventListener('resize', this.boundIEResize);
 			this.setState({
 				usingIE: true
