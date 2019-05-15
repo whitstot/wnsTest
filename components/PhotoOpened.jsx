@@ -17,19 +17,21 @@ export default class PhotoOpened extends Component {
 			'jade', 
 			'whitInception',
 			'meFlowerFace', 
-			'lauraUnderwater',
-			'ECUsched',
 			'newChapter',
-			'jessWed',
-			'myLogoFlower',
-			'whitsFlowerFarm',
+			'ECUsched',
+			'lauraUnderwater',
+			'MAC',
+			'whitSlice',
 			'whynotusgirl',
-			'roomieChristmas', 
-			'tshirt1',
+			'jessWed',
+			'roomieChristmas',
+			'myLogoFlower',
 			'safari',
-			'mountains',
+			'lauraBook',
 			'whynotus',
-			'MAC'
+			'mountains',
+			'whitsFlowerFarm',
+			'tshirt1'	
 		];	
 
 		this.rightArrow = false;
@@ -274,7 +276,7 @@ export default class PhotoOpened extends Component {
 					}
 					{this.state.imageToRender === 'MAC' &&
 						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
-							<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="imageWithLink photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/MAC2myselfBlue.jpg" alt=""/></a>
+							<a href="https://www.youtube.com/channel/UCPMCYXxedxlYS5qrNQgtbaA"><img className="imageWithLink photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/MAC2.jpg" alt=""/></a>
 							<div className="textWrapper"> 
 								<div>Level: 4 </div>
 								<br/>
@@ -429,6 +431,30 @@ export default class PhotoOpened extends Component {
 								<div> Hard Logo </div>
 								<br/>
 								<div> If you swing over to the resume tab, you'll see this logo in action! </div>
+							</div>
+						</div>
+					}
+					{this.state.imageToRender === 'whitSlice' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/whitleySlices.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 2 </div>
+								<br/>
+								<div> Graphic </div>
+								<br/>
+								<div> This is Whitley, one of my roommates. This is also a quick look at what colors make up Whitley's personality. Yellow - energetic, silly, giggly past 10pm, lights up the room and always up for a laugh. Blue - leader, reliable, steady, ready to listen and ready to point you in the right direction. Pink - sweet, kind, loving, not afraid to be embarrassed and thinking of others first. </div>
+							</div>
+						</div>
+					}
+					{this.state.imageToRender === 'lauraBook' &&
+						<div onTransitionEnd={this.transitionEnd.bind(this)} className={this.state.className}>
+							<img className="photoOpenedImg" ref={(eref) => {this.refs['img'] = findDOMNode(eref)}} onLoad={this.boundSetPhotoDimensions} src="../images/lauraBook.jpg" alt=""/>
+							<div className="textWrapper"> 
+								<div> Level: 3 </div>
+								<br/>
+								<div> Graphic </div>
+								<br/>
+								<div> This is Laura, one of my roommates. Everyone say, "Hi Laura!" Clearly Goliath was about to fail his math test, so he called in a tutor. </div>
 							</div>
 						</div>
 					}	
