@@ -33797,11 +33797,11 @@ function (_Component) {
         },
         className: "resumeWrapper"
       }, _react.default.createElement("a", {
-        href: "../images/ResumeSimpleWebsite.jpg",
+        href: "../images/ResumeLinkedInWebsite.jpg",
         target: "_blank"
       }, _react.default.createElement("img", {
         className: this.state.imgClass,
-        src: "../images/ResumeSimpleWebsite.jpg"
+        src: "../images/ResumeLinkedInWebsite.jpg"
       })), _react.default.createElement(_Footer.default, null));
     }
   }]);
