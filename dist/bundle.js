@@ -32708,10 +32708,12 @@ function (_Component) {
           this.refs['iframeDesirae'].style.width = widthToSet + 'px';
           this.refs['iframeMeagan'].style.width = widthToSet + 'px';
           this.refs['iframeShayna'].style.width = widthToSet + 'px';
+          this.refs['iframeJess'].style.width = widthToSet + 'px';
           this.refs['iframeRach'].style.height = heightToSet + 'px';
           this.refs['iframeDesirae'].style.height = heightToSet + 'px';
           this.refs['iframeMeagan'].style.height = heightToSet + 'px';
-          this.refs['iframeShayna'].style.height = heightToSet + 'px'; // this.refs['descriptionRach'].style.width = widthToSet + 'px';
+          this.refs['iframeShayna'].style.height = heightToSet + 'px';
+          this.refs['iframeJess'].style.height = heightToSet + 'px'; // this.refs['descriptionRach'].style.width = widthToSet + 'px';
           // this.refs['descriptionDesirae'].style.width = widthToSet + 'px';
           // this.refs['descriptionMeagan'].style.width = widthToSet + 'px';
           // this.refs['descriptionShayna'].style.width = widthToSet + 'px';
@@ -32778,6 +32780,26 @@ function (_Component) {
         className: "videoWrapper"
       }, _react.default.createElement("iframe", {
         ref: function ref(eref) {
+          _this3.refs['iframeJess'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        allowFullScreen: "1",
+        allow: "autoplay; encrypted-media",
+        frameBorder: "0",
+        style: {
+          width: "958px",
+          height: "539px"
+        },
+        src: "https://www.youtube.com/embed/lGwJSuHrMHE?&loop=1&mute=1"
+      }), _react.default.createElement("a", {
+        className: "description",
+        href: "https://www.youtube.com/watch?v=lGwJSuHrMHE&t=9s",
+        ref: function ref(eref) {
+          _this3.refs['descriptionJess'] = (0, _reactDom.findDOMNode)(eref);
+        }
+      }, "Logan and Jessica Cash Wedding")), _react.default.createElement("div", {
+        className: "videoWrapper"
+      }, _react.default.createElement("iframe", {
+        ref: function ref(eref) {
           _this3.refs['iframeRach'] = (0, _reactDom.findDOMNode)(eref);
         },
         allowFullScreen: "1",
@@ -32790,27 +32812,7 @@ function (_Component) {
           _this3.refs['descriptionRach'] = (0, _reactDom.findDOMNode)(eref);
         },
         href: "https://www.youtube.com/watch?v=lQf5ixa_Jo0&t=110s"
-      }, "Kyle and Rachael Kesler Wedding")), _react.default.createElement("div", {
-        className: "videoWrapper"
-      }, _react.default.createElement("iframe", {
-        ref: function ref(eref) {
-          _this3.refs['iframeDesirae'] = (0, _reactDom.findDOMNode)(eref);
-        },
-        allowFullScreen: "1",
-        allow: "autoplay; encrypted-media",
-        frameBorder: "0",
-        style: {
-          width: "958px",
-          height: "539px"
-        },
-        src: "https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1"
-      }), _react.default.createElement("a", {
-        className: "description",
-        href: "https://www.youtube.com/watch?v=yefauMCc28g&t=77s",
-        ref: function ref(eref) {
-          _this3.refs['descriptionDesirae'] = (0, _reactDom.findDOMNode)(eref);
-        }
-      }, "Trey and Desirae Richardson Wedding"))), _react.default.createElement("div", {
+      }, "Kyle and Rachael Kesler Wedding"))), _react.default.createElement("div", {
         className: "weddingsChild"
       }, _react.default.createElement("div", {
         className: "videoWrapper"
@@ -32833,6 +32835,28 @@ function (_Component) {
           _this3.refs['descriptionMeagan'] = (0, _reactDom.findDOMNode)(eref);
         }
       }, "David and Meagan Escobar Wedding")), _react.default.createElement("div", {
+        className: "videoWrapper"
+      }, _react.default.createElement("iframe", {
+        ref: function ref(eref) {
+          _this3.refs['iframeDesirae'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        allowFullScreen: "1",
+        allow: "autoplay; encrypted-media",
+        frameBorder: "0",
+        style: {
+          width: "958px",
+          height: "539px"
+        },
+        src: "https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1"
+      }), _react.default.createElement("a", {
+        className: "description",
+        href: "https://www.youtube.com/watch?v=yefauMCc28g&t=77s",
+        ref: function ref(eref) {
+          _this3.refs['descriptionDesirae'] = (0, _reactDom.findDOMNode)(eref);
+        }
+      }, "Trey and Desirae Richardson Wedding"))), _react.default.createElement("div", {
+        className: "weddingsChild"
+      }, _react.default.createElement("div", {
         className: "videoWrapper"
       }, _react.default.createElement("iframe", {
         ref: function ref(eref) {
@@ -33756,7 +33780,8 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Element).call(this, props));
     _this.state = {
-      imgClass: 'imgResume'
+      imgClass: 'imgResume',
+      imgClass2: 'imgResume2'
     };
     return _this;
   }
@@ -33778,13 +33803,14 @@ function (_Component) {
       }, 20);
       window.setTimeout(function () {
         _this2.setState({
-          imgClass: 'imgResume comeIn scale'
+          imgClass: 'imgResume comeIn scale',
+          imgClass2: 'imgResume2 comeIn'
         });
-      }, 1000); //this is only here because theres for some reason an excessive amount of scrolling after the transition, and this fixes it?
+      }, 1000); //this is only here because theres for some reason an excessive amount of scrolling after the transition, and this fixes it? It's like its hanging on to where the photo was before the transition
 
       window.setTimeout(function () {
-        _this2.refs['resumeWrapper'].style.height = "100%";
-      }, 1020);
+        _this2.refs['imageWrapper'].style.height = "100%";
+      }, 2000);
     }
   }, {
     key: "render",
@@ -33792,17 +33818,25 @@ function (_Component) {
       var _this3 = this;
 
       return _react.default.createElement("div", {
-        ref: function ref(eref) {
-          _this3.refs['resumeWrapper'] = (0, _reactDom.findDOMNode)(eref);
-        },
         className: "resumeWrapper"
+      }, _react.default.createElement("div", {
+        ref: function ref(eref) {
+          _this3.refs['imageWrapper'] = (0, _reactDom.findDOMNode)(eref);
+        },
+        className: "imagesWrapper"
       }, _react.default.createElement("a", {
+        className: "resumeLeft",
         href: "../images/ResumeLinkedInWebsite.jpg",
         target: "_blank"
       }, _react.default.createElement("img", {
         className: this.state.imgClass,
         src: "../images/ResumeLinkedInWebsite.jpg"
-      })), _react.default.createElement(_Footer.default, null));
+      })), _react.default.createElement("div", {
+        className: "resumeRight"
+      }, _react.default.createElement("img", {
+        className: this.state.imgClass2,
+        src: "../images/ResumeLinkedInWebsite.jpg"
+      }))), _react.default.createElement(_Footer.default, null));
     }
   }]);
 
@@ -33872,7 +33906,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n.imgResume {    \n\twidth: 100%;\n    border: 0.5px solid lightgray;\n    /*border-bottom-width: 0px;*/\n    transform: translate(0%, 150%);\n    transition: transform 1s ease;\n    box-shadow: 10px 10px 13px lightslategrey;\n}\n.comeIn {\n\ttransform: translate(0%, 0%);\n}\n.scale {\n\ttransition: transform 1.5s ease;\n\ttransform: scale(0.9);\n}\n.resumeWrapper {\n\twidth: 100%;\n\tposition: absolute;\n}\n\n\n\n\n\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n}\n\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t\n\n}", ""]);
+exports.push([module.i, "\n\n\n\n\n\n.imagesWrapper {\n\tdisplay: flex;\n}\n.resumeWrapper {\n\twidth: 100%;\n\tposition: absolute;\n}\n\n\n\n\n\n\n/* Media Queries */\n\n@media (min-width: 1051px) {\n\t/* desktop */\n\n\t.imgResume {    \n\t\twidth: 100%;\n\t\theight: auto;\n\t    border: 0.5px solid lightgray;\n\t    transition: transform 1s ease;\n\t    box-shadow: 10px 10px 13px lightslategrey;\n\t    cursor: pointer;\n\t}\n\t.imgResume2 {    \n\t\twidth: 100%;\n\t\theight: auto;\n\t    border: 1px solid lightgray;\n\t    border-bottom-width: 2px;\n\t    transform: translate(0%, 150%);\n\t    transition: transform 1s ease;\n\t}\n\t.resumeLeft {\n\t\twidth: 50%;\n\t}\n\t.resumeRight {\n\t\twidth: 100%;\n\t}\n\t.comeIn {\n\t\ttransform: translate(0%, 0%);\n\t}\n\t.scale {\n\t\ttransition: transform 1.5s ease;\n\t\ttransform: scale(0.9);\n\t}\n}\n\n\n@media (max-width: 1050px) {\n\t/* mobile */\n\t.imgResume {    \n\t\twidth: 100%;\n\t\theight: auto;\n\t    border: 0.5px solid lightgray;\n\t    transform: translate(0%, 150%);\n\t    transition: transform 1s ease;\n\t    box-shadow: 10px 10px 13px lightslategrey;\n\t}\n\t.resumeLeft {\n\t\twidth: 100%;\n\t}\n\t.resumeRight {\n\t\tdisplay: none;\n\t}\n\t.comeIn {\n\t\ttransform: translate(0%, 0%);\n\t}\n\t.scale {\n\t\ttransition: transform 1.5s ease;\n\t\ttransform: scale(0.9);\n\t}\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 

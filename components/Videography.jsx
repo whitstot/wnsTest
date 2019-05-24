@@ -84,11 +84,13 @@ export default class Videography extends Component {
 				this.refs['iframeDesirae'].style.width = widthToSet + 'px';
 				this.refs['iframeMeagan'].style.width = widthToSet + 'px';
 				this.refs['iframeShayna'].style.width = widthToSet + 'px';
+				this.refs['iframeJess'].style.width = widthToSet + 'px';
 
 				this.refs['iframeRach'].style.height = heightToSet + 'px';
 				this.refs['iframeDesirae'].style.height = heightToSet + 'px';
 				this.refs['iframeMeagan'].style.height = heightToSet + 'px';
 				this.refs['iframeShayna'].style.height = heightToSet + 'px';
+				this.refs['iframeJess'].style.height = heightToSet + 'px';
 
 				// this.refs['descriptionRach'].style.width = widthToSet + 'px';
 				// this.refs['descriptionDesirae'].style.width = widthToSet + 'px';
@@ -157,6 +159,21 @@ export default class Videography extends Component {
 					<div className="weddingsChild">
 						<div className="videoWrapper">
 							<iframe
+								ref={(eref) => {this.refs['iframeJess'] = findDOMNode(eref)}}
+								allowFullScreen="1" 
+								allow="autoplay; encrypted-media"  
+								frameBorder="0"
+								style={{width: "958px", height: "539px"}}
+								src="https://www.youtube.com/embed/lGwJSuHrMHE?&loop=1&mute=1">
+							</iframe>
+							<a  className="description" 
+								href="https://www.youtube.com/watch?v=lGwJSuHrMHE&t=9s"
+								ref={(eref) => {this.refs['descriptionJess'] = findDOMNode(eref)}}>
+									Logan and Jessica Cash Wedding
+							</a>
+						</div>
+						<div className="videoWrapper">
+							<iframe
 								ref={(eref) => {this.refs['iframeRach'] = findDOMNode(eref)}}
 								allowFullScreen="1" 
 								allow="autoplay; encrypted-media"  
@@ -167,21 +184,6 @@ export default class Videography extends Component {
 								ref={(eref) => {this.refs['descriptionRach'] = findDOMNode(eref)}}
 								href="https://www.youtube.com/watch?v=lQf5ixa_Jo0&t=110s">
 									Kyle and Rachael Kesler Wedding
-							</a>
-						</div>
-						<div className="videoWrapper">
-							<iframe
-								ref={(eref) => {this.refs['iframeDesirae'] = findDOMNode(eref)}}
-								allowFullScreen="1" 
-								allow="autoplay; encrypted-media"  
-								frameBorder="0"
-								style={{width: "958px", height: "539px"}}
-								src="https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1">
-							</iframe>
-							<a  className="description"
-								href="https://www.youtube.com/watch?v=yefauMCc28g&t=77s" 
-								ref={(eref) => {this.refs['descriptionDesirae'] = findDOMNode(eref)}}>
-									Trey and Desirae Richardson Wedding
 							</a>
 						</div>
 					</div>
@@ -202,6 +204,24 @@ export default class Videography extends Component {
 									David and Meagan Escobar Wedding
 							</a>
 						</div>
+						<div className="videoWrapper">
+							<iframe
+								ref={(eref) => {this.refs['iframeDesirae'] = findDOMNode(eref)}}
+								allowFullScreen="1" 
+								allow="autoplay; encrypted-media"  
+								frameBorder="0"
+								style={{width: "958px", height: "539px"}}
+								src="https://www.youtube.com/embed/yefauMCc28g?&loop=1&mute=1">
+							</iframe>
+							<a  className="description"
+								href="https://www.youtube.com/watch?v=yefauMCc28g&t=77s" 
+								ref={(eref) => {this.refs['descriptionDesirae'] = findDOMNode(eref)}}>
+									Trey and Desirae Richardson Wedding
+							</a>
+						</div>
+					</div>
+
+					<div className="weddingsChild">
 						<div className="videoWrapper">
 							<iframe 
 								ref={(eref) => {this.refs['iframeShayna'] = findDOMNode(eref)}}
