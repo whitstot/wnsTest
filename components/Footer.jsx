@@ -20,7 +20,7 @@ export default class Footer extends Component {
 			<div className="footerWrapper">
 				<div className="footerBorder"></div>
 				<div className="footer">
-					WhitStot Studios™
+					WhitStot Studios
 				</div>
 			</div>
 		)

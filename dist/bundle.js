@@ -11323,7 +11323,7 @@ function (_Component) {
         className: "footerBorder"
       }), _react.default.createElement("div", {
         className: "footer"
-      }, "WhitStot Studios\u2122"));
+      }, "WhitStot Studios"));
     }
   }]);
 
