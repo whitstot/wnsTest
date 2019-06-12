@@ -54,11 +54,13 @@ export default class Videography extends Component {
 				this.refs['iframeDesirae'].style.width = widthToSet;
 				this.refs['iframeMeagan'].style.width = widthToSet;
 				this.refs['iframeShayna'].style.width = widthToSet;
+				this.refs['iframeJess'].style.width = widthToSet;
 
 				this.refs['iframeRach'].style.height = heightForVimeoPortrait;
 				this.refs['iframeDesirae'].style.height = heightForVimeoPortrait;
 				this.refs['iframeMeagan'].style.height = heightForVimeoPortrait;
 				this.refs['iframeShayna'].style.height = heightForVimeoPortrait;
+				this.refs['iframeJess'].style.height = heightForVimeoPortrait;
 
 				// this.refs['descriptionRach'].style.width = widthToSet;
 				// this.refs['descriptionDesirae'].style.width = widthToSet;

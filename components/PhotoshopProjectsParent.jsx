@@ -32,6 +32,17 @@ export default class PhotoshopProjectsParent extends Component {
 		})
 	}
 	componentWillReceiveProps() {
+
+
+		// TO DO:   
+		//		
+		//			Write if else statement for this so it doesn't
+		//			switch components on the resize
+		//						OR
+		//			figure out another solution
+		//			might have to do with the parent component
+
+
 		this.setState({
 			componentToRender: this.props.pageToRender
 		})
